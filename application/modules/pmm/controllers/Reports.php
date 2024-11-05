@@ -15071,7 +15071,7 @@ class Reports extends CI_Controller {
 		?>
 		
 		<table class="table table-bordered" width="100%">
-		<style type="text/css">
+		 <style type="text/css">
 			body {
 				font-family: helvetica;
 				font-size: 11px;
@@ -15704,12 +15704,10 @@ class Reports extends CI_Controller {
 
 			$batching_plant = $harsat_batching_plant * $total_volume;
 			$pemeliharaan_batching_plant = $harsat_pemeliharaan_batching_plant * $total_volume;
-			//$penyusutan_batching_plant = $batching_plant - $pemeliharaan_batching_plant;
-			$penyusutan_batching_plant = 0;
+			$penyusutan_batching_plant = $batching_plant - $pemeliharaan_batching_plant;
 			$wheel_loader = ($harsat_wheel_loader * $vol_wheel_loader) + $total_nilai_pemeliharaan_wheel_loader;
 			$pemeliharaan_wheel_loader = $harsat_pemeliharaan_wheel_loader * $vol_pemeliharaan_wheel_loader;
-			//$penyusutan_wheel_loader = $wheel_loader - $pemeliharaan_wheel_loader;
-			$penyusutan_wheel_loader = 0;
+			$penyusutan_wheel_loader = $wheel_loader - $pemeliharaan_wheel_loader;
 			$truck_mixer = $harsat_truck_mixer * $total_volume;
 			$excavator = $harsat_excavator * $total_volume;
 			$transfer_semen = $harsat_transfer_semen * $total_volume;
@@ -15818,7 +15816,7 @@ class Reports extends CI_Controller {
 			$total_nilai_realisasi_bua = $overhead_biaya['total'] + $overhead_jurnal['total'];
 
 			$total_volume_rap_bua = $total_volume;
-			$total_nilai_rap_bua = $rap_bua / 3;
+			$total_nilai_rap_bua = $rap_bua / 24;
 			$total_harsat_rap_bua = $total_nilai_rap_bua / $total_volume_rap_bua;
 			
 			$total_volume_realisasi_bua = $total_volume;
