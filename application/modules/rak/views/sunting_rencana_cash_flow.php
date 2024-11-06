@@ -49,39 +49,9 @@
                                 <form method="POST" action="<?php echo site_url('rak/submit_sunting_rencana_cash_flow');?>" id="form-po" enctype="multipart/form-data" autocomplete="off">
                                     <input type="hidden" name="id" value="<?= $rak["id"] ?>">
                                     <table class="table table-bordered table-striped">
-                                        <?php
-                                        $tanggal = $rak['tanggal_rencana_kerja'];
-                                        $date = date('Y-m-d',strtotime($tanggal));
-                                        ?>
-                                        <?php
-                                        function tgl_indo($date){
-                                            $bulan = array (
-                                                1 =>   'Januari',
-                                                'Februari',
-                                                'Maret',
-                                                'April',
-                                                'Mei',
-                                                'Juni',
-                                                'Juli',
-                                                'Agustus',
-                                                'September',
-                                                'Oktober',
-                                                'November',
-                                                'Desember'
-                                            );
-                                            $pecahkan = explode('-', $date);
-                                            
-                                            // variabel pecahkan 0 = tanggal
-                                            // variabel pecahkan 1 = bulan
-                                            // variabel pecahkan 2 = tahun
-                                        
-                                            return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
-                                            
-                                        }
-                                        ?>
                                         <tr>
                                             <th width="200px">Tanggal</th>
-                                            <td>: <?= tgl_indo(date($date)); ?></td>
+                                            <td><input type="text" class="form-control dtpicker" name="tanggal_rencana_kerja"  value="<?= $tanggal ?>" /></td>
                                         </tr>
                                         <tr>
                                             <th width="100px">Lampiran</th>
@@ -127,8 +97,23 @@
                                             </tr>
                                             <tr>
                                                 <td class="text-center">6.</td>
-                                                <td class="text-left">Biaya Persiapan</td>
-                                                <td class="text-right"><input type="text" id="biaya_persiapan" name="biaya_persiapan" class="form-control rupiahformat text-right" value="<?= $rak['biaya_persiapan'] ?>" required="" autocomplete="off"></td>
+                                                <td class="text-left">Pajak Keluaran</td>
+                                                <td class="text-right"><input type="text" id="pajak_keluaran" name="pajak_keluaran" class="form-control rupiahformat text-right" value="<?= $rak['pajak_keluaran'] ?>" required="" autocomplete="off"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">7.</td>
+                                                <td class="text-left">Pajak Masukan</td>
+                                                <td class="text-right"><input type="text" id="pajak_masukan" name="pajak_masukan" class="form-control rupiahformat text-right" value="<?= $rak['pajak_masukan'] ?>" required="" autocomplete="off"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">8.</td>
+                                                <td class="text-left">Penerimaan Pinjaman</td>
+                                                <td class="text-right"><input type="text" id="penerimaan" name="penerimaan" class="form-control rupiahformat text-right" value="<?= $rak['penerimaan'] ?>" required="" autocomplete="off"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">9.</td>
+                                                <td class="text-left">Pengembalian Pinjaman</td>
+                                                <td class="text-right"><input type="text" id="pengembalian" name="pengembalian" class="form-control rupiahformat text-right" value="<?= $rak['pengembalian'] ?>" required="" autocomplete="off"></td>
                                             </tr>
                                         </tbody>
                                     </table>
