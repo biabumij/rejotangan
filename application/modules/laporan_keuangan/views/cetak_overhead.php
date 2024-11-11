@@ -109,6 +109,17 @@
 				<td align="left" width="100%"><b>BIAYA</b></td>
 			</tr>
 			<?php
+
+			if(!empty($biaya_langsung_parent)){
+				foreach ($biaya_langsung_parent as $key => $blj) {
+					?>	
+					<tr>
+						<td align="left" width="100%"><b>BIAYA</b></td>
+					</tr>
+					<?php				
+				}
+			}
+
 			$total_biaya_langsung  = 0;
 			if(!empty($biaya_langsung)){
 				foreach ($biaya_langsung as $key => $bl) {
