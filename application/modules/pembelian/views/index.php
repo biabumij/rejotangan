@@ -255,7 +255,7 @@
                                                         <textarea id="about_text" name="memo" class="form-control" data-required="false" rows="20">
 <p style="font-size:6;"><b>Syarat &amp; Ketentuan :</b></p>
 <p style="font-size:6;">1.&nbsp;Waktu Penyerahan : </p>
-<p style="font-size:6;">2.&nbsp;Tempat Penyerahan : Batching Plant, Bia Bumi Jayendra, Desa Sukabumi, Kec. Tigadihaji, Kabupaten Oku Selatan, Sumatera Selatan.</p>
+<p style="font-size:6;">2.&nbsp;Tempat Penyerahan : </p>
 <p style="font-size:6;">3.&nbsp;Cara Pembayaran : 30 (tiga puluh) hari kerja setelah berkas tagihan dinyatakan lolos verifikasi keuangan PT. Bia Bumi Jayendra, dengan melampirkan</p>
 <p style="font-size:6;">&nbsp;&nbsp;&nbsp; dokumen sebagai berikut :</p>
 <p style="font-size:6;">&nbsp;&nbsp;&nbsp;3.1 Tagihan</p>
