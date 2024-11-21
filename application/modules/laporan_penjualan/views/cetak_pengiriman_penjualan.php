@@ -82,10 +82,9 @@
 		<table width="98%" border="0" cellpadding="3">
 			<tr>
 				<td width="100%" align="center">
-					<div style="display: block;font-weight: bold;font-size: 11px;">LAPORAN PENGIRIMAN PENJUALAN</div>
-					<div style="display: block;font-weight: bold;font-size: 11px;">DIVISI STONE CRUSHER</div>
-				    <div style="display: block;font-weight: bold;font-size: 11px;">PT. BIA BUMI JAYENDRA</div>
-					<div style="display: block;font-weight: bold;font-size: 11px; text-transform: uppercase;">PERIODE <?php echo str_replace($search, $replace, $subject);?></div>
+					<div style="display: block;font-weight: bold;font-size: 11px;">Laporan Pengiriman Penjualan</div>
+					<div style="display: block;font-weight: bold;font-size: 11px;">Divisi Stone Crusher</div>
+					<div style="display: block;font-weight: bold;font-size: 11px;">Periode <?php echo str_replace($search, $replace, $subject);?></div>
 				</td>
 			</tr>
 		</table>
@@ -195,12 +194,12 @@
 						</tr>
 						<tr>
 							<td align="center">
-								<b><u>Tri Wahyu Rahadi </u><br />
-								Ka. Unit Bisnis</b>
+								<b><u>Novel Joko Tri Laksono</u><br />
+								Ka. Plant</b>
 							</td>
 							<td align="center">
-								<b><u>Vicky Irwana Yudha</u><br />
-								Ka. Logistik</b>
+								<b><u>Rani Oktavia Rizal</u><br />
+								Adm. Logistik</b>
 							</td>
 						</tr>
 					</table>
