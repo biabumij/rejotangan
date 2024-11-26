@@ -382,8 +382,6 @@
             $(this).val(picker.startDate.format('DD-MM-YYYY') + ' - ' + picker.endDate.format('DD-MM-YYYY'));
             table_biaya_2.ajax.reload();
 		});
-
-
     </script>
     
 	<script type="text/javascript">

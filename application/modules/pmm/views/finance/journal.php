@@ -329,7 +329,6 @@
             });
         }
 
-
         function DeleteData(id)
         {
             bootbox.confirm("Apakah Anda yakin untuk menghapus data ini ?", function(result){ 
@@ -382,8 +381,6 @@
         $(this).val(picker.startDate.format('DD-MM-YYYY') + ' - ' + picker.endDate.format('DD-MM-YYYY'));
         table_jurnal_2.ajax.reload();
 		});
-
-
     </script>
 
 </body>
