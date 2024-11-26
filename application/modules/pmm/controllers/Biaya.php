@@ -51,7 +51,7 @@ class Biaya extends CI_Controller {
 		$filter_date = $this->input->post('filter_date');
 
         $kunci_rakor = $this->db->select('date')->order_by('date','desc')->limit(1)->get_where('kunci_rakor')->row_array();
-        $last_opname = date('Y-m-d', strtotime('0 days', strtotime($kunci_rakor['date'])));
+        $last_opname = date('Y-m-d', strtotime('+1 days', strtotime($kunci_rakor['date'])));
 
 		if(!empty($filter_date)){
 			$arr_date = explode(' - ', $filter_date);
@@ -73,7 +73,7 @@ class Biaya extends CI_Controller {
                 $row['saldo'] = 0;
                 $row['tanggal'] = date('d/m/Y',strtotime($row['tanggal_transaksi']));
                 $row['saldo_bank'] = 0;
-                $row['nomor_transaksi'] = "<a  href='".base_url('pmm/biaya/detail_biaya_2/'.$row['id'])."' >".$row['nomor_transaksi']."</a>";
+                $row['nomor_transaksi'] = "<a  href='".base_url('pmm/biaya/detail_biaya/'.$row['id'])."' >".$row['nomor_transaksi']."</a>";
 				$row['jumlah_total'] = number_format($row['total'],2,',','.');
                 $row['admin_name'] = $this->crud_global->GetField('tbl_admin',array('admin_id'=>$row['created_by']),'admin_name');
                 $row['created_on'] = date('d/m/Y H:i:s',strtotime($row['created_on']));
@@ -327,28 +327,6 @@ class Biaya extends CI_Controller {
             $this->db->join('pmm_coa c','b.akun = c.id','left');
             $data['detail'] = $this->db->get_where('pmm_detail_biaya b',array('b.biaya_id'=>$id))->result_array();            
             $this->load->view('pmm/biaya/detail_biaya',$data);
-            
-        }else {
-            redirect('admin');
-        }
-    }
-
-    public function detail_biaya_2($id)
-    {
-        $check = $this->m_admin->check_login();
-        if($check == true){     
-
-            $this->db->select('b.*,p.nama as penerima');
-            $this->db->join('penerima p','b.penerima = p.id','left');
-            $this->db->where('b.id',$id);
-            $query = $this->db->get('pmm_biaya b');
-            $data['row'] = $query->row_array();
-
-
-            $this->db->select('b.*, c.coa as akun, c.coa_number as kode_akun');
-            $this->db->join('pmm_coa c','b.akun = c.id','left');
-            $data['detail'] = $this->db->get_where('pmm_detail_biaya b',array('b.biaya_id'=>$id))->result_array();            
-            $this->load->view('pmm/biaya/detail_biaya_2',$data);
             
         }else {
             redirect('admin');
