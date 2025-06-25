@@ -55,7 +55,7 @@
                                 <div class="panel-content">
                                     <ul class="nav nav-tabs" role="tablist">
                                         <?php
-                                        if(in_array($this->session->userdata('admin_group_id'), array(1,2,3,7,8))){
+                                        if(in_array($this->session->userdata('admin_group_id'), array(1,5,6,13))){
                                         ?>
                                         <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" style="border-radius:10px; font-weight:bold;">BIAYA BUA</a></li>
                                         <?php
@@ -63,7 +63,7 @@
                                         ?>
 
                                         <?php
-                                        if(in_array($this->session->userdata('admin_group_id'), array(4,5,6))){
+                                        if(in_array($this->session->userdata('admin_group_id'), array(10,11,15,16))){
                                         ?>
                                         <li role="presentation" class="active"><a href="#home_2" aria-controls="home_2" role="tab" data-toggle="tab" style="border-radius:10px; font-weight:bold; text-transform:uppercase;">BULAN INI</a></li>
                                         <li role="presentation"><a href="#home_3" aria-controls="home_3" role="tab" data-toggle="tab" style="border-radius:10px; font-weight:bold; text-transform:uppercase;">SEMUA</a></li>
@@ -74,7 +74,7 @@
                                     
                                     <div class="tab-content">
                                         <?php
-                                        if(in_array($this->session->userdata('admin_group_id'), array(1,2,3,7,8))){
+                                        if(in_array($this->session->userdata('admin_group_id'), array(1,5,6,13))){
                                         ?>
                                         <div role="tabpanel" class="tab-pane active" id="home">  
                                             <br />
@@ -108,7 +108,7 @@
                                         ?>
 
                                         <?php
-                                        if(in_array($this->session->userdata('admin_group_id'), array(4,5,6))){
+                                        if(in_array($this->session->userdata('admin_group_id'), array(10,11,15,16))){
                                         ?>
                                         <div role="tabpanel" class="tab-pane active" id="home_2">
                                             <br />

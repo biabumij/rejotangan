@@ -131,10 +131,10 @@
             <?php echo $this->Templates->PageHeader();?>
             <div class="page-body">
                 <div id="about" class="container spacer about">
+                    <?php
+                    if(in_array($this->session->userdata('admin_group_id'), array(1,2,3,4))){
+                    ?>
                     <div class="col-sm-12" style="background:#fff;background-image:linear-gradient(to top right, #666666 0%, #666666 100%); font-size:18px; border-radius: 5px; padding:10px; margin-bottom:50px;">
-                        <?php
-                        if(in_array($this->session->userdata('admin_group_id'), array(1,2,3))){
-                        ?>
                         <figure class="highcharts-figure">
                             <?php
                             $query1 = $this->db->select('COUNT(pvp.id) as id')
@@ -166,9 +166,7 @@
                             $query = $query['id'];
                             ?>
                                 <center><b><a target="_blank" href="<?= base_url("pmm/reports/detail_notification_2/") ?>"><i class="fa-solid fa-clipboard-check"></i> BUTUH PERSETUJUAN KA. PLANT (<blink><?php echo number_format($query,0,',','.');?></blink>)</a><b></center>
-                            <?php
-                            }
-                            ?>
+                            
                             <!--<?php
                             if(in_array($this->session->userdata('admin_group_id'), array(1))){
                             ?>
@@ -187,7 +185,11 @@
                         </figure>    
                     </div>
                     <?php
-                    if(in_array($this->session->userdata('admin_group_id'), array(1,2,3,4,7,8))){
+                    }
+                    ?>
+
+                    <?php
+                    if(in_array($this->session->userdata('admin_group_id'), array(1,5,6,10,11,13,15))){
                     ?>
                     <div id="flippy">
                         <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'}"><i class="fa-regular fa-hand-point-right"></i> GRAFIK</button>
@@ -261,7 +263,7 @@
                                     <th width="50%" class="text-center">
                                         <ul class="row text-center list-inline  wowload bounceInUp collapse" id="produksi">
                                             <?php
-                                            if(in_array($this->session->userdata('admin_group_id'), array(1,2,3,4,5,7,8))){
+                                            if(in_array($this->session->userdata('admin_group_id'), array(1,5,6,10,11,13,15))){
                                             ?>
                                             <li class="text-center" style="background: linear-gradient(110deg, #40c9fe 20%, #40c9fe 20%, #2ea4d7 80%);">
                                                 <a href="<?php echo site_url('admin/rap');?>">
@@ -288,7 +290,7 @@
                                                 <span style="color:#fffdd0;"><i class="fa-solid fa-cart-shopping"></i><b>PEMBELIAN</b></span></a>
                                             </li>
                                             <?php
-                                            if(in_array($this->session->userdata('admin_group_id'), array(1,2,3,4,5,7,8))){
+                                            if(in_array($this->session->userdata('admin_group_id'), array(1,5,6,10,11,13,15))){
                                             ?>
                                             <?php
                                             }
@@ -296,7 +298,7 @@
                                         </ul>
                                     </th>
                                     <?php
-                                    if(in_array($this->session->userdata('admin_group_id'), array(1,2,3,4,6,7,8))){
+                                    if(in_array($this->session->userdata('admin_group_id'), array(1,5,6,10,11,13,15))){
                                     ?>
                                     <th width="50%" class="text-center">
                                         <ul class="row text-center list-inline  wowload bounceInUp collapse" id="keuangan">
@@ -323,19 +325,6 @@
                                     <?php
                                     }
                                     ?>
-
-                                    <?php
-                                    if(in_array($this->session->userdata('admin_group_id'), array(5))){
-                                    ?>
-                                    <th width="50%" class="text-center">
-                                        <ul class="row text-center list-inline  wowload bounceInUp collapse" id="keuangan">
-                        
-                                        </ul>
-                                    </th>
-                                    <?php
-                                    }
-                                    ?>
-                                    
                                 </tr>
                             </table>
                             <table width="100%">
@@ -370,26 +359,6 @@
                                                 <a href="<?php echo site_url('admin/laporan_keuangan');?>">
                                                 <span style="color:#fffdd0;"><i class="fa-solid fa-money-bill"></i><b>KEUANGAN</b></span></a>
                                             </li>
-                                            <!--<li class="text-center" style="background: linear-gradient(110deg, #38761d 20%, #38761d 20%, #6aa84f 80%);">
-                                                <a href="<?php echo site_url('admin/laporan_pembelian');?>">
-                                                <span style="color:#fffdd0;"><i class="fa-solid fa-cart-shopping"></i><b>PEMBELIAN</b></span></a>
-                                            </li>
-                                            <br />
-                                            <br />
-                                            <li class="text-center" style="background: linear-gradient(110deg, #38761d 20%, #38761d 20%, #6aa84f 80%);">
-                                                <a href="<?php echo site_url('admin/laporan_penjualan');?>">
-                                                <span style="color:#fffdd0;"><i class="fa-solid fa-bag-shopping"></i><b>PENJUALAN</b></span></a>
-                                            </li>
-                                            <li class="text-center" style="background: linear-gradient(110deg, #38761d 20%, #38761d 20%, #6aa84f 80%);">
-                                                <a href="<?php echo site_url('admin/laporan_ev._produksi');?>">
-                                                <span style="color:#fffdd0;"><i class="fa-solid fa-chart-simple"></i><b>EVALUASI</b></span></a>
-                                            </li>
-                                            <br />
-                                            <br />
-                                            <li class="text-center" style="background: linear-gradient(110deg, #38761d 20%, #38761d 20%, #6aa84f 80%);">
-                                                <a href="<?php echo site_url('admin/laporan_rencana_kerja');?>">
-                                                <span style="color:#fffdd0;"><i class="fa-solid fa-calendar-week"></i><b>RENCANA<br />KERJA</b></span></a>
-                                            </li>-->
                                         </ul>
                                     </th>
                                     
@@ -420,7 +389,7 @@
                                                 <span style="color:#fffdd0;"><i class="fa-solid fa-users"></i><b>USER</b></span></a>
                                             </li>
                                             <?php
-                                            if(in_array($this->session->userdata('admin_group_id'), array(1,2,3,7,8))){
+                                            if(in_array($this->session->userdata('admin_group_id'), array(1,5,6,10,11,13,15))){
                                             ?>
                                             <li class="text-center" style="background: linear-gradient(110deg, #d11212 20%, #d11212 20%, #b30f15 80%);">
                                                 <a href="<?php echo site_url('admin/perusahaan');?>">
