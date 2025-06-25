@@ -122,7 +122,7 @@
                                         <a href="<?= base_url('penjualan/detailPenagihan/' . $bayar["penagihan_id"]) ?>" class="btn btn-info" style="width:150px; font-weight:bold; border-radius:10px;"> KEMBALI</a>
                                         <a href="<?= base_url('penjualan/cetak_pembayaran/' . $bayar["id"]) ?>" target="_blank" class="btn btn-default" style="width:150px; font-weight:bold; border-radius:10px;"> PRINT</a>
                                         <?php
-                                        if($this->session->userdata('admin_id') == 13 || $this->session->userdata('admin_id') == 1 || $this->session->userdata('admin_id') == 2 || $this->session->userdata('admin_id') == 6 || $this->session->userdata('admin_id') == 8 || $this->session->userdata('admin_id') == 9){
+                                        if(in_array($this->session->userdata('admin_id'), array(1,3,4,9))){
                                         ?>
                                         <a href="<?= base_url('penjualan/sunting_pembayaran/' . $bayar["id"]) ?>" class="btn btn-default" style="width:150px; font-weight:bold; border-radius:10px;"> EDIT</a>
                                         <?php
@@ -130,7 +130,7 @@
                                         ?>
 
                                         <?php
-                                        if($this->session->userdata('admin_id') == 13 || $this->session->userdata('admin_id') == 1 || $this->session->userdata('admin_id') == 2 || $this->session->userdata('admin_id') == 6 || $this->session->userdata('admin_id') == 8 || $this->session->userdata('admin_id') == 9){
+                                        if(in_array($this->session->userdata('admin_id'), array(1,3,4,9))){
                                         ?>
                                         <button type="button" id="tombol_hapus" class="btn btn-default" style="width:150px; font-weight:bold; margin-bottom:10px; border-radius:10px;"> HAPUS</button>
                                         <?php
