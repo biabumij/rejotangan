@@ -389,7 +389,7 @@
                                                 <span style="color:#fffdd0;"><i class="fa-solid fa-users"></i><b>USER</b></span></a>
                                             </li>
                                             <?php
-                                            if(in_array($this->session->userdata('admin_group_id'), array(1,5,6,10,11,13,15))){
+                                            if(in_array($this->session->userdata('admin_group_id'), array(1,15))){
                                             ?>
                                             <li class="text-center" style="background: linear-gradient(110deg, #d11212 20%, #d11212 20%, #b30f15 80%);">
                                                 <a href="<?php echo site_url('admin/perusahaan');?>">
