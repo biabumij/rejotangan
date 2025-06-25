@@ -51,7 +51,7 @@
 			<tr>
 				<td align="center">
 					<div style="display: block;font-weight: bold;font-size: 12px;">RAP ALAT<br/>
-					PROYEK BENDUNGAN TIGA DIHAJI<br/>
+					DIVISI STONE CRUSHER<br/>
 					PT. BIA BUMI JAYENDRA<br/></div>
 				</td>
 			</tr>

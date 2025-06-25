@@ -72,7 +72,7 @@
 	</head>
 	<body>
 		<div align="center" style="display: block;font-weight: bold;font-size: 11px;">Mobilisasi Truck Mixer</div>
-		<div align="center" style="display: block;font-weight: bold;font-size: 11px;">Proyek Bendungan Tiga Dihaji</div>
+		<div align="center" style="display: block;font-weight: bold;font-size: 11px;">Divisi Stone Crusher</div>
 		<div align="center" style="display: block;font-weight: bold;font-size: 11px;">Periode <?php echo str_replace($search, $replace, $subject);?></div>
 		<br /><br /><br />
 		<?php

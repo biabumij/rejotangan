@@ -90,7 +90,7 @@
 			<tr>
 				<td align="center">
 					<div style="display: block;font-weight: bold;font-size: 11px;">Laporan Biaya Umum & Administratif</div>
-					<div align="center" style="display: block;font-weight:bold; font-size: 11px;">Proyek Bendungan Tiga Dihaji</div>
+					<div align="center" style="display: block;font-weight:bold; font-size: 11px;">Divisi Stone Crusher</div>
 					<div align="center" style="display: block;font-weight:bold; font-size: 11px;">PT. Bia Bumi Jayendra</div>
 					<div align="center" style="display: block;font-weight:bold; font-size: 11px; ">Periode : <?php echo str_replace($search, $replace, $subject);?></div>
 				</td>

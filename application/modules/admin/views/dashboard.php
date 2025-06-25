@@ -556,7 +556,7 @@
                                 fontSize: '14px',
                                 fontFamily: 'helvetica'
                             },
-                            text: 'PT. BIA BUMI JAYENDRA - TIGA DIHAJI (PAKET 5)',
+                            text: 'PT. BIA BUMI JAYENDRA - STONE CRUSHER',
                             x: -20 //center text
                         },
                         xAxis: { //data bulan
@@ -723,7 +723,7 @@
                                 fontSize: '14px',
                                 fontFamily: 'helvetica'
                             },
-                            text: 'PT. BIA BUMI JAYENDRA - TIGA DIHAJI (PAKET 5)',
+                            text: 'PT. BIA BUMI JAYENDRA - STONE CRUSHER',
                             x: -20
                         },
                         xAxis: { //X axis menampilkan data bulan

@@ -85,7 +85,7 @@
 	</head>
 	<body>
 		<div align="center" style="display: block;font-weight: bold;font-size: 8px;">Laporan Rencana Kerja</div>
-		<div align="center" style="display: block;font-weight: bold;font-size: 8px;">Proyek Bendungan Tiga Dihaji</div>
+		<div align="center" style="display: block;font-weight: bold;font-size: 8px;">Divisi Stone Crusher</div>
 		<div align="center" style="display: block;font-weight: bold;font-size: 8px;">PT. Bia Bumi Jayendra</div>
 		<br /><br />
 		<?php

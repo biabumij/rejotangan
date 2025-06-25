@@ -160,8 +160,7 @@
 						</tr>
 						<tr>
 							<td align="left">
-								<b>Nindya - TPP, Kso<br />
-								Pembangunan Bendungan Tiga Dihaji Paket III</b>
+								
 							</td>
 							<td align="center">
 								

@@ -72,7 +72,7 @@
 			<tr>
 				<td align="center" width="100%">
 					<div style="display: block;font-weight: bold;font-size: 11px;">Biaya Bahan</div>
-					<div style="display: block;font-weight: bold;font-size: 11px;">Proyek Bendungan Tiga Dihaji</div>
+					<div style="display: block;font-weight: bold;font-size: 11px;">Divisi Stone Crusher</div>
 					<div style="display: block;font-weight: bold;font-size: 11px;">Periode <?php echo str_replace($search, $replace, $subject);?></div>
 				</td>
 			</tr>

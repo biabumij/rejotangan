@@ -48,7 +48,7 @@
 			<tr>
 				<td align="center">
 					<div style="display: block;font-weight: bold;font-size: 12px;">PERMINTAAN BAHAN & ALAT <br />
-					PROYEK BENDUNGAN TIGA DIHAJI<br />PT BIA BUMI JAYENDRA</div>
+					DIVISI STONE CRUSHER<br />PT BIA BUMI JAYENDRA</div>
 					<div style="display:block; font-weight:bold; font-size:12px; color:red;">(DRAFT)</div>
 				</td>
 			</tr>

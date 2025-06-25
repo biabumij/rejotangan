@@ -51,7 +51,7 @@
 			<tr>
 				<td width="100%" align="center">
 					<div style="display: block;font-weight: bold;font-size: 11px;">Laporan Piutang</div>
-				    <div style="display: block;font-weight: bold;font-size: 11px;">Proyek Bendungan Tiga Dihaji</div>
+				    <div style="display: block;font-weight: bold;font-size: 11px;">Divisi Stone Crusher</div>
 					<?php
 					function tgl_indo($date2){
 						$bulan = array (

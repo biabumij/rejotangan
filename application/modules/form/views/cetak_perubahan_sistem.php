@@ -24,7 +24,7 @@
 			<tr>
 				<th>2. Departemen / Divisi</th>
 				<th>:</th>
-				<th>Divisi Beton - Proyek Bendungan Tiga Dihaji</th>
+				<th>Divisi Beton - Divisi Stone Crusher</th>
 			</tr>
 			<tr>
 				<th>3. Aplikasi / Website</th>
