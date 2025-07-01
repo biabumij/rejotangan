@@ -297,20 +297,20 @@
 						</tr>
 						<tr>
 							<td align="center" height="55px">
-								<img src="uploads/ttd_novel.png" width="50px">
+								<img src="uploads/ttd_satria.png" width="50px">
 							</td>
 							<td align="center">
-								<img src="uploads/ttd_rani.png" width="50px">
+								<img src="uploads/ttd_dian.png" width="50px">
 							</td>
 						</tr>
 						<tr>
 							<td align="center" >
-								<b><u>Novel Joko Tri Laksono</u><br />
-								Ka. Plant</b>
+								<b><u>Satria Widura Drana Wisesa</u><br />
+								Ka. Unit Bisnis</b>
 							</td>
 							<td align="center" >
-								<b><u>Rani Oktavia Rizal</u><br />
-								Adm. Logistik</b>
+								<b><u>Dian Melinda Sari</u><br />
+								Produksi & HSE</b>
 							</td>
 						</tr>
 					</table>

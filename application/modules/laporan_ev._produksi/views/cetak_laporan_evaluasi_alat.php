@@ -1003,7 +1003,7 @@
 							
 							</td>
 							<td align="center">
-								<img src="uploads/ttd_novel.png" width="50px">
+								<img src="uploads/ttd_satria.png" width="50px">
 							</td>
 						</tr>
 						<tr>
@@ -1012,8 +1012,8 @@
 								Direktur Utama</b>
 							</td>
 							<td align="center">
-								<b><u>Novel Joko Tri Laksono</u><br />
-								Ka. Plant</b>
+								<b><u>Satria Widura Drana Wisesa</u><br />
+								Ka. Unit Bisnis</b>
 							</td>
 						</tr>
 					</table>

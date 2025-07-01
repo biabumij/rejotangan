@@ -185,20 +185,20 @@
 						</tr>
 						<tr>
 							<td align="center" height="55px">
-								<img src="uploads/ttd_novel.png" width="50px">
+								<img src="uploads/ttd_satria.png" width="50px">
 							</td>
 							<td align="center">
-								<img src="uploads/ttd_avriani.png" width="50px">
+								<img src="uploads/ttd_rifka.png" width="50px">
 							</td>
 						</tr>
 						<tr>
 							<td align="center" >
-								<b><u>Novel Joko Tri Laksono</u><br />
-								Ka. Plant</b>
+								<b><u>Satria Widura Drana Wisesa</u><br />
+								Ka. Unit Bisnis</b>
 							</td>
 							<td align="center" >
-								<b><u>Avriani Delia Ika Putri</u><br />
-								Keuangan Proyek</b>
+								<b><u>Rifka Dian Bethary</u><br />
+								Pj. Keuangan & SDM</b>
 							</td>
 						</tr>
 					</table>

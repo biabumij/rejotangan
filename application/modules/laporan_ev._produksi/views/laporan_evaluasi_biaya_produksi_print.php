@@ -1557,7 +1557,7 @@
 						</tr>
 						<tr class="">
 							<td align="center" height="50px">
-								<img src="uploads/ttd_novel.png" width="50px">
+								<img src="uploads/ttd_satria.png" width="50px">
 							</td>
 							<td align="center">
 								<img src="uploads/ttd_erika.png" width="50px">
@@ -1568,8 +1568,8 @@
 						</tr>
 						<tr>
 							<td align="center">
-								<b><u>Novel Joko Tri Laksono</u><br />
-								Ka. Plant</b>
+								<b><u>Satria Widura Drana Wisesa</u><br />
+								Ka. Unit Bisnis</b>
 							</td>
 							<td align="center">
 								<b><u>Erika Sinaga</u><br />

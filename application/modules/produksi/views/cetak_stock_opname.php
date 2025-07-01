@@ -430,9 +430,9 @@
 							</td>
 						</tr>
 						<tr>
-						<td align="center">
-								<b><u>Novel Joko Tri Laksono</u><br />
-								Ka. Plant</b>
+							<td align="center">
+								<b><u>Satria Widura Drana Wisesa</u><br />
+								Ka. Unit Bisnis</b>
 							</td>
 							<td align="center">
 								<b><u>Rani Oktavia Rizal</u><br />

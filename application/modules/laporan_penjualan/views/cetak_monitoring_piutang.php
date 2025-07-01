@@ -223,27 +223,27 @@
 						</tr>
 						<tr class="">
 							<td align="center" height="30px">
-								<img src="uploads/ttd_avriani.png" width="30px">
+								<img src="uploads/ttd_rifka.png" width="30px">
 							</td>
 							<td align="center">
-								<img src="uploads/ttd_novel.png" width="30px">
+								<img src="uploads/ttd_satria.png" width="30px">
 							</td>
 							<td align="center">
-								<img src="uploads/ttd_novel.png" width="30px">
+								<img src="uploads/ttd_satria.png" width="30px">
 							</td>
 						</tr>
 						<tr>
-						<td align="center">
-								<b><u>Avriani Delia Ika Putri</u><br />
-								Keuangan</b>
+							<td align="center">
+								<b><u>Rifka Dian Bethary</u><br />
+								Pj. Keuangan & SDM</b>
 							</td>
 							<td align="center">
-								<b><u>Novel Joko Tri Laksono</u><br />
-								Ka. Plant</b>
+								<b><u>Satria Widura Drana Wisesa</u><br />
+								Ka. Unit Bisnis</b>
 							</td>
 							<td align="center">
-								<b><u>Novel Joko Tri Laksono</u><br />
-								Ka. Plant</b>
+								<b><u>Satria Widura Drana Wisesa</u><br />
+								Ka. Unit Bisnis</b>
 							</td>
 						</tr>
 					</table>

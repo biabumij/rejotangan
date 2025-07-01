@@ -732,8 +732,8 @@
 								Direktur Utama</b>
 							</td>
 							<td align="center">
-								<b><u>Novel Joko Tri Laksono</u><br />
-								Ka. Plant</b>
+								<b><u>Satria Widura Drana Wisesa</u><br />
+								Ka. Unit Bisnis</b>
 							</td>
 						</tr>
 					</table>
