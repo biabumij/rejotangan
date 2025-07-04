@@ -262,9 +262,6 @@
                                 <tr>
                                     <th width="50%" class="text-center">
                                         <ul class="row text-center list-inline  wowload bounceInUp collapse" id="produksi">
-                                            <?php
-                                            if(in_array($this->session->userdata('admin_group_id'), array(1,5,6,10,11,13,15))){
-                                            ?>
                                             <li class="text-center" style="background: linear-gradient(110deg, #40c9fe 20%, #40c9fe 20%, #2ea4d7 80%);">
                                                 <a href="<?php echo site_url('admin/rap');?>">
                                                 <span style="color:#fffdd0;"><i class="fa-regular fa-calendar-check"></i><b>RAP</b></span></a>
@@ -278,9 +275,6 @@
                                                 <span style="color:#fffdd0;"><i class="fa-solid fa-cubes"></i><b>STOK</b></span></a>
                                             </li>
                                             <br /><br />
-                                            <?php
-                                            }
-                                            ?>
                                             <li class="text-center" style="background: linear-gradient(110deg, #40c9fe 20%, #40c9fe 20%, #2ea4d7 80%);">
                                                 <a href="<?php echo site_url('admin/penjualan');?>">
                                                 <span style="color:#fffdd0;"><i class="fa-solid fa-bag-shopping"></i><b>PENJUALAN</b></span></a>
@@ -289,17 +283,8 @@
                                                 <a href="<?php echo site_url('admin/pembelian');?>">
                                                 <span style="color:#fffdd0;"><i class="fa-solid fa-cart-shopping"></i><b>PEMBELIAN</b></span></a>
                                             </li>
-                                            <?php
-                                            if(in_array($this->session->userdata('admin_group_id'), array(1,5,6,10,11,13,15))){
-                                            ?>
-                                            <?php
-                                            }
-                                            ?>
                                         </ul>
                                     </th>
-                                    <?php
-                                    if(in_array($this->session->userdata('admin_group_id'), array(1,5,6,10,11,13,15))){
-                                    ?>
                                     <th width="50%" class="text-center">
                                         <ul class="row text-center list-inline  wowload bounceInUp collapse" id="keuangan">
                                             <li class="text-center" style="background: linear-gradient(110deg, #ce7e00 20%, #ce7e00 20%, #a46400  80%);">
@@ -322,9 +307,6 @@
                                             </li>
                                         </ul>
                                     </th>
-                                    <?php
-                                    }
-                                    ?>
                                 </tr>
                             </table>
                             <table width="100%">
@@ -389,7 +371,7 @@
                                                 <span style="color:#fffdd0;"><i class="fa-solid fa-users"></i><b>USER</b></span></a>
                                             </li>
                                             <?php
-                                            if(in_array($this->session->userdata('admin_group_id'), array(1,15))){
+                                            if(in_array($this->session->userdata('admin_group_id'), array(1))){
                                             ?>
                                             <li class="text-center" style="background: linear-gradient(110deg, #d11212 20%, #d11212 20%, #b30f15 80%);">
                                                 <a href="<?php echo site_url('admin/perusahaan');?>">
