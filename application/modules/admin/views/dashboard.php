@@ -134,7 +134,7 @@
                     <?php
                     if(in_array($this->session->userdata('admin_group_id'), array(1,2,3,4))){
                     ?>
-                    <div class="col-sm-12" style="background:#fff;background-image:linear-gradient(to top right, #666666 0%, #666666 100%); font-size:18px; border-radius: 5px; padding:10px; margin-bottom:50px;">
+                    <div class="col-sm-12" style="background-color: rgba(56,56,56, 0.8); font-size:18px; border-radius: 5px; padding:10px; margin-bottom:50px;">
                         <figure class="highcharts-figure">
                             <?php
                             $query1 = $this->db->select('COUNT(pvp.id) as id')
@@ -485,8 +485,8 @@
                             backgroundColor: {
                                 linearGradient: [0, 0, 700, 500],
                                 stops: [
-                                    [0, 'rgb(242, 242, 242)'],
-                                    [1, 'rgb(242, 242, 242)']
+                                    [0, 'rgb(242, 242, 242, 0.5)'],
+                                    [1, 'rgb(242, 242, 242, 0.5)']
                                 ]
                             },
                         },
@@ -652,8 +652,8 @@
                                 //linearGradient: [500, 0, 0, 700],
                                 linearGradient: [0, 0, 700, 500],
                                 stops: [
-                                    [0, 'rgb(242, 242, 242)'],
-                                    [1, 'rgb(242, 242, 242)']
+                                    [0, 'rgb(242, 242, 242, 0.5)'],
+                                    [1, 'rgb(242, 242, 242, 0.5)']
                                 ]
                             },
                         },
