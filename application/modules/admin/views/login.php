@@ -34,11 +34,13 @@
 	<body>
 		<div class="wrap">
 			<div class="page-body animated slideInDown">
-				<div class="box" style="background-color: rgba(242, 242, 242, 0.9); margin-top:10%;">
+				<div class="box" style="background-color: rgba(56,56,56, 0.1); margin-top:10%;">
+				<!--<div class="box" style="margin-top:10%; border: 2px solid #e69500;">-->
 					<table width="100%" border="0">
 						<tr>
 							<th width="50%" class="text-center">
-								<img alt="logo" width="50%" src="<?php echo base_url().$this->m_themes->GetThemes('site_logo');?>" />
+								<!--<img alt="logo" width="50%" src="<?php echo base_url().$this->m_themes->GetThemes('site_logo');?>" />-->
+								<h2>Login</h2>
 								<div class="panel-content-login bg-scale-0">
 									<div class="panel-content-login bg-scale-0">
 										<div class="alert alert-warning" role="alert">
@@ -70,7 +72,7 @@
 							</th>
 						</tr>
 						<tr>
-							<th colspan="2" class="text-center" style="font-size:90%;">&copy; PT BIA BUMI JAYENDRA, 2024</th>
+							<th colspan="2" class="text-center" style="font-size:90%;">&copy; PT BIA BUMI JAYENDRA, 2025</th>
 						</tr>
 					</table>
 					<!--SIGN IN FORM-->
