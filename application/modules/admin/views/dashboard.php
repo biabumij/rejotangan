@@ -313,7 +313,7 @@
                                 <tr>
                                     <th width="50%" class="text-center" data-toggle="collapse" data-target="#laporan" aria-expanded="false" aria-controls="beton">
                                         <ul class="row text-center list-inline  wowload bounceIn" style="border-radius:20px;">
-                                            <li style="background: linear-gradient(110deg, #c37e37 20%, #c37e37 20%, #B45F06 80%);">
+                                            <li style="background: linear-gradient(110deg, #5f914a 20%, #5f914a 20%, #38761D 80%);">
                                                 <a>
                                                 <span style="color:#fffdd0;"><i class="fa-solid fa-chart-line"></i><b>LAPORAN</b></span></a>
                                             </li>
@@ -333,11 +333,11 @@
                                 <tr>
                                     <th width="25%" class="text-center">
                                         <ul class="row text-center list-inline  wowload bounceInUp collapse" id="laporan">
-                                            <li class="text-center" style="background: linear-gradient(110deg, #c37e37 20%, #c37e37 20%, #B45F06 80%);">
+                                            <li class="text-center" style="background: linear-gradient(110deg, #5f914a 20%, #5f914a 20%, #38761D 80%);">
                                                 <a href="<?php echo site_url('admin/laporan_produksi');?>">
                                                 <span style="color:#fffdd0;"><i class="fa-solid fa-person-digging"></i><b>PRODUKSI</b></span></a>
                                             </li>
-                                            <li class="text-center" style="background: linear-gradient(110deg, #c37e37 20%, #c37e37 20%, #B45F06 80%);">
+                                            <li class="text-center" style="background: linear-gradient(110deg, #5f914a 20%, #5f914a 20%, #38761D 80%);">
                                                 <a href="<?php echo site_url('admin/laporan_keuangan');?>">
                                                 <span style="color:#fffdd0;"><i class="fa-solid fa-money-bill"></i><b>KEUANGAN</b></span></a>
                                             </li>
