@@ -276,6 +276,10 @@
                                             </li>
                                             <br /><br />
                                             <li class="text-center" style="background: linear-gradient(110deg, #3b75a9 20%, #3b75a9 20%, #0B5394 80%);">
+                                                <a href="<?php echo site_url('admin/produksi_harian');?>">
+                                                <span style="color:#fffdd0;"><i class="fa-solid fa-bag-shopping"></i><b>PRODUKSI HARIAN</b></span></a>
+                                            </li>
+                                            <li class="text-center" style="background: linear-gradient(110deg, #3b75a9 20%, #3b75a9 20%, #0B5394 80%);">
                                                 <a href="<?php echo site_url('admin/penjualan');?>">
                                                 <span style="color:#fffdd0;"><i class="fa-solid fa-bag-shopping"></i><b>PENJUALAN</b></span></a>
                                             </li>
