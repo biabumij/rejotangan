@@ -95,6 +95,7 @@
                                 ->from('tbl_admin')
                                 ->where("admin_id = $id ")
                                 ->get()->row_array();
+                                $menu_admin =  $approval['menu_admin'];
                                 $approval_penawaran_pembelian =  $approval['approval_penawaran_pembelian'];
                                 $delete_penawaran_pembelian =  $approval['delete_penawaran_pembelian'];
                                 $approval_permintaan_bahan_alat =  $approval['approval_permintaan_bahan_alat'];
@@ -105,6 +106,12 @@
                                 $verifikasi =  $approval['verifikasi'];
                                 $delete_tagihan_pembelian =  $approval['delete_tagihan_pembelian'];
                                 ?>
+                                <div class="form-group">
+                                    <label for="name" class="col-sm-2 control-label">Menu Admin<span class="required" aria-required="true">*</span></label>
+                                    <div class="col-sm-1">
+                                        <input type="checkbox" name="menu_admin" id="menu_admin" value="1"<?= (isset($menu_admin) && $menu_admin == 1) ? 'checked' : '' ;?> />
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <label for="name" class="col-sm-2 control-label">Approval Penawaran<span class="required" aria-required="true">*</span></label>
                                     <div class="col-sm-1">
@@ -154,7 +161,7 @@
                                         <br />
                                         <br />
                                         <a href="<?php echo site_url('admin/admin'); ?>" class="btn btn-danger" style="width:5%; font-weight:bold; border-radius:10px; margin-top: 10px;"> KEMBALI</a>
-                                        <button type="submit" name="submit" class="btn btn-success" id="btn-submit" data-loading-text="please wait.." style="font-weight:bold; border-radius:10px;">KIRIM</button>
+                                        <button type="submit" name="submit" class="btn btn-success" id="btn-submit" data-loading-text="please wait.." style="width:5%; font-weight:bold; border-radius:10px;">KIRIM</button>
                                         <br />
                                         <br />
                                         <br />
