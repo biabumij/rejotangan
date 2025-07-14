@@ -132,9 +132,9 @@
             <div class="page-body">
                 <div id="about" class="container spacer about">
                     <div class="col-sm-12" style="background-color: rgba(56,56,56, 0.8); font-size:18px; border-radius: 5px; padding:10px; margin-bottom:50px; color:white;">
-                        <center><b>DIVISI STONE CRUSHER</b></center>
+                        <center><b>PROYEK BENDUNGAN TIGA DIHAJI</b></center>
                         <?php
-                        if(in_array($this->session->userdata('admin_group_id'), array(1,2,3,4))){
+                        if(in_array($this->session->userdata('admin_group_id'), array(1,2,3))){
                         ?>
                         <figure class="highcharts-figure">
                             <?php
@@ -167,7 +167,9 @@
                             $query = $query['id'];
                             ?>
                                 <center><b><a target="_blank" href="<?= base_url("pmm/reports/detail_notification_2/") ?>"><i class="fa-solid fa-clipboard-check"></i> BUTUH PERSETUJUAN KA. PLANT (<blink><?php echo number_format($query,0,',','.');?></blink>)</a><b></center>
-                            
+                            <?php
+                            }
+                            ?>
                             <!--<?php
                             if(in_array($this->session->userdata('admin_group_id'), array(1))){
                             ?>
@@ -185,9 +187,6 @@
                             ?>-->
                         </figure>    
                     </div>
-                    <?php
-                    }
-                    ?>
 
                     <?php
                     if(in_array($this->session->userdata('admin_group_id'), array(1,5,6,10,11,13,15))){
