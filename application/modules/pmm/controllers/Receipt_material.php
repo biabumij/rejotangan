@@ -282,7 +282,7 @@ class Receipt_material extends CI_Controller {
 		$material_id = $this->input->post('material_id');
 		
 		$kunci_rakor = $this->db->select('date')->order_by('date','desc')->limit(1)->get_where('kunci_rakor')->row_array();
-        $last_opname = date('d-m-Y', strtotime('+1 days', strtotime($kunci_rakor['date'])));
+        $last_opname = date('Y-m-d', strtotime('+1 days', strtotime($kunci_rakor['date'])));
 
 		$this->db->select('prm.*,ppo.no_po,ps.nama as supplier_name');
 		if(!empty($supplier_id)){
@@ -336,7 +336,14 @@ class Receipt_material extends CI_Controller {
 					$row['edits'] = '-';
 				}*/
 
-				if(in_array($this->session->userdata('admin_id'), array(1,3,4,8))){
+				$admin_id = $this->session->userdata('admin_id');
+				$approval = $this->db->select('*')
+				->from('tbl_admin')
+				->where("admin_id = $admin_id ")
+				->get()->row_array();
+				$surat_jalan_pembelian =  $approval['surat_jalan_pembelian'];
+
+				if($surat_jalan_pembelian == 1){
 					$row['actions'] = $edit.' <a href="javascript:void(0);" onclick="DeleteData('.$row['id'].')" class="btn btn-danger" style="font-weight:bold; border-radius:10px;"><i class="fa fa-close"></i> </a>';
 					//$row['actions'] = '<a href="javascript:void(0);" onclick="DeleteData('.$row['id'].')" class="btn btn-danger" style="font-weight:bold; border-radius:10px;"><i class="fa fa-close"></i> </a>';
 				}else {

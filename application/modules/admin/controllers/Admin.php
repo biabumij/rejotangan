@@ -191,6 +191,15 @@ class Admin extends CI_Controller {
         $admin_id = $this->session->userdata('admin_id');
         $status = $this->input->post('status');
         $datecreated = date("Y-m-d H:i:s");
+		$approval_penawaran_pembelian = $this->input->post('approval_penawaran_pembelian');
+		$delete_penawaran_pembelian = $this->input->post('delete_penawaran_pembelian');
+		$approval_permintaan_bahan_alat = $this->input->post('approval_permintaan_bahan_alat');
+		$delete_permintaan_bahan_alat = $this->input->post('delete_permintaan_bahan_alat');
+		$approval_po = $this->input->post('approval_po');
+		$delete_po = $this->input->post('delete_po');
+		$surat_jalan_pembelian = $this->input->post('surat_jalan_pembelian');
+		$verifikasi = $this->input->post('verifikasi');
+		$delete_tagihan_pembelian = $this->input->post('delete_tagihan_pembelian');
 
         // Update JSON
         // Get Data Old for Filter
@@ -215,7 +224,16 @@ class Admin extends CI_Controller {
 	        		'admin_photo'=>$admin_photo,
 	        		'status'=>$status,
 	        		'update_by'=>$admin_id,
-	        		'dateupdate'=>$datecreated
+	        		'dateupdate'=>$datecreated,
+					'approval_penawaran_pembelian'=>$approval_penawaran_pembelian,
+					'delete_penawaran_pembelian'=>$delete_penawaran_pembelian,
+					'approval_permintaan_bahan_alat'=>$approval_permintaan_bahan_alat,
+					'delete_permintaan_bahan_alat'=>$delete_permintaan_bahan_alat,
+					'approval_po'=>$approval_po,
+					'delete_po'=>$delete_po,
+					'surat_jalan_pembelian'=>$surat_jalan_pembelian,
+					'verifikasi'=>$verifikasi,
+					'delete_tagihan_pembelian'=>$delete_tagihan_pembelian,
 	        	);
         	}else {
 	        	$arrayvalues = array(
@@ -226,7 +244,16 @@ class Admin extends CI_Controller {
 	        		'admin_photo'=>$admin_photo,
 	        		'status'=>$status,
 	        		'update_by'=>$admin_id,
-	        		'dateupdate'=>$datecreated
+	        		'dateupdate'=>$datecreated,
+					'approval_penawaran_pembelian'=>$approval_penawaran_pembelian,
+					'delete_penawaran_pembelian'=>$delete_penawaran_pembelian,
+					'approval_permintaan_bahan_alat'=>$approval_permintaan_bahan_alat,
+					'delete_permintaan_bahan_alat'=>$delete_permintaan_bahan_alat,
+					'approval_po'=>$approval_po,
+					'delete_po'=>$delete_po,
+					'surat_jalan_pembelian'=>$surat_jalan_pembelian,
+					'verifikasi'=>$verifikasi,
+					'delete_tagihan_pembelian'=>$delete_tagihan_pembelian,
 	        	);
         	}
             $query=$this->crud_global->UpdateDefault('tbl_admin',$arrayvalues,$arraywhere);

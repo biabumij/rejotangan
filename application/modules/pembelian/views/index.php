@@ -192,7 +192,7 @@
                                                     <th>Subyek</th>
                                                     <th>Rekanan</th>                               
                                                     <th>Volume</th>
-                                                    <th>Lihat</th>
+                                                    <th>Cetak</th>
                                                     <th>Hapus</th>    
                                                 </tr>
                                             </thead>

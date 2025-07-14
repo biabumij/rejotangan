@@ -50,7 +50,7 @@ class Productions extends Secure_Controller {
 		$w_date = $this->input->post('filter_date');
 
 		$kunci_rakor = $this->db->select('date')->order_by('date','desc')->limit(1)->get_where('kunci_rakor')->row_array();
-        $last_opname = date('d-m-Y', strtotime('+1 days', strtotime($kunci_rakor['date'])));
+        $last_opname = date('Y-m-d', strtotime('+1 days', strtotime($kunci_rakor['date'])));
 
 		$this->db->select('*');
 		if (!empty($client_id)) {
@@ -96,7 +96,7 @@ class Productions extends Secure_Controller {
 				$edit = '<a href="javascript:void(0);" onclick="EditData('.$row['id'].')" class="btn btn-warning" style="font-weight:bold; border-radius:10px;"><i class="fa fa-edit"></i> </a>';	
 				$edit_new = false;
 				$edit_new = '<a href="javascript:void(0);" onclick="EditDataNew('.$row['id'].')" class="btn btn-primary" style="font-weight:bold; border-radius:10px;"><i class="fa fa-edit"></i> </a>';
-				if(in_array($this->session->userdata('admin_id'), array(1,3,4,8))){
+				if($this->session->userdata('admin_group_id') == 1 || $this->session->userdata('admin_group_id') == 2 || $this->session->userdata('admin_group_id') == 3 || $this->session->userdata('admin_group_id') == 4 || $this->session->userdata('admin_group_id') == 5){
 					$row['delete'] = $edit_new.' <a href="javascript:void(0);" onclick="DeleteData('.$row['id'].')" class="btn btn-danger" style="font-weight:bold; border-radius:10px;"><i class="fa fa-close"></i> </a>';
 					//$row['delete'] = '<a href="javascript:void(0);" onclick="DeleteData('.$row['id'].')" class="btn btn-danger" style="font-weight:bold; border-radius:10px;"><i class="fa fa-close"></i> </a>';
 				}else {

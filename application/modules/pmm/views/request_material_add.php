@@ -243,6 +243,14 @@
                             </div>
                             
                             <div class="text-center">
+                                <?php
+                                $admin_id = $this->session->userdata('admin_id');
+                                $approval = $this->db->select('*')
+                                ->from('tbl_admin')
+                                ->where("admin_id = $admin_id ")
+                                ->get()->row_array();
+                                $approval_permintaan_bahan_alat =  $approval['approval_permintaan_bahan_alat'];
+                                ?>
                                 <br /><br /><br />
                                 <?php
                                 if($data['status'] == 'DRAFT'){
@@ -250,7 +258,7 @@
                                     <a onclick="ProcessForm('<?php echo site_url('pmm/request_materials/process/'.$id.'/3');?>')" class="btn btn-success check-btn" style="width:200px; font-weight:bold; border-radius:10px;"> KIRIM PERMINTAAN</a>
                                     <?php
                                 }else if($data['status'] == 'WAITING'){
-                                    if(in_array($this->session->userdata('admin_id'), array(1,3,4,8))){
+                                     if($approval_permintaan_bahan_alat == 1){
                                         ?>
                                         <a onclick="ProcessForm('<?php echo site_url('pmm/request_materials/process/'.$id.'/1');?>')" class="btn btn-success" style="width:150px; font-weight:bold; border-radius:10px;"> SETUJUI</a>
                                         <a onclick="ProcessForm('<?php echo site_url('pmm/request_materials/process/'.$id.'/2');?>')" class="btn btn-danger check-btn" style="width:150px; font-weight:bold; border-radius:10px;"> TOLAK</a>
