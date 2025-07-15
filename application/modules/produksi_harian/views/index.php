@@ -68,9 +68,9 @@
                                     </div>
                                 </div>
                                 <div class="panel-content">
-                                    <ul class="nav nav-tabs" role="tablist">
-									<li role="presentation" class="active"><a href="#kalibrasi" aria-controls="kalibrasi" role="tab" data-toggle="tab" style="border-radius:10px; font-weight:bold;">KALIBRASI</a></li>
-                                    <li role="presentation"><a href="#produksi_harian" aria-controls="produksi_harian" role="tab" data-toggle="tab" style="border-radius:10px; font-weight:bold;">PRODUKSI HARIAN</a></li>
+                                    <ul class="nav nav-tabs" role="tablist" style="border-bottom:2px solid #e69500; padding-bottom:10px;">
+									<li role="presentation" class="active"><a href="#kalibrasi" aria-controls="kalibrasi" role="tab" data-toggle="tab" style="border-radius:5px; font-weight:bold;">KALIBRASI</a></li>
+                                    <li role="presentation"><a href="#produksi_harian" aria-controls="produksi_harian" role="tab" data-toggle="tab" style="border-radius:5px; font-weight:bold;">PRODUKSI HARIAN</a></li>
                                 </ul>
                                     <div class="tab-content">
                                         <br />
@@ -91,7 +91,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-sm-5">
-                                                <button style="background-color:#88b93c; border:1px solid black; border-radius:10px; line-height:30px;"><a href="<?php echo site_url('produksi/form_kalibrasi'); ?>"><b style="color:white;">BUAT KALIBRASI</b></a></button>
+                                                <button style="background-color:#88b93c; border-radius:5px; line-height:30px;"><a href="<?php echo site_url('produksi/form_kalibrasi'); ?>"><b style="color:white;">BUAT KALIBRASI</b></a></button>
                                             </div>
                                             <br />
 										    <br />
@@ -125,7 +125,7 @@
                                                 <input type="text" id="filter_date_produksi_harian" name="filter_date" class="form-control dtpickerange" autocomplete="off" placeholder="Filter By Date">
                                             </div>
                                             <div class="col-sm-5">
-                                                <button style="background-color:#88b93c; border:1px solid black; border-radius:10px; line-height:30px;"><a href="<?php echo site_url('produksi/form_produksi_harian'); ?>"><b style="color:white;">BUAT PRODUKSI HARIAN</b></a></button>
+                                                <button style="background-color:#88b93c; border-radius:5px; line-height:30px;"><a href="<?php echo site_url('produksi/form_produksi_harian'); ?>"><b style="color:white;">BUAT PRODUKSI HARIAN</b></a></button>
                                             </div>
                                             <br />
 										    <br />
