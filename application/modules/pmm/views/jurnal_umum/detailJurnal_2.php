@@ -121,10 +121,18 @@
                                 <br /><br />
                                 <div class="row">
                                         <div class="col-sm-12 text-center">
+                                            <?php
+                                            $admin_id = $this->session->userdata('admin_id');
+                                            $approval = $this->db->select('*')
+                                            ->from('tbl_admin')
+                                            ->where("admin_id = $admin_id ")
+                                            ->get()->row_array();
+                                            $edit_biaya = $approval['edit_biaya'];
+                                            $delete_biaya = $approval['delete_biaya'];
+                                            ?>
                                             <a href="<?= base_url('admin/jurnal_umum') ?>" class="btn btn-info" style="width:10%; font-weight:bold; border-radius:5px;"> KEMBALI</a>
-                                            
-                                            <!--<?php
-                                            if(in_array($this->session->userdata('admin_id'), array(1,3,4))){
+                                            <?php
+                                            if($edit_biaya == 1){
                                             ?>
                                             <?php if($detail["status"] === "UNPAID") : ?>
                                                 <a href="<?= base_url("pmm/Jurnal_umum/approvalJurnal/".$detail["id"]) ?>" class="btn btn-success"><i class="fa fa-check" style="width:10%; font-weight:bold; border-radius:5px;"></i> APPROVE</a>
@@ -132,24 +140,24 @@
                                             <?php endif; ?>
                                             <?php
                                             }
-                                            ?>-->
+                                            ?>
 
                                             <?php if($detail["status"] === "PAID") : ?>
                                                 <a target="_blank" href="<?= base_url('pmm/jurnal_umum/cetakJurnal/'.$detail["id"]) ?>" class="btn btn-default" style="width:10%; font-weight:bold; border-radius:5px;"> PRINT</a>
-                                                <?php
-                                                if(in_array($this->session->userdata('admin_id'), array(1,3))){
+                                                <!--<?php
+                                                if($this->session->userdata('admin_group_id') == 1 || $this->session->userdata('admin_group_id') == 2 || $this->session->userdata('admin_group_id') == 3){
                                                 ?>
                                                 <a  href="<?= base_url('pmm/jurnal_umum/form/'.$detail['id']) ?>" class="btn btn-default" style="width:10%; font-weight:bold; border-radius:5px;"> EDIT</a>
                                                 <?php
                                                 }
                                                 ?>
                                                 <?php
-                                                if(in_array($this->session->userdata('admin_id'), array(1,3))){
+                                                if($this->session->userdata('admin_group_id') == 1 || $this->session->userdata('admin_group_id') == 2 || $this->session->userdata('admin_group_id') == 3){
                                                 ?>
                                                 <a class="btn btn-danger" style="width:10%; font-weight:bold; border-radius:5px;" onclick="DeleteData('<?= site_url('pmm/jurnal_umum/delete/'.$detail['id']);?>')"> HAPUS</a>
                                                 <?php
                                                 }
-                                                ?>
+                                                ?>-->
                                             <?php endif; ?>
                                             
                                         </div>
