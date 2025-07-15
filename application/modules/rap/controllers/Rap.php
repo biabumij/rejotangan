@@ -172,7 +172,7 @@ class Rap extends Secure_Controller {
 			# Something went wrong.
 			$this->db->trans_rollback();
 			$this->session->set_flashdata('notif_error','<b>ERROR</b>');
-			redirect('rap/rap');
+			redirect('admin/rap');
 		} else {
 			# Everything is Perfect. 
 			# Committing data to the database.
@@ -913,7 +913,7 @@ class Rap extends Secure_Controller {
             # Something went wrong.
             $this->db->trans_rollback();
             $this->session->set_flashdata('notif_error','<b>ERROR</b>');
-            redirect('rap/rap');
+            redirect('admin/rap');
         } else {
             # Everything is Perfect. 
             # Committing data to the database.
