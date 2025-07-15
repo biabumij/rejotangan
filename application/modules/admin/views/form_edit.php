@@ -222,7 +222,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="name" class="col-sm-2 control-label">Edit RAP, Rencana Kerja, Stock Opname, Pemakaian Bahan</label>
+                                    <label for="name" class="col-sm-2 control-label">Edit RAP, Rencana Kerja, Rencana Cash Flow Stock Opname, Pemakaian Bahan</label>
                                     <div class="col-sm-1">
                                         <input type="checkbox" name="edit_rap" id="edit_rap" value="1"<?= (isset($edit_rap) && $edit_rap == 1) ? 'checked' : '' ;?> />
                                     </div>
@@ -232,7 +232,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="name" class="col-sm-2 control-label">Edit BUA, Jurnal Umum</label>
+                                    <label for="name" class="col-sm-2 control-label">Edit BUA, Jurnal Umum, Kas & Bank</label>
                                     <div class="col-sm-1">
                                         <input type="checkbox" name="edit_biaya" id="edit_biaya" value="1"<?= (isset($edit_biaya) && $edit_biaya == 1) ? 'checked' : '' ;?> />
                                     </div>
@@ -245,8 +245,8 @@
                                     <div>
                                         <br />
                                         <br />
-                                        <a href="<?php echo site_url('admin/admin'); ?>" class="btn btn-danger" style="width:5%; font-weight:bold; border-radius:10px; margin-top: 10px;"> KEMBALI</a>
-                                        <button type="submit" name="submit" class="btn btn-success" id="btn-submit" data-loading-text="please wait.." style="width:5%; font-weight:bold; border-radius:10px;">KIRIM</button>
+                                        <a href="<?php echo site_url('admin/admin'); ?>" class="btn btn-danger" style="width:5%; font-weight:bold; border-radius:5px; margin-top: 10px;"> KEMBALI</a>
+                                        <button type="submit" name="submit" class="btn btn-success" id="btn-submit" data-loading-text="please wait.." style="width:5%; font-weight:bold; border-radius:5px;">KIRIM</button>
                                         <br />
                                         <br />
                                         <br />
