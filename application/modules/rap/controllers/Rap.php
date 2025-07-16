@@ -432,27 +432,22 @@ class Rap extends Secure_Controller {
 		$tanggal_rap_alat = $this->input->post('tanggal_rap_alat');
 		$nomor_rap_alat = $this->input->post('nomor_rap_alat');
 		$masa_kontrak = $this->input->post('masa_kontrak');
-		$vol_batching_plant =  str_replace(',', '.', $this->input->post('vol_batching_plant'));
-		$vol_pemeliharaan_batching_plant =  str_replace(',', '.', $this->input->post('vol_pemeliharaan_batching_plant'));
-		$vol_wheel_loader =  str_replace(',', '.', $this->input->post('vol_wheel_loader'));
-		$vol_pemeliharaan_wheel_loader =  str_replace(',', '.', $this->input->post('vol_pemeliharaan_wheel_loader'));
-		$vol_truck_mixer =  str_replace(',', '.', $this->input->post('vol_truck_mixer'));
-		$vol_bbm_solar =  str_replace(',', '.', $this->input->post('vol_bbm_solar'));
-		$harsat_batching_plant =  str_replace('.', '', $this->input->post('harsat_batching_plant'));
-		$harsat_pemeliharaan_batching_plant =  str_replace('.', '', $this->input->post('harsat_pemeliharaan_batching_plant'));
-		$harsat_wheel_loader =  str_replace('.', '', $this->input->post('harsat_wheel_loader'));
-		$harsat_pemeliharaan_wheel_loader =  str_replace('.', '', $this->input->post('harsat_pemeliharaan_wheel_loader'));
-		$harsat_truck_mixer =  str_replace('.', '', $this->input->post('harsat_truck_mixer'));
-		$harsat_bbm_solar =  str_replace('.', '', $this->input->post('harsat_bbm_solar'));
-		$batching_plant =  str_replace('.', '', $this->input->post('batching_plant'));
-		$pemeliharaan_batching_plant =  str_replace('.', '', $this->input->post('pemeliharaan_batching_plant'));
-		$truck_mixer =  str_replace('.', '', $this->input->post('truck_mixer'));
-		$wheel_loader =  str_replace('.', '', $this->input->post('wheel_loader'));
-		$pemeliharaan_wheel_loader =  str_replace('.', '', $this->input->post('pemeliharaan_wheel_loader'));
-		$bbm_solar =  str_replace('.', '', $this->input->post('bbm_solar'));
 
-		$penawaran_truck_mixer = $this->input->post('penawaran_truck_mixer');
-		$penawaran_bbm_solar = $this->input->post('penawaran_bbm_solar');
+		$vol_stone_crusher =  str_replace(',', '.', $this->input->post('vol_stone_crusher'));
+		$harsat_stone_crusher =  str_replace(',', '.', $this->input->post('harsat_stone_crusher'));
+		$stone_crusher =  str_replace(',', '.', $this->input->post('stone_crusher'));
+
+		$vol_wheel_loader =  str_replace(',', '.', $this->input->post('vol_wheel_loader'));
+		$harsat_wheel_loader =  str_replace(',', '.', $this->input->post('harsat_wheel_loader'));
+		$wheel_loader =  str_replace(',', '.', $this->input->post('wheel_loader'));
+
+		$vol_maintenance =  str_replace(',', '.', $this->input->post('vol_maintenance'));
+		$harsat_maintenance =  str_replace(',', '.', $this->input->post('harsat_maintenance'));
+		$maintenance =  str_replace(',', '.', $this->input->post('maintenance'));
+
+		$vol_bbm_solar =  str_replace(',', '.', $this->input->post('vol_bbm_solar'));
+		$harsat_bbm_solar =  str_replace(',', '.', $this->input->post('harsat_bbm_solar'));
+		$bbm_solar =  str_replace(',', '.', $this->input->post('bbm_solar'));
 
 		$this->db->trans_start(); # Starting Transaction
 		$this->db->trans_strict(FALSE); # See Note 01. If you wish can remove as well 
@@ -461,29 +456,22 @@ class Rap extends Secure_Controller {
 			'tanggal_rap_alat' =>  date('Y-m-d', strtotime($tanggal_rap_alat)),
 			'nomor_rap_alat' => $nomor_rap_alat,
 			'masa_kontrak' => $masa_kontrak,
-			'vol_batching_plant' => $vol_batching_plant,
-			'vol_pemeliharaan_batching_plant' => $vol_pemeliharaan_batching_plant,
-			'vol_wheel_loader' => $vol_wheel_loader,
-			'vol_pemeliharaan_wheel_loader' => $vol_pemeliharaan_wheel_loader,
-			'vol_truck_mixer' => $vol_truck_mixer,
-			'vol_bbm_solar' => $vol_bbm_solar,
-			'harsat_batching_plant' => $harsat_batching_plant,
-			'harsat_pemeliharaan_batching_plant' => $harsat_pemeliharaan_batching_plant,
-			'harsat_wheel_loader' => $harsat_wheel_loader,
-			'harsat_pemeliharaan_wheel_loader' => $harsat_pemeliharaan_wheel_loader,
-			//'harsat_truck_mixer' => $harsat_truck_mixer / 200,
-			'harsat_truck_mixer' => $truck_mixer / $vol_truck_mixer,
-			'harsat_bbm_solar' => $harsat_bbm_solar,
-			'batching_plant' => $batching_plant,
-			'pemeliharaan_batching_plant' => $pemeliharaan_batching_plant,
-			'wheel_loader' => $wheel_loader,
-			'pemeliharaan_wheel_loader' => $pemeliharaan_wheel_loader,
-			//'truck_mixer' => $vol_truck_mixer * ($harsat_truck_mixer / 200),
-			'truck_mixer' => $truck_mixer,
-			'bbm_solar' => $bbm_solar,
 
-			'penawaran_truck_mixer' => $penawaran_truck_mixer,
-			'penawaran_bbm_solar' => $penawaran_bbm_solar,
+			'vol_stone_crusher' => $vol_stone_crusher,
+			'harsat_stone_crusher' => $harsat_stone_crusher,
+			'stone_crusher' => $stone_crusher,
+
+			'vol_wheel_loader' => $vol_wheel_loader,
+			'harsat_wheel_loader' => $harsat_wheel_loader,
+			'wheel_loader' => $wheel_loader,
+
+			'vol_maintenance' => $vol_maintenance,
+			'harsat_maintenance' => $harsat_maintenance,
+			'maintenance' => $maintenance,
+
+			'vol_bbm_solar' => $vol_bbm_solar,
+			'harsat_bbm_solar' => $harsat_bbm_solar,
+			'bbm_solar' => $bbm_solar,
 			
 			'status' => 'PUBLISH',
 			'created_by' => $this->session->userdata('admin_id'),

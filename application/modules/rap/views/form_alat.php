@@ -54,94 +54,22 @@
                                                     <th width="25%">URAIAN</th>
                                                     <th>VOLUME</th>
                                                     <th>SATUAN</th>
-                                                    <th>PENAWARAN</th>
-                                                    <th>HARGA SATUAN</th>
 													<th>TOTAL</th>                                    
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
                                                     <td class="text-center">1.</td>
-                                                    <td>TRUCK MIXER</td>
+                                                    <td>STONE CRUSHER + GENSET</td>
 													<td>
-                                                    <input type="text" id="vol_truck_mixer" name="vol_truck_mixer" class="form-control numberformat text-right" value="" onchange="changeData(1)" required="" autocomplete="off">
+                                                    <input type="text" id="vol_stone_crusher" name="vol_stone_crusher" class="form-control numberformat text-right" value="" onchange="changeData(1)" required="" autocomplete="off">
                                                     </td>
                                                     <td class="text-center">M3</td>
-                                                    <td class="text-center">
-                                                        <select id="penawaran_truck_mixer" name="penawaran_truck_mixer" class="form-control" required="">
-                                                            <option value="">Pilih Penawaran</option>
-                                                            <?php
-
-                                                            foreach ($truck_mixer as $key => $tm) {
-                                                                ?>
-                                                                <option value="<?php echo $tm['penawaran_id'];?>" data-supplier_id="<?php echo $tm['supplier_id'];?>" data-measure="<?php echo $tm['measure'];?>" data-price="<?php echo $tm['price'];?>" data-tax_id="<?php echo $tm['tax_id'];?>" data-tax="<?php echo $tm['tax'];?>" data-pajak_id="<?php echo $tm['pajak_id'];?>" data-pajak="<?php echo $tm['pajak'];?>" data-penawaran_id="<?php echo $tm['penawaran_id'];?>" data-id_penawaran="<?php echo $tm['id_penawaran'];?>"><?php echo $tm['nama'];?> - <?php echo $tm['nomor_penawaran'];?></option>
-                                                                <?php
-                                                            }
-                                                            ?>
-                                                        </select>
+                                                    <td>
+                                                    <input type="text" name="harsat_stone_crusher" id="harsat_stone_crusher" class="form-control rupiahformat text-right" onchange="changeData(1)" required="" autocomplete="off"/>
                                                     </td>
                                                     <td>
-                                                    <input type="text" name="harsat_truck_mixer" id="harsat_truck_mixer" class="form-control rupiahformat text-right" onchange="changeData(1)" required="" readonly="" autocomplete="off"/>
-                                                    </td>
-                                                    <td>
-                                                    <input type="text" name="truck_mixer" class="form-control rupiahformat text-right" value="" required="" autocomplete="off"/>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">2.</td>
-                                                    <td>BBM SOLAR</td>
-													<td>
-                                                    <input type="text" id="vol_bbm_solar" name="vol_bbm_solar" class="form-control numberformat text-right" value="" onchange="changeData(1)" required="" autocomplete="off">
-                                                    </td>
-                                                    <td class="text-center">Liter</td>
-                                                    <td class="text-center">
-                                                        <select id="penawaran_bbm_solar" name="penawaran_bbm_solar" class="form-control" required="">
-                                                            <option value="">Pilih Penawaran</option>
-                                                            <?php
-
-                                                            foreach ($bbm_solar as $key => $bbm) {
-                                                                ?>
-                                                                <option value="<?php echo $bbm['penawaran_id'];?>" data-supplier_id="<?php echo $bbm['supplier_id'];?>" data-measure="<?php echo $bbm['measure'];?>" data-price="<?php echo $bbm['price'];?>" data-tax_id="<?php echo $bbm['tax_id'];?>" data-tax="<?php echo $bbm['tax'];?>" data-pajak_id="<?php echo $bbm['pajak_id'];?>" data-pajak="<?php echo $bbm['pajak'];?>" data-penawaran_id="<?php echo $bbm['penawaran_id'];?>" data-id_penawaran="<?php echo $bbm['id_penawaran'];?>"><?php echo $bbm['nama'];?> - <?php echo $bbm['nomor_penawaran'];?></option>
-                                                                <?php
-                                                            }
-                                                            ?>
-                                                        </select>
-                                                    </td>
-                                                    <td>
-                                                    <input type="text" name="harsat_bbm_solar" id="harsat_bbm_solar" class="form-control rupiahformat text-right" onchange="changeData(1)" required="" readonly="" autocomplete="off"/>
-                                                    </td>
-                                                    <td>
-                                                    <input type="text" name="bbm_solar" id="bbm_solar" class="form-control rupiahformat text-right" readonly="" value="" required="" readonly="" autocomplete="off"/>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">3.</td>
-                                                    <td>BATCHING PLANT + GENSET</td>
-													<td>
-                                                    <input type="text" id="vol_batching_plant" name="vol_batching_plant" class="form-control numberformat text-right" value="" onchange="changeData(1)" required="" autocomplete="off">
-                                                    </td>
-                                                    <td class="text-center">M3</td>
-                                                    <td class="text-center"></td>
-                                                    <td>
-                                                    <input type="text" name="harsat_batching_plant" id="harsat_batching_plant" class="form-control rupiahformat text-right" onchange="changeData(1)"  required=""  autocomplete="off"/>
-                                                    </td>
-                                                    <td>
-                                                    <input type="text" name="batching_plant" id="batching_plant" class="form-control rupiahformat text-right" readonly="" value="" required=""  autocomplete="off"/>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center"></td>
-                                                    <td>PEMELIHARAAN BATCHING PLANT + GENSET</td>
-													<td>
-                                                    <input type="text" id="vol_pemeliharaan_batching_plant" name="vol_pemeliharaan_batching_plant" class="form-control numberformat text-right" value="" onchange="changeData(1)" required="" autocomplete="off">
-                                                    </td>
-                                                    <td class="text-center">M3</td>
-                                                    <td class="text-center"></td>
-                                                    <td>
-                                                    <input type="text" name="harsat_pemeliharaan_batching_plant" id="harsat_pemeliharaan_batching_plant" class="form-control rupiahformat text-right" onchange="changeData(1)"  required=""  autocomplete="off"/>
-                                                    </td>
-                                                    <td>
-                                                    <input type="text" name="pemeliharaan_batching_plant" id="pemeliharaan_batching_plant" class="form-control rupiahformat text-right" readonly="" value="" required=""  autocomplete="off"/>
+                                                    <input type="text" name="stone_crusher" id="stone_crusher" class="form-control rupiahformat text-right" readonly="" value="" required="" autocomplete="off"/>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -151,7 +79,6 @@
                                                     <input type="text" id="vol_wheel_loader" name="vol_wheel_loader" class="form-control numberformat text-right" value="" onchange="changeData(1)" required="" autocomplete="off">
                                                     </td>
                                                     <td class="text-center">M3</td>
-                                                    <td class="text-center"></td>
                                                     <td>
                                                     <input type="text" name="harsat_wheel_loader" id="harsat_wheel_loader" class="form-control rupiahformat text-right" onchange="changeData(1)"  required="" autocomplete="off"/>
                                                     </td>
@@ -161,28 +88,42 @@
                                                 </tr>
                                                 <tr>
                                                     <td class="text-center"></td>
-                                                    <td>PEMELIHARAAN WHEEL LOADER</td>
+                                                    <td>MAINTENANCE</td>
 													<td>
-                                                    <input type="text" id="vol_pemeliharaan_wheel_loader" name="vol_pemeliharaan_wheel_loader" class="form-control numberformat text-right" value="" onchange="changeData(1)" required="" autocomplete="off">
+                                                    <input type="text" id="vol_maintenance" name="vol_maintenance" class="form-control numberformat text-right" value="" onchange="changeData(1)" required="" autocomplete="off">
                                                     </td>
                                                     <td class="text-center">M3</td>
-                                                    <td class="text-center"></td>
                                                     <td>
-                                                    <input type="text" name="harsat_pemeliharaan_wheel_loader" id="harsat_pemeliharaan_wheel_loader" class="form-control rupiahformat text-right" onchange="changeData(1)"  required=""  autocomplete="off"/>
+                                                    <input type="text" name="harsat_maintenance" id="harsat_maintenance" class="form-control rupiahformat text-right" onchange="changeData(1)"  required=""  autocomplete="off"/>
                                                     </td>
                                                     <td>
-                                                    <input type="text" name="pemeliharaan_wheel_loader" id="pemeliharaan_wheel_loader" class="form-control rupiahformat text-right" readonly="" value="" required=""  autocomplete="off"/>
+                                                    <input type="text" name="maintenance" id="maintenance" class="form-control rupiahformat text-right" readonly="" value="" required=""  autocomplete="off"/>
                                                     </td>
                                                 </tr>
-                                            </tbody>
-                                            <tfoot>
                                                 <tr>
-                                                    <td colspan="6" class="text-right">GRAND TOTAL</td>
+                                                    <td class="text-center">2.</td>
+                                                    <td>BBM SOLAR</td>
+													<td>
+                                                    <input type="text" id="vol_bbm_solar" name="vol_bbm_solar" class="form-control numberformat text-right" value="" onchange="changeData(1)" required="" autocomplete="off">
+                                                    </td>
+                                                    <td class="text-center">Liter</td>
+                                                    <td>
+                                                    <input type="text" name="harsat_bbm_solar" id="harsat_bbm_solar" class="form-control rupiahformat text-right" onchange="changeData(1)" required="" autocomplete="off"/>
+                                                    </td>
+                                                    <td>
+                                                    <input type="text" name="bbm_solar" id="bbm_solar" class="form-control rupiahformat text-right" readonly="" value="" required="" readonly="" autocomplete="off"/>
+                                                    </td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                            <!--<tfoot>
+                                                <tr>
+                                                    <td colspan="5" class="text-right">GRAND TOTAL</td>
                                                     <td>
                                                     <input type="text" id="sub-total-val" name="sub_total" value="0" class="form-control rupiahformat tex-left text-right" readonly="">
                                                     </td>
                                                 </tr> 
-                                            </tfoot>
+                                            </tfoot>-->
                                         </table>    
                                     </div>
                                     <div class="row">
@@ -228,7 +169,7 @@
         $('.form-select2').select2();
 
         $('input.numberformat').number(true, 4,',','.' );
-        $('input.rupiahformat').number(true, 0,',','.' );
+        $('input.rupiahformat').number(true, 2,',','.' );
 
         $('.dtpicker').daterangepicker({
             singleDatePicker: true,
@@ -268,30 +209,22 @@
 
         function changeData(id)
         {
-			var vol_batching_plant = $('#vol_batching_plant').val();
-            var vol_pemeliharaan_batching_plant = $('#vol_pemeliharaan_batching_plant').val();
+			var vol_stone_crusher = $('#vol_stone_crusher').val();
             var vol_wheel_loader = $('#vol_wheel_loader').val();
-            var vol_pemeliharaan_wheel_loader = $('#vol_pemeliharaan_wheel_loader').val();
-            var vol_truck_mixer = $('#vol_truck_mixer').val();
+            var vol_maintenance = $('#vol_maintenance').val();
             var vol_bbm_solar = $('#vol_bbm_solar').val();
 
-			var harsat_batching_plant = $('#harsat_batching_plant').val();
-            var harsat_pemeliharaan_batching_plant = $('#harsat_pemeliharaan_batching_plant').val();
+			var harsat_stone_crusher = $('#harsat_stone_crusher').val();
             var harsat_wheel_loader = $('#harsat_wheel_loader').val();
-            var harsat_pemeliharaan_wheel_loader = $('#harsat_pemeliharaan_wheel_loader').val();
-            var harsat_truck_mixer = $('#harsat_truck_mixer').val();
+            var harsat_maintenance = $('#harsat_maintenance').val();
             var harsat_bbm_solar = $('#harsat_bbm_solar').val();
             				
-			batching_plant = ( vol_batching_plant * harsat_batching_plant );
-            $('#batching_plant').val(batching_plant);
-            pemeliharaan_batching_plant = ( vol_pemeliharaan_batching_plant * harsat_pemeliharaan_batching_plant );
-            $('#pemeliharaan_batching_plant').val(pemeliharaan_batching_plant);
+			stone_crusher = ( vol_stone_crusher * harsat_stone_crusher );
+            $('#stone_crusher').val(stone_crusher);
             wheel_loader = ( vol_wheel_loader * harsat_wheel_loader );
             $('#wheel_loader').val(wheel_loader);
-            pemeliharaan_wheel_loader = ( vol_pemeliharaan_wheel_loader * harsat_pemeliharaan_wheel_loader );
-            $('#pemeliharaan_wheel_loader').val(pemeliharaan_wheel_loader);
-            truck_mixer = ( vol_truck_mixer * harsat_truck_mixer );
-            $('#truck_mixer').val(truck_mixer);
+            maintenance = ( vol_maintenance * harsat_maintenance );
+            $('#maintenance').val(maintenance);
             bbm_solar = ( vol_bbm_solar * harsat_bbm_solar );
             $('#bbm_solar').val(bbm_solar);
             getTotal();
@@ -301,49 +234,15 @@
         {
             var sub_total = $('#sub-total-val').val();
 
-            sub_total = parseInt($('#batching_plant').val()) + parseInt($('#wheel_loader').val()) + parseInt($('#truck_mixer').val()) + parseInt($('#bbm_solar').val());
+            sub_total = parseInt($('#stone_crusher').val()) + parseInt($('#wheel_loader').val()) + parseInt($('#maintenance').val()) + parseInt($('#bbm_solar').val());
             
             $('#sub-total-val').val(sub_total);
-            $('#sub-total').text($.number( sub_total, 0,',','.' ));
+            $('#sub-total').text($.number( sub_total, 2,',','.' ));
 
             total_total = parseInt(sub_total);
             $('#total-val').val(total_total);
-            $('#total').text($.number( total_total, 0,',','.' ));
+            $('#total').text($.number( total_total, 2,',','.' ));
         }
-
-        $('#penawaran_truck_mixer').change(function(){
-			var penawaran_id = $(this).find(':selected').data('penawaran_id');
-			$('#penawaran_truck_mixer').val(penawaran_id);
-			var price = $(this).find(':selected').data('price');
-			$('#harsat_truck_mixer').val(price);
-			var supplier_id = $(this).find(':selected').data('supplier_id');
-			$('#supplier_id_truck_mixer').val(supplier_id);
-			var measure = $(this).find(':selected').data('measure');
-			$('#measure_truck_mixer').val(measure);
-			var tax_id = $(this).find(':selected').data('tax_id');
-			$('#tax_id_truck_mixer').val(tax_id);
-			var pajak_id = $(this).find(':selected').data('pajak_id');
-			$('#pajak_id_truck_mixer').val(pajak_id);
-			var id_penawaran = $(this).find(':selected').data('id_penawaran');
-			$('#penawaran_id_truck_mixer').val(penawaran_id);
-		});
-
-        $('#penawaran_bbm_solar').change(function(){
-			var penawaran_id = $(this).find(':selected').data('penawaran_id');
-			$('#penawaran_bbm_solar').val(penawaran_id);
-			var price = $(this).find(':selected').data('price');
-			$('#harsat_bbm_solar').val(price);
-			var supplier_id = $(this).find(':selected').data('supplier_id');
-			$('#supplier_id_bbm_solar').val(supplier_id);
-			var measure = $(this).find(':selected').data('measure');
-			$('#measure_bbm_solar').val(measure);
-			var tax_id = $(this).find(':selected').data('tax_id');
-			$('#tax_id_bbm_solar').val(tax_id);
-			var pajak_id = $(this).find(':selected').data('pajak_id');
-			$('#pajak_id_bbm_solar').val(pajak_id);
-			var id_penawaran = $(this).find(':selected').data('id_penawaran');
-			$('#penawaran_id_bbm_solar').val(penawaran_id);
-		});
 
     </script>
 
