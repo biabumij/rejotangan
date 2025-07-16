@@ -97,8 +97,8 @@
 				<td align="left">STONE CRUSHER + GENSET</td>
 				<td align="center"><?= number_format($rap_alat['vol_stone_crusher'],4,',','.'); ?></td>
 				<td align="center">M3</td>
-				<td align="right"><?= number_format($rap_alat['harsat_stone_crusher'],0,',','.'); ?></td>
-				<td align="right"><?= number_format($rap_alat['stone_crusher'],0,',','.'); ?></td>
+				<td align="right"><?= number_format($rap_alat['harsat_stone_crusher'],2,',','.'); ?></td>
+				<td align="right"><?= number_format($rap_alat['stone_crusher'],2,',','.'); ?></td>
 			</tr>
 			
 			<tr class="table-baris1">
@@ -106,28 +106,28 @@
 				<td align="left">WHEEL LOADER</td>
 				<td align="center"><?= number_format($rap_alat['vol_wheel_loader'],4,',','.'); ?></td>
 				<td align="center">M3</td>
-				<td align="right"><?= number_format($rap_alat['harsat_wheel_loader'],0,',','.'); ?></td>
-				<td align="right"><?= number_format($rap_alat['wheel_loader'],0,',','.'); ?></td>
+				<td align="right"><?= number_format($rap_alat['harsat_wheel_loader'],2,',','.'); ?></td>
+				<td align="right"><?= number_format($rap_alat['wheel_loader'],2,',','.'); ?></td>
 			</tr>
 			<tr class="table-baris1">
 				<td align="center">3.</td>
 				<td align="left">MAINTENANCE</td>
 				<td align="center"><?= number_format($rap_alat['vol_maintenance'],4,',','.'); ?></td>
 				<td align="center">M3</td>
-				<td align="right"><?= number_format($rap_alat['harsat_maintenance'],0,',','.'); ?></td>
-				<td align="right"><?= number_format($rap_alat['maintenance'],0,',','.'); ?></td>
+				<td align="right"><?= number_format($rap_alat['harsat_maintenance'],2,',','.'); ?></td>
+				<td align="right"><?= number_format($rap_alat['maintenance'],2,',','.'); ?></td>
 			</tr>
 			<tr class="table-baris1">
 				<td align="center">4.</td>
 				<td align="left">BBM SOLAR</td>
 				<td align="center"><?= number_format($rap_alat['vol_bbm_solar'],4,',','.'); ?></td>
 				<td align="center">Liter</td>
-				<td align="right"><?= number_format($rap_alat['harsat_bbm_solar'],0,',','.'); ?></td>
-				<td align="right"><?= number_format($rap_alat['bbm_solar'],0,',','.'); ?></td>
+				<td align="right"><?= number_format($rap_alat['harsat_bbm_solar'],2,',','.'); ?></td>
+				<td align="right"><?= number_format($rap_alat['bbm_solar'],2,',','.'); ?></td>
 			</tr>
 			<tr class="table-total">
 				<td align="right" colspan="5">GRAND TOTAL</td>
-				<td align="right"><?= number_format($total,0,',','.'); ?></td>
+				<td align="right"><?= number_format($total,2,',','.'); ?></td>
 			</tr>
 		</table>
 		<br />

@@ -170,7 +170,7 @@
         $('.form-select2').select2();
 
         $('input.numberformat').number(true, 4,',','.' );
-        $('input.rupiahformat').number(true, 2,',','.' );
+        $('input.rupiahformat').number(true, 2,',','' );
 
         $('.dtpicker').daterangepicker({
             singleDatePicker: true,
