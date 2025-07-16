@@ -54,6 +54,7 @@
                                                     <th width="25%">URAIAN</th>
                                                     <th>VOLUME</th>
                                                     <th>SATUAN</th>
+                                                    <th>HARGA SATUAN</th>  
 													<th>TOTAL</th>                                    
                                                 </tr>
                                             </thead>
