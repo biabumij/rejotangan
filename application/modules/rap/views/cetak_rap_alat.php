@@ -83,7 +83,7 @@
 					$total = 0;
 					?>
 					<?php
-					$total = $rap_alat['batching_plant'] + $rap_alat['truck_mixer'] + $rap_alat['wheel_loader'] + $rap_alat['excavator'] + $rap_alat['transfer_semen'] + $rap_alat['bbm_solar'];
+					$total = $rap_alat['stone_crusher'] + $rap_alat['wheel_loader'] + $rap_alat['maintenance'] + $rap_alat['bbm_solar'];
 				?>
                 <th width="5%" align="center">NO.</th>
                 <th width="25%" align="center">URAIAN</th>
@@ -94,11 +94,11 @@
             </tr>
 			<tr class="table-baris1">
 				<td align="center">1.</td>
-				<td align="left">BATCHING PLANT + GENSET</td>
-				<td align="center"><?= number_format($rap_alat['vol_batching_plant'],4,',','.'); ?></td>
+				<td align="left">STONE CRUSHER + GENSET</td>
+				<td align="center"><?= number_format($rap_alat['vol_stone_crusher'],4,',','.'); ?></td>
 				<td align="center">M3</td>
-				<td align="right"><?= number_format($rap_alat['harsat_batching_plant'],0,',','.'); ?></td>
-				<td align="right"><?= number_format($rap_alat['batching_plant'],0,',','.'); ?></td>
+				<td align="right"><?= number_format($rap_alat['harsat_stone_crusher'],0,',','.'); ?></td>
+				<td align="right"><?= number_format($rap_alat['stone_crusher'],0,',','.'); ?></td>
 			</tr>
 			
 			<tr class="table-baris1">
@@ -111,11 +111,11 @@
 			</tr>
 			<tr class="table-baris1">
 				<td align="center">3.</td>
-				<td align="left">TRUCK MIXER</td>
-				<td align="center"><?= number_format($rap_alat['vol_truck_mixer'],4,',','.'); ?></td>
+				<td align="left">MAINTENANCE</td>
+				<td align="center"><?= number_format($rap_alat['vol_maintenance'],4,',','.'); ?></td>
 				<td align="center">M3</td>
-				<td align="right"><?= number_format($rap_alat['harsat_truck_mixer'],0,',','.'); ?></td>
-				<td align="right"><?= number_format($rap_alat['truck_mixer'],0,',','.'); ?></td>
+				<td align="right"><?= number_format($rap_alat['harsat_maintenance'],0,',','.'); ?></td>
+				<td align="right"><?= number_format($rap_alat['maintenance'],0,',','.'); ?></td>
 			</tr>
 			<tr class="table-baris1">
 				<td align="center">4.</td>
