@@ -92,14 +92,10 @@
                                                 <thead>
                                                     <tr>
                                                         <th>No</th>
-														<th>Mutu Beton</th>
                                                         <th>Judul</th>
 														<th>Lampiran</th>
-                                                        <th>Closed</th>
-                                                        <th>Edit</th>
                                                         <th>Cetak</th>
                                                         <th>Hapus</th>
-                                                        <th>Status</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -217,29 +213,17 @@
                     "data": "no"
                 },
 				{
-                    "data": "mutu_beton"
-                },
-				{
                     "data": "jobs_type"
                 },
 				{
                     "data": "lampiran"
                 },
                 {
-					"data": "closed"
-				},
-                {
-					"data": "edit"
-				},
-                {
 					"data": "print"
 				},
                 {
 					"data": "actions"
-				},
-                {
-                    "data": "status"
-                }
+				}
             ],
             "columnDefs": [
                 { "width": "5%", "targets": 0, "className": 'text-center'},

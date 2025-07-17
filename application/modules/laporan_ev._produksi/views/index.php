@@ -73,10 +73,24 @@
 										<br />
 										<div class="row">
 											<div width="100%">
+												<?php
+                                                $admin_id = $this->session->userdata('admin_id');
+                                                $approval = $this->db->select('*')
+                                                ->from('tbl_admin')
+                                                ->where("admin_id = $admin_id ")
+                                                ->get()->row_array();
+                                                $akun_pusat =  $approval['akun_pusat'];
+                                                ?>
+                                                <?php
+                                                if($akun_pusat == 1){
+                                                ?>
 												<div class="col-sm-5">
 													<p><b><h5>Laporan Evaluasi Biaya Produksi (Stok)</h5></b></p>
 													<a href="#laporan_evaluasi_biaya_produksi" aria-controls="laporan_evaluasi_biaya_produksi" role="tab" data-toggle="tab" class="btn btn-primary" style="border-radius:10px; font-weight:bold;">Lihat Laporan</a>
 												</div>
+												<?php
+                                                }
+                                                ?>
 												<div class="col-sm-5">
 													<p><b><h5>Laporan Evaluasi Biaya Produksi (Pemakaian)</h5></b></p>
 													<a href="#laporan_evaluasi_biaya_produksi_pemakaian" aria-controls="laporan_evaluasi_biaya_produksi_pemakaian" role="tab" data-toggle="tab" class="btn btn-primary" style="border-radius:10px; font-weight:bold;">Lihat Laporan</a>

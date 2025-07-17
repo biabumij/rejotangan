@@ -57,7 +57,7 @@
 			<tr>
 				<td align="center">
 					<div style="display: block;font-weight: bold;font-size: 10px;">RAP BAHAN</div>
-					<div style="display: block;font-weight: bold;font-size: 10px; text-transform:uppercase;">BETON READY MIX</div>
+					<div style="display: block;font-weight: bold;font-size: 10px; text-transform:uppercase;">DIVISI STONE CRUSHER</div>
 				</td>
 			</tr>
 		</table>
@@ -79,9 +79,9 @@
 		<table class="minimalistBlack" cellpadding="3" width="98%">
 			<tr class="table-active">
 				<th align="center" rowspan="2" width="5%">&nbsp; <br />NO.</th>
-				<th align="center" rowspan="2" width="23%">&nbsp; <br />KOMPONEN</th>
+				<th align="center" rowspan="2" width="23%">&nbsp; <br />URAIAN</th>
+				<th align="center" rowspan="2" width="20%">&nbsp; <br />VOLUME</th>
 				<th align="center" rowspan="2" width="12%">&nbsp; <br />SATUAN</th>
-				<th align="center" rowspan="2" width="20%">&nbsp; <br />PERKIRAAN KUANTITAS</th>
 				<th align="center" rowspan="2" width="20%">&nbsp; <br />HARGA SATUAN</th>
 				<th align="center" width="20%" colspan="2">&nbsp; <br />JUMLAH HARGA</th>
             </tr>
@@ -98,63 +98,16 @@
 			</tr>
 			<tr>
 				<?php
-				$total = 0;
+				$total_bahan = $row['total_a'];
 				?>
+				
 				<?php
-				$total_bahan = $row['total_a'] + $row['total_b'] + $row['total_c'] + $row['total_d'] + $row['total_e'];
-				$harga_jual = $row['harga_jual'];
-				?>
-				<td align="center">1.</td>
-				<td align="left"><?= $row['produk_a'] = $this->crud_global->GetField('produk',array('id'=>$row['produk_a']),'nama_produk'); ?></td>
-				<td align="center"><?= $row['measure_a']  = $this->crud_global->GetField('pmm_measures',array('id'=>$row['measure_a']),'measure_name'); ?></td>
-				<td align="center"><?php echo number_format($row['presentase_a'],4,',','.');?></td>
-				<td align="right"><?php echo number_format($row['price_a'],0,',','.');?></td>
-				<td align="right"></td>
-				<td align="right"><?php echo number_format($row['total_a'],0,',','.');?></td>
-			</tr>
-			<tr>
-				<td align="center">2.</td>
-				<td align="left"><?= $row['produk_b'] = $this->crud_global->GetField('produk',array('id'=>$row['produk_b']),'nama_produk'); ?></td>
-				<td align="center"><?= $row['measure_b']  = $this->crud_global->GetField('pmm_measures',array('id'=>$row['measure_b']),'measure_name'); ?></td>
-				<td align="center"><?= $row['presentase_b']; ?></td>
-				<td align="right"><?php echo number_format($row['price_b'],0,',','.');?></td>
-				<td align="right"></td>
-				<td align="right"><?php echo number_format($row['total_b'],0,',','.');?></td>
-			</tr>
-			<tr>
-				<td align="center">3.</td>
-				<td align="left"><?= $row['produk_c'] = $this->crud_global->GetField('produk',array('id'=>$row['produk_c']),'nama_produk'); ?></td>
-				<td align="center"><?= $row['measure_c']  = $this->crud_global->GetField('pmm_measures',array('id'=>$row['measure_c']),'measure_name'); ?></td>
-				<td align="center"><?= $row['presentase_c']; ?></td>
-				<td align="right"><?php echo number_format($row['price_c'],0,',','.');?></td>
-				<td align="right"></td>
-				<td align="right"><?php echo number_format($row['total_c'],0,',','.');?></td>
-			</tr>
-			<tr>
-				<td align="center">4.</td>
-				<td align="left"><?= $row['produk_d'] = $this->crud_global->GetField('produk',array('id'=>$row['produk_d']),'nama_produk'); ?></td>
-				<td align="center"><?= $row['measure_d']  = $this->crud_global->GetField('pmm_measures',array('id'=>$row['measure_d']),'measure_name'); ?></td>
-				<td align="center"><?= $row['presentase_d']; ?></td>
-				<td align="right"><?php echo number_format($row['price_d'],0,',','.');?></td>
-				<td align="right"></td>
-				<td align="right"><?php echo number_format($row['total_d'],0,',','.');?></td>
-			</tr>
-			<tr>
-				<td align="center">5.</td>
-				<td align="left"><?= $row['produk_e'] = $this->crud_global->GetField('produk',array('id'=>$row['produk_e']),'nama_produk'); ?></td>
-				<td align="center"><?= $row['measure_e']  = $this->crud_global->GetField('pmm_measures',array('id'=>$row['measure_e']),'measure_name'); ?></td>
-				<td align="center"><?= $row['presentase_e']; ?></td>
-				<td align="right"><?php echo number_format($row['price_e'],0,',','.');?></td>
-				<td align="right"></td>
-				<td align="right"><?php echo number_format($row['total_e'],0,',','.');?></td>
-			</tr>
-				<?php
-				$row = $this->db->select('*')
+				$row_alat = $this->db->select('*')
 				->from('rap_alat')
 				->where('id',$row['rap_alat'])
 				->get()->row_array();
 
-				$total_alat = $row['batching_plant'] + $row['truck_mixer'] + $row['wheel_loader'] + $row['bbm_solar'];
+				$total_alat = $row_alat['stone_crusher'] + $row_alat['wheel_loader'] + $row_alat['maintenance'] + $row_alat['bbm_solar'];
 				$total_bua = 96774;
 				$total_persiapan = 67496;
 				$sub_total = $total_bahan + $total_alat + $total_bua + $total_persiapan;
@@ -162,10 +115,31 @@
 				$total_diskonto = $harga_jual * 3 /100;
 				$total = $sub_total + $total_diskonto;
 				?>
+
+				<?php
+				$row_bua = $this->db->select('*')
+				->from('rap_bua')
+				->where('id',$row['id'])
+				->get()->row_array();
+				$total_bua = ($row_bua['total'] / 6) /5000;
+				?>
+
+				<?php
+				$total = $total_bahan + $total_alat + $total_bua;
+				?>
+				<td align="center">1.</td>
+				<td align="left"><?= $row['produk_a'] = $this->crud_global->GetField('produk',array('id'=>$row['produk_a']),'nama_produk'); ?></td>
+				<td align="center"><?php echo number_format($row['volume'],4,',','.');?></td>
+				<td align="center"><?= $row['measure_a']  = $this->crud_global->GetField('pmm_measures',array('id'=>$row['measure_a']),'measure_name'); ?></td>
+				<td align="right"><?php echo number_format($row['price_a'],2,',','.');?></td>
+				<td align="right"></td>
+				<td align="right"><?php echo number_format($row['total_a'],2,',','.');?></td>
+			</tr>
+				
 			<tr>
 				<td align="right" colspan="5"><b>JUMLAH HARGA BAHAN</b></td>
 				<td align="right"><b><?php echo number_format(($total_bahan / $total) * 100,2,',','.');?>%</b></td>
-				<td align="right"><b><?php echo number_format($total_bahan,0,',','.');?></b></td>
+				<td align="right"><b><?php echo number_format($total_bahan,2,',','.');?></b></td>
 			</tr>
 			<tr>
 				<td align="center"><b>B.</b></td>
@@ -173,167 +147,69 @@
 			</tr>
 			<tr>
 				<td align="center">1.</td>
-				<td align="left">Batching Plant + Genset</td>
-				<td align="center">Jam</td>
-				<td align="center"><?php echo number_format($row['vol_batching_plant'],4,',','.');?></td>
-				<td align="right"><?php echo number_format($row['harsat_batching_plant'],0,',','.');?></td>
+				<td align="left">Stone Crusher + Genset</td>
+				<td align="center"><?php echo number_format($row_alat['vol_stone_crusher'],4,',','.');?></td>
+				<td align="center">M3</td>
+				<td align="right"><?php echo number_format($row_alat['harsat_stone_crusher'],2,',','.');?></td>
 				<td align="right"></td>
-				<td align="right"><?php echo number_format($row['batching_plant'],0,',','.');?></td>
+				<td align="right"><?php echo number_format($row_alat['stone_crusher'],2,',','.');?></td>
 			</tr>
 			<tr>
 				<td align="center">2.</td>
 				<td align="left">Wheel Loader</td>
-				<td align="center">Jam</td>
-				<td align="center"><?php echo number_format($row['vol_wheel_loader'],4,',','.');?></td>
-				<td align="right"><?php echo number_format($row['harsat_wheel_loader'],0,',','.');?></td>
+				<td align="center"><?php echo number_format($row_alat['vol_wheel_loader'],4,',','.');?></td>
+				<td align="center">M3</td>
+				<td align="right"><?php echo number_format($row_alat['harsat_wheel_loader'],2,',','.');?></td>
 				<td align="right"></td>
-				<td align="right"><?php echo number_format($row['wheel_loader'],0,',','.');?></td>
+				<td align="right"><?php echo number_format($row_alat['wheel_loader'],2,',','.');?></td>
 			</tr>
-			
 			<tr>
 				<td align="center">3.</td>
-				<td align="left">Truck Mixer</td>
-				<td align="center">Jam</td>
-				<td align="center"><?php echo number_format($row['vol_truck_mixer'],4,',','.');?></td>
-				<td align="right"><?php echo number_format($row['harsat_truck_mixer'],0,',','.');?></td>
+				<td align="left">Maintenance</td>
+				<td align="center"><?php echo number_format($row_alat['vol_maintenance'],4,',','.');?></td>
+				<td align="center">M3</td>
+				<td align="right"><?php echo number_format($row_alat['harsat_maintenance'],2,',','.');?></td>
 				<td align="right"></td>
-				<td align="right"><?php echo number_format($row['truck_mixer'],0,',','.');?></td>
+				<td align="right"><?php echo number_format($row_alat['maintenance'],2,',','.');?></td>
 			</tr>
 			<tr>
 				<td align="center">4.</td>
 				<td align="left">BBM Solar</td>
-				<td align="center">Jam</td>
-				<td align="center"><?php echo number_format($row['vol_bbm_solar'],4,',','.');?></td>
-				<td align="right"><?php echo number_format($row['harsat_bbm_solar'],0,',','.');?></td>
+				<td align="center"><?php echo number_format($row_alat['vol_bbm_solar'],4,',','.');?></td>
+				<td align="center">Liter</td>
+				<td align="right"><?php echo number_format($row_alat['harsat_bbm_solar'],2,',','.');?></td>
 				<td align="right"></td>
-				<td align="right"><?php echo number_format($row['bbm_solar'],0,',','.');?></td>
+				<td align="right"><?php echo number_format($row_alat['bbm_solar'],2,',','.');?></td>
 			</tr>
 			<tr>
 				<td align="right" colspan="5"><b>JUMLAH HARGA PERALATAN</b></td>
-				<td align="right"></td>
-				<td align="right"><b><?php echo number_format($total_alat,0,',','.');?></b></td>
-			</tr>
-			<tr>
-				<td align="right" colspan="5"><b>JUMLAH HARGA POKOK PENJUALAN (A+B)</b></td>
 				<td align="right"><b><?php echo number_format(($total_alat / $total) * 100,2,',','.');?>%</b></td>
-				<td align="right"><b><?php echo number_format($total_bahan + $total_alat,0,',','.');?></b></td>
+				<td align="right"><b><?php echo number_format($total_alat,2,',','.');?></b></td>
 			</tr>
+			
 			<tr>
 				<td align="center"><b>C.</b></td>
 				<td align="left" colspan="6"><b>BUA</b></td>
 			</tr>
 			<tr>
 				<td align="center">1.</td>
-				<td align="left">Gaji Karyawan / Tenaga Kerja</td>
-				<td align="center">Jam</td>
-				<td align="center"><?php echo number_format(0.0700,4,',','.');?></td>
-				<td align="right"><?php echo number_format(829562,0,',','.');?></td>
+				<td align="left">BUA</td>
+				<td align="center"><?php echo number_format(1,4,',','.');?></td>
+				<td align="center">Bulan</td>
+				<td align="right"><?php echo number_format($total_bua,2,',','.');?></td>
 				<td align="right"></td>
-				<td align="right"><?php echo number_format(0.0700 * 829562,0,',','.');?></td>
-			</tr>
-			<tr>
-				<td align="center">2.</td>
-				<td align="left">Operasional</td>
-				<td align="center">Jam</td>
-				<td align="center"><?php echo number_format(0.0700,4,',','.');?></td>
-				<td align="right"><?php echo number_format(553042,0,',','.');?></td>
-				<td align="right"></td>
-				<td align="right"><?php echo number_format(0.0700 * 553042,0,',','.');?></td>
+				<td align="right"><?php echo number_format($total_bua,2,',','.');?></td>
 			</tr>
 			<tr>
 				<td align="right" colspan="5"><b>JUMLAH BUA</b></td>
 				<td align="right"><b><?php echo number_format(($total_bua / $total) * 100,2,',','.');?>%</b></td>
-				<td align="right"><b><?php echo number_format($total_bua,0,',','.');?></b></td>
+				<td align="right"><b><?php echo number_format($total_bua,2,',','.');?></b></td>
 			</tr>
+			
 			<tr>
-				<td align="left" colspan="7"><i><b>BEBAN LAIN - LAIN</i></b></td>
-			</tr>
-			<tr>
-				<td align="center"><b>D.</b></td>
-				<td align="left" colspan="6"><b>PERSIAPAN</b></td>
-			</tr>
-			<tr>
-				<td align="center">1.</td>
-				<td align="left">Material - Persiapan</td>
-				<td align="center">Ls</td>
-				<td align="center"></td>
-				<td align="right"><?php echo number_format(570849143,0,',','.');?></td>
+				<td align="right" colspan="5"><b>JUMLAH HARGA POKOK PENJUALAN (A+B+C)</b></td>
 				<td align="right"></td>
-				<td align="right"><?php echo number_format(18414,0,',','.');?></td>
-			</tr>
-			<tr>
-				<td align="center">2.</td>
-				<td align="left">Erection & Mobilisasi - Persiapan</td>
-				<td align="center">Ls</td>
-				<td align="center"></td>
-				<td align="right"><?php echo number_format(493089396,0,',','.');?></td>
-				<td align="right"></td>
-				<td align="right"><?php echo number_format(15906,0,',','.');?></td>
-			</tr>
-			<tr>
-				<td align="center">3.</td>
-				<td align="left">Direksi Keet - Persiapan</td>
-				<td align="center">Ls</td>
-				<td align="center"></td>
-				<td align="right"><?php echo number_format(390821050,0,',','.');?></td>
-				<td align="right"></td>
-				<td align="right"><?php echo number_format(12607,0,',','.');?></td>
-			</tr>
-			<tr>
-				<td align="center">4.</td>
-				<td align="left">Operasional - Persiapan</td>
-				<td align="center">Ls</td>
-				<td align="center"></td>
-				<td align="right"><?php echo number_format(637626476,0,',','.');?></td>
-				<td align="right"></td>
-				<td align="right"><?php echo number_format(20569,0,',','.');?></td>
-			</tr>
-			<tr>
-				<td align="right" colspan="5"><b>JUMLAH HARGA PERSIAPAN</b></td>
-				<td align="right"><b><?php echo number_format(($total_persiapan / $total) * 100,2,',','.');?>%</b></td>
-				<td align="right"><b><?php echo number_format($total_persiapan,0,',','.');?></b></td>
-			</tr>
-			<tr>
-				<td align="center"><b>E.</b></td>
-				<td align="left" colspan="6"><b>BIAYA BANK</b></td>
-			</tr>
-			<tr>
-				<td align="center">1.</td>
-				<td align="left">Diskonto</td>
-				<td align="center">M3</td>
-				<td align="center"><?php echo number_format(3,2,',','.');?>%</td>
-				<td align="right"></td>
-				<td align="right"></td>
-				<td align="right"><?php echo number_format($total_diskonto,0,',','.');?></td>
-			</tr>
-			<tr>
-				<td align="center">2.</td>
-				<td align="left">Admin</td>
-				<td align="center">M3</td>
-				<td align="center"><?php echo number_format(1,4,',','.');?></td>
-				<td align="right"></td>
-				<td align="right"></td>
-				c
-			</tr>
-			<tr>
-				<td align="right" colspan="5"><b>JUMLAH BIAYA BANK</b></td>
-				<td align="right"><b><?php echo number_format(($total_diskonto / $total) * 100,2,',','.');?>%</b></td>
-				<td align="right"><b><?php echo number_format($total_diskonto,0,',','.');?></b></td>
-			</tr>
-			<tr>
-				<td align="right" colspan="5"><b>JUMLAH HARGA POKOK PENJUALAN (A+B+C+D+E)</b></td>
-				<td align="right"></td>
-				<td align="right"><b><?php echo number_format($total,0,',','.');?></b></td>
-			</tr>
-			<tr>
-				<td align="right" colspan="5"><b>LABA</b></td>
-				<td align="right"><b><?php echo number_format(($harga_jual - $total) / $total * 100,2,',','.');?>%</b></td>
-				<td align="right"><b><?php echo number_format($harga_jual - $total,0,',','.');?></b></td>
-			</tr>
-			<tr>
-				<td align="right" colspan="5"><b>HARGA JUAL</b></td>
-				<td align="right"></td>
-				<td align="right"><b><?php echo number_format($harga_jual,0,',','.');?></b></td>
+				<td align="right"><b><?php echo number_format($total,2,',','.');?></b></td>
 			</tr>
 		</table>
 	</body>
