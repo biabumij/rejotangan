@@ -111,25 +111,6 @@
                                                 <input type="hidden" id="tax_id" name="tax_id" class="form-control" value="" required="" readonly="">
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label for="inputEmail3" class="control-label">Komposisi<span class="required" aria-required="true">*</span></label>
-                                                <select id="komposisi_id" class="form-control input-sm" name="komposisi_id">
-                                                    <option value="">Pilih Komposisi</option>
-                                                    <?php
-                                                    if (!empty($komposisi)) {
-                                                        foreach ($komposisi as $kom) {
-                                                    ?>
-                                                            <option value="<?php echo $kom['id']; ?>"><?php echo $kom['jobs_type']; ?><!-- - (<?= date('d/F/Y',strtotime($kom['date_agregat']));?>)--></option>
-                                                    <?php
-                                                        }
-                                                    }
-                                                    ?>
-                                                </select>
-                                            </div>
-                                        </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="inputEmail3" class="control-label">Lokasi Pengiriman<span class="required" aria-required="true">*</span></label>
