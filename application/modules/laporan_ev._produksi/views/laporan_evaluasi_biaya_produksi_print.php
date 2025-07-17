@@ -1560,7 +1560,7 @@
 								<img src="uploads/ttd_satria.png" width="50px">
 							</td>
 							<td align="center">
-								<img src="uploads/ttd_erika.png" width="50px">
+								<!--<img src="uploads/ttd_erika.png" width="50px">-->
 							</td>
 							<td align="center">
 								<img src="uploads/ttd_deddy.png" width="50px">
