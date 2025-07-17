@@ -93,7 +93,7 @@
 		
 		<table class="table-lap" width="98%" border="0" cellpadding="3">
 			<?php
-			$row_biaya = $this->db->select('b.*, c.coa_number, c.coa, pdb.deskripsi, pdb.jumlah as total')
+			$row_biaya = $this->db->select('b.*, b.nomor_transaksi as nomor_transaksi, c.coa_number, c.coa, pdb.deskripsi, pdb.jumlah as total')
 			->from('pmm_biaya b')
 			->join('pmm_detail_biaya pdb', 'b.id = pdb.biaya_id','left')
 			->join('pmm_coa c','pdb.akun = c.id','left')
@@ -104,7 +104,7 @@
 			->order_by('b.created_on','asc')
 			->get()->result_array();
 
-			$row_jurnal = $this->db->select('j.*, c.coa_number, c.coa, pdj.deskripsi, pdj.debit as total')
+			$row_jurnal = $this->db->select('j.*, j.nomor_transaksi as nomor_transaksi, c.coa_number, c.coa, pdj.deskripsi, pdj.debit as total')
 			->from('pmm_jurnal_umum j')
 			->join('pmm_detail_jurnal pdj','j.id = pdj.jurnal_id','left')
 			->where("j.tanggal_transaksi between '$date1' and '$date2'")
@@ -129,13 +129,13 @@
 			usort($total_biaya, 'sortByOrder');
 			?>
 			<tr class="table-active">
-				<th align="center" width="6%"><b>TANGGAL</b></th>
-				<th align="center" width="20%"><b>NOMOR BUKTI</b></th>
-				<th align="center" width="10%"><b>PENERIMA</b></th>
-				<th align="center" width="24%"><b>URAIAN</b></th>
-				<th align="center" width="10%"><b>KODE AKUN</b></th>
-				<th align="center" width="10%"><b>NAMA AKUN</b></th>
-				<th align="center" width="10%"><b>KATEGORI AKUN</b></th>
+				<th align="left" width="6%"><b>TANGGAL</b></th>
+				<th align="left" width="20%"><b>NOMOR BUKTI</b></th>
+				<th align="left" width="10%"><b>PENERIMA</b></th>
+				<th align="left" width="24%"><b>URAIAN</b></th>
+				<th align="left" width="10%"><b>KODE AKUN</b></th>
+				<th align="left" width="10%"><b>NAMA AKUN</b></th>
+				<th align="left" width="10%"><b>KATEGORI AKUN</b></th>
 				<th align="right" width="10%"><b>JUMLAH</b></th>
 			</tr>
 			<?php
@@ -143,13 +143,13 @@
 				foreach ($total_biaya as $key => $x) {
 					?>
 					<tr>
-						<td align="center"><?= date('d-m-Y',strtotime($x["tanggal_transaksi"])) ?></td>
+						<td align="left"><?= date('d-m-Y',strtotime($x["tanggal_transaksi"])) ?></td>
 						<td align="left"><?= $x['nomor_transaksi'];?></td>
 						<td align="left"><?= $this->crud_global->GetField('penerima',array('id'=>$x['penerima']),'nama');?></td>
 						<td align="left"><?= $x['deskripsi'];?></td>
-						<td align="center"><?= $x['coa_number'];?></td>
-						<td align="center"><?= $x['coa'];?></td>
-						<td align="center"><?= $x['transaksi'];?></td>
+						<td align="left"><?= $x['coa_number'];?></td>
+						<td align="left"><?= $x['coa'];?></td>
+						<td align="left"><?= $x['transaksi'];?></td>
 						<td align="right"><?php echo number_format($x['total'],0,',','.');?></td>
 					</tr>
 					<?php
