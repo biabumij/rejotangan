@@ -1405,66 +1405,6 @@ class Laporan extends Secure_Controller {
 	
 	}
 
-	public function cetak_evaluasi_bahan()
-	{
-		$this->load->library('pdf');
-	
-		$pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
-        $pdf->setPrintHeader(true);
-        $tagvs = array('div' => array(0 => array('h' => 0, 'n' => 0), 1 => array('h' => 0, 'n'=> 0)));
-		$pdf->setHtmlVSpace($tagvs);
-		$pdf->AddPage('P');
-
-		$arr_date = $this->input->get('filter_date');
-		if(empty($arr_date)){
-			$filter_date = '-';
-		}else {
-			$arr_filter_date = explode(' - ', $arr_date);
-			$start_date = date('Y-m-d',strtotime($arr_filter_date[0]));
-    		$end_date = date('Y-m-d',strtotime($arr_filter_date[1]));
-			$filter_date = date('d F Y',strtotime($arr_filter_date[0])).' - '.date('d F Y',strtotime($arr_filter_date[1]));
-		}
-		$data['filter_date'] = $filter_date;
-		$data['start_date'] = $start_date;
-		$data['end_date'] = $end_date;
-        $html = $this->load->view('laporan_ev._produksi/cetak_laporan_evaluasi',$data,TRUE);
-
-        $pdf->SetTitle('BBJ - Laporan Evaluasi Pemakaian Bahan Baku');
-        $pdf->nsi_html($html);
-        $pdf->Output('laporan_evaluasi_pemakaian_bahan_baku.pdf', 'I');
-	
-	}
-
-	public function cetak_evaluasi_bahan_pemakaian()
-	{
-		$this->load->library('pdf');
-	
-		$pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
-        $pdf->setPrintHeader(true);
-        $tagvs = array('div' => array(0 => array('h' => 0, 'n' => 0), 1 => array('h' => 0, 'n'=> 0)));
-		$pdf->setHtmlVSpace($tagvs);
-		$pdf->AddPage('P');
-
-		$arr_date = $this->input->get('filter_date');
-		if(empty($arr_date)){
-			$filter_date = '-';
-		}else {
-			$arr_filter_date = explode(' - ', $arr_date);
-			$start_date = date('Y-m-d',strtotime($arr_filter_date[0]));
-    		$end_date = date('Y-m-d',strtotime($arr_filter_date[1]));
-			$filter_date = date('d F Y',strtotime($arr_filter_date[0])).' - '.date('d F Y',strtotime($arr_filter_date[1]));
-		}
-		$data['filter_date'] = $filter_date;
-		$data['start_date'] = $start_date;
-		$data['end_date'] = $end_date;
-        $html = $this->load->view('laporan_ev._produksi/cetak_laporan_evaluasi_pemakaian',$data,TRUE);
-
-        $pdf->SetTitle('BBJ - Laporan Evaluasi Pemakaian Bahan Baku');
-        $pdf->nsi_html($html);
-        $pdf->Output('laporan_evaluasi_pemakaian_bahan_baku.pdf', 'I');
-	
-	}
-
 	public function cetak_laporan_evaluasi_alat()
 	{
 		$this->load->library('pdf');
@@ -1982,6 +1922,44 @@ class Laporan extends Secure_Controller {
 		$data['biaya_langsung'] = $this->m_laporan->biaya_langsung_print($arr_date);
 
         $html = $this->load->view('laporan_ev._produksi/cetak_detail_solar',$data,TRUE);
+        
+        $pdf->SetTitle('');
+        $pdf->nsi_html($html);
+        $pdf->Output('detail-solar.pdf', 'I');
+    }
+
+	public function cetak_detail_boulder()
+    {
+		$this->load->library('pdf');
+
+        $pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
+        $pdf->setPrintHeader(false);
+		$pdf->setPrintFooter(false);
+        $tagvs = array('div' => array(0 => array('h' => 0, 'n' => 0), 1 => array('h' => 0, 'n'=> 0)));
+		$pdf->setHtmlVSpace($tagvs);
+		
+		// add a page
+		$pdf->AddPage('P');
+		$pdf->setPrintHeader(false);
+		$pdf->setPrintFooter(false);
+		$pdf->SetY(5);
+		$pdf->SetX(5);
+		$pdf->SetMargins(5, 5); 
+
+		$pdf->SetAutoPageBreak(TRUE, 20);
+        $arr_date = $this->input->get('filter_date');
+
+        $dt = explode(' - ', $arr_date);
+        $start_date = date('Y-m-d',strtotime($dt[0]));
+        $end_date = date('Y-m-d',strtotime($dt[1]));
+
+        $date = array($start_date,$end_date);
+        $data['filter_date'] = $arr_date;
+		$data['start_date'] = $start_date;
+		$data['end_date'] = $end_date;
+		$data['biaya_langsung'] = $this->m_laporan->biaya_langsung_print($arr_date);
+
+        $html = $this->load->view('laporan_ev._produksi/cetak_detail_boulder',$data,TRUE);
         
         $pdf->SetTitle('');
         $pdf->nsi_html($html);

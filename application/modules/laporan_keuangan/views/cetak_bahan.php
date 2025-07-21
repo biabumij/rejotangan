@@ -98,63 +98,19 @@
 		
 		<table width="98%" cellpadding="5" border="1">
 			<?php
-			$pemakaian_semen = $this->db->select('sum(volume) as volume, sum(nilai) as nilai')
+			$pemakaian_boulder = $this->db->select('sum(volume) as volume, sum(nilai) as nilai')
 			->from('pemakaian_bahan')
 			->where("date between '$date1' and '$date2'")
-			->where("material_id = 1")
+			->where("material_id = 22")
 			->where("status = 'PUBLISH'")
 			->get()->row_array();
 	
-			$pemakaian_volume_semen = $pemakaian_semen['volume'];
-			$pemakaian_nilai_semen = $pemakaian_semen['nilai'];
-			$pemakaian_harsat_semen = ($pemakaian_volume_semen!=0)?$pemakaian_nilai_semen / $pemakaian_volume_semen * 1:0;
-			
-			$pemakaian_pasir = $this->db->select('sum(volume) as volume, sum(nilai) as nilai')
-			->from('pemakaian_bahan')
-			->where("date between '$date1' and '$date2'")
-			->where("material_id = 2")
-			->where("status = 'PUBLISH'")
-			->get()->row_array();
+			$pemakaian_volume_boulder = $pemakaian_boulder['volume'];
+			$pemakaian_nilai_boulder = $pemakaian_boulder['nilai'];
+			$pemakaian_harsat_boulder = ($pemakaian_volume_boulder!=0)?$pemakaian_nilai_boulder / $pemakaian_volume_boulder * 1:0;
 	
-			$pemakaian_volume_pasir = $pemakaian_pasir['volume'];
-			$pemakaian_nilai_pasir = $pemakaian_pasir['nilai'];
-			$pemakaian_harsat_pasir = ($pemakaian_volume_pasir!=0)?$pemakaian_nilai_pasir / $pemakaian_volume_pasir * 1:0;
-	
-			$pemakaian_1020 = $this->db->select('sum(volume) as volume, sum(nilai) as nilai')
-			->from('pemakaian_bahan')
-			->where("date between '$date1' and '$date2'")
-			->where("material_id = 3")
-			->where("status = 'PUBLISH'")
-			->get()->row_array();
-	
-			$pemakaian_volume_1020 = $pemakaian_1020['volume'];
-			$pemakaian_nilai_1020 = $pemakaian_1020['nilai'];
-			$pemakaian_harsat_1020 = ($pemakaian_volume_1020!=0)?$pemakaian_nilai_1020 / $pemakaian_volume_1020 * 1:0;
-	
-			$pemakaian_2030 = $this->db->select('sum(volume) as volume, sum(nilai) as nilai')
-			->from('pemakaian_bahan')
-			->where("date between '$date1' and '$date2'")
-			->where("material_id = 4")
-			->where("status = 'PUBLISH'")
-			->get()->row_array();
-	
-			$pemakaian_volume_2030 = $pemakaian_2030['volume'];
-			$pemakaian_nilai_2030 = $pemakaian_2030['nilai'];
-			$pemakaian_harsat_2030 = ($pemakaian_volume_2030!=0)?$pemakaian_nilai_2030 / $pemakaian_volume_2030 * 1:0;
-	
-			$pemakaian_additive = $this->db->select('sum(volume) as volume, sum(nilai) as nilai')
-			->from('pemakaian_bahan')
-			->where("date between '$date1' and '$date2'")
-			->where("material_id = 19")
-			->where("status = 'PUBLISH'")
-			->get()->row_array();
-	
-			$pemakaian_volume_additive = $pemakaian_additive['volume'];
-			$pemakaian_nilai_additive = $pemakaian_additive['nilai'];
-			$pemakaian_harsat_additive = ($pemakaian_volume_additive!=0)?$pemakaian_nilai_additive / $pemakaian_volume_additive * 1:0;
-	
-			$total_volume_realisasi = $pemakaian_volume_semen + $pemakaian_volume_pasir + $pemakaian_volume_1020 + $pemakaian_volume_2030 + $pemakaian_volume_additive;
-			$total_nilai_realisasi = $pemakaian_nilai_semen + $pemakaian_nilai_pasir + $pemakaian_nilai_1020 + $pemakaian_nilai_2030 + $pemakaian_nilai_additive;
+			$total_volume_realisasi = $pemakaian_volume_boulder + $pemakaian_volume_pasir + $pemakaian_volume_1020 + $pemakaian_volume_2030 + $pemakaian_volume_additive;
+			$total_nilai_realisasi = $pemakaian_nilai_boulder + $pemakaian_nilai_pasir + $pemakaian_nilai_1020 + $pemakaian_nilai_2030 + $pemakaian_nilai_additive;
 	        ?>
 			
 			<tr class="table-judul">
@@ -170,43 +126,11 @@
 	        </tr>
 			<tr class="table-baris1">
 				<th align="center">1.</th>	
-				<th align="left">Semen</th>
-				<th align="center">Ton</th>
-				<th align="right"><?php echo number_format($pemakaian_volume_semen,2,',','.');?></th>
-				<th align="right"><?php echo number_format($pemakaian_harsat_semen,0,',','.');?></th>
-				<th align="right"><?php echo number_format($pemakaian_nilai_semen,0,',','.');?></th>
-	        </tr>
-			<tr class="table-baris1">
-				<th align="center">2.</th>
-				<th align="left">Pasir</th>
+				<th align="left">Boulder</th>
 				<th align="center">M3</th>
-				<th align="right"><?php echo number_format($pemakaian_volume_pasir,2,',','.');?></th>
-				<th align="right"><?php echo number_format($pemakaian_harsat_pasir,0,',','.');?></th>
-				<th align="right"><?php echo number_format($pemakaian_nilai_pasir,0,',','.');?></th>
-	        </tr>
-			<tr class="table-baris1">
-				<th align="center">3.</th>
-				<th align="left">Batu Split 10 - 20</th>
-				<th align="center">M3</th>
-				<th align="right"><?php echo number_format($pemakaian_volume_1020,2,',','.');?></th>
-				<th align="right"><?php echo number_format($pemakaian_harsat_1020,0,',','.');?></th>
-				<th align="right"><?php echo number_format($pemakaian_nilai_1020,0,',','.');?></th>
-	        </tr>
-			<tr class="table-baris1">
-				<th align="center">4.</th>
-				<th align="left">Batu Split 20 - 30</th>
-				<th align="center">M3</th>
-				<th align="right"><?php echo number_format($pemakaian_volume_2030,2,',','.');?></th>
-				<th align="right"><?php echo number_format($pemakaian_harsat_2030,0,',','.');?></th>
-				<th align="right"><?php echo number_format($pemakaian_nilai_2030,0,',','.');?></th>
-	        </tr>
-			<tr class="table-baris1">
-				<th align="center">5.</th>
-				<th align="left">Additive</th>
-				<th align="center">M3</th>
-				<th align="right"><?php echo number_format($pemakaian_volume_additive,2,',','.');?></th>
-				<th align="right"><?php echo number_format($pemakaian_harsat_additive,0,',','.');?></th>
-				<th align="right"><?php echo number_format($pemakaian_nilai_additive,0,',','.');?></th>
+				<th align="right"><?php echo number_format($pemakaian_volume_boulder,2,',','.');?></th>
+				<th align="right"><?php echo number_format($pemakaian_harsat_boulder,0,',','.');?></th>
+				<th align="right"><?php echo number_format($pemakaian_nilai_boulder,0,',','.');?></th>
 	        </tr>
 			<tr class="table-total">
 	            <th align="right" colspan="5">TOTAL</th>

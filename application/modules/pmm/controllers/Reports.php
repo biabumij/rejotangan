@@ -13763,6 +13763,85 @@ class Reports extends CI_Controller {
 			}
 		 </style>
 			<?php
+			$rap_bahan = $this->db->select('*')
+			->from('pmm_agregat ')
+			->where("date_agregat <= '$date2'")
+			->where('status','PUBLISH')
+			->group_by("id")
+			->order_by('date_agregat','desc')->limit(1)
+			->get()->result_array();
+
+			foreach ($rap_bahan as $x){
+				$harsat_bahan = $x['price_a'];
+			}
+
+			$pemakaian_boulder = $this->db->select('sum(volume) as volume, sum(nilai) as nilai')
+			->from('pemakaian_bahan')
+			->where("date between '$date1' and '$date2'")
+			->where("material_id = 22")
+			->where("status = 'PUBLISH'")
+			->get()->row_array();
+
+			$date1_ago = date('2020-01-01');
+			$date2_ago = date('Y-m-d', strtotime('-1 days', strtotime($date1)));
+			$date3_ago = date('Y-m-d', strtotime('-1 months', strtotime($date1)));
+			$tanggal_opening_balance = date('Y-m-d', strtotime('-1 days', strtotime($date1)));
+
+			$stock_opname_boulder_ago = $this->db->select('cat.volume as volume, cat.total as nilai')
+			->from('pmm_remaining_materials_cat cat ')
+			->where("(cat.date <= '$tanggal_opening_balance')")
+			->where("cat.material_id = 22")
+			->where("cat.status = 'PUBLISH'")
+			->order_by('date','desc')->limit(1)
+			->get()->row_array();
+
+			$stok_volume_boulder_lalu = $stock_opname_boulder_ago['volume'];
+			$stok_nilai_boulder_lalu = $stock_opname_boulder_ago['nilai'];
+			$stok_harsat_boulder_lalu = (round($stok_volume_boulder_lalu,2)!=0)?$stok_nilai_boulder_lalu / round($stok_volume_boulder_lalu,2) * 1:0;
+
+			$pembelian_boulder = $this->db->select('prm.display_measure as satuan, SUM(prm.display_volume) as volume, (prm.display_price / prm.display_volume) as harga, SUM(prm.display_price) as nilai')
+			->from('pmm_receipt_material prm')
+			->join('pmm_purchase_order po', 'prm.purchase_order_id = po.id','left')
+			->join('produk p', 'prm.material_id = p.id','left')
+			->where("prm.date_receipt between '$date1' and '$date2'")
+			->where("p.kategori_bahan = 7")
+			->get()->row_array();
+		
+			$pembelian_volume_boulder = $pembelian_boulder['volume'];
+			$pembelian_nilai_boulder = $pembelian_boulder['nilai'];
+			$pembelian_harga_boulder = (round($pembelian_volume_boulder,2)!=0)?$pembelian_nilai_boulder / round($pembelian_volume_boulder,2) * 1:0;
+
+			$total_stok_volume_boulder = $stok_volume_boulder_lalu + $pembelian_volume_boulder;
+			$total_stok_nilai_boulder = $stok_nilai_boulder_lalu + $pembelian_nilai_boulder;
+
+			$stock_opname_boulder_now = $this->db->select('cat.volume as volume, cat.total as nilai, cat.pemakaian_custom, cat.reset, cat.reset_pemakaian')
+			->from('pmm_remaining_materials_cat cat ')
+			->where("(cat.date <= '$date2')")
+			->where("cat.material_id = 22")
+			->where("cat.status = 'PUBLISH'")
+			->order_by('date','desc')->limit(1)
+			->get()->row_array();
+
+			$volume_stock_opname_boulder_now = $stock_opname_boulder_now['volume'];
+			$nilai_stock_opname_boulder_now = $stock_opname_boulder_now['nilai'];
+
+			$vol_pemakaian_boulder_now = ($stok_volume_boulder_lalu + $pembelian_volume_boulder) - $volume_stock_opname_boulder_now;
+			$nilai_pemakaian_boulder_now = $stock_opname_boulder_now['nilai'];
+
+			$pemakaian_volume_boulder = $vol_pemakaian_boulder_now;
+			$pemakaian_nilai_boulder = (($total_stok_nilai_boulder - $nilai_stock_opname_boulder_now) * $stock_opname_boulder_now['reset']) + ($stock_opname_boulder_now['pemakaian_custom'] * $stock_opname_boulder_now['reset_pemakaian']);
+			$pemakaian_harsat_boulder = $pemakaian_nilai_boulder / $pemakaian_volume_boulder;
+
+			$total_volume_boulder_rap = $pemakaian_volume_boulder;
+			$total_nilai_boulder_rap = $pemakaian_volume_boulder * $harsat_bahan;
+			$total_harsat_boulder_rap = ($total_volume_boulder_rap!=0)?$total_nilai_boulder_rap / $total_volume_boulder_rap * 1:0;
+
+			$total_volume_boulder_realisasi = $pemakaian_volume_boulder;
+			$total_nilai_boulder_realisasi = $pemakaian_nilai_boulder;
+			$total_harsat_boulder_realisasi = $pemakaian_harsat_boulder;
+
+			$total_volume_boulder_evaluasi = $total_volume_boulder_rap - $total_volume_boulder_realisasi;
+			$total_nilai_boulder_evaluasi = $total_nilai_boulder_rap - $total_nilai_boulder_realisasi;
 	        ?>
 
 			<?php
@@ -14330,20 +14409,20 @@ class Reports extends CI_Controller {
 			<tr class="table-active3">
 	            <th class="text-center">1</th>
 				<th class="text-left">BAHAN</th>
-				<th class="text-right"><?php echo number_format($total_volume_komposisi,2,',','.');?></th>
-				<th class="text-right"><?php echo number_format($total_nilai_komposisi / $total_volume_komposisi,0,',','.');?></th>
-				<th class="text-right"><a target="_blank" href="<?= base_url("laporan/cetak_evaluasi_bahan?filter_date=".$filter_date = date('d-m-Y',strtotime($date1)).' - '.date('d-m-Y',strtotime($date2))) ?>"><?php echo number_format($total_nilai_komposisi,0,',','.');?></a></th>
-				<th class="text-right"><?php echo number_format($total_volume_realisasi,2,',','.');?></th>
-				<th class="text-right"><?php echo number_format($total_nilai_realisasi / $total_volume_realisasi,0,',','.');?></th>
-				<th class="text-right"><a target="_blank" href="<?= base_url("laporan/cetak_evaluasi_bahan?filter_date=".$filter_date = date('d-m-Y',strtotime($date1)).' - '.date('d-m-Y',strtotime($date2))) ?>"><?php echo number_format($total_nilai_realisasi,0,',','.');?></a></th>
+				<th class="text-right"><?php echo number_format($total_volume_boulder_rap,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($total_harsat_boulder_rap,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($total_nilai_boulder_rap,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($total_volume_boulder_realisasi,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($total_harsat_boulder_realisasi,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($total_nilai_boulder_realisasi,0,',','.');?></th>
 				<?php
-				$styleColor = $total_volume_evaluasi < 0 ? 'color:red' : 'color:black';
+				$styleColor = $total_volume_boulder_evaluasi < 0 ? 'color:red' : 'color:black';
 				?>
-				<th class="text-right" style="<?php echo $styleColor ?>"><?php echo $total_volume_evaluasi < 0 ? "(".number_format(-$total_volume_evaluasi,2,',','.').")" : number_format($total_volume_evaluasi,2,',','.');?></th>
+				<th class="text-right" style="<?php echo $styleColor ?>"><?php echo $total_volume_boulder_evaluasi < 0 ? "(".number_format(-$total_volume_boulder_evaluasi,2,',','.').")" : number_format($total_volume_boulder_evaluasi,2,',','.');?></th>
 				<?php
-				$styleColor = $total_nilai_evaluasi < 0 ? 'color:red' : 'color:black';
+				$styleColor = $total_nilai_boulder_evaluasi < 0 ? 'color:red' : 'color:black';
 				?>
-				<th class="text-right" style="<?php echo $styleColor ?>"><?php echo $total_nilai_evaluasi < 0 ? "(".number_format(-$total_nilai_evaluasi,0,',','.').")" : number_format($total_nilai_evaluasi,0,',','.');?></th>
+				<th class="text-right" style="<?php echo $styleColor ?>"><?php echo $total_nilai_boulder_evaluasi < 0 ? "(".number_format(-$total_nilai_boulder_evaluasi,0,',','.').")" : number_format($total_nilai_boulder_evaluasi,0,',','.');?></th>
 	        </tr>
 			<tr class="table-active3">
 	            <th class="text-center">2</th>
@@ -14476,6 +14555,39 @@ class Reports extends CI_Controller {
 			}
 		 </style>
 			<?php
+			$rap_bahan = $this->db->select('*')
+			->from('pmm_agregat ')
+			->where("date_agregat <= '$date2'")
+			->where('status','PUBLISH')
+			->group_by("id")
+			->order_by('date_agregat','desc')->limit(1)
+			->get()->result_array();
+
+			foreach ($rap_bahan as $x){
+				$harsat_bahan = $x['price_a'];
+			}
+
+			$pemakaian_boulder = $this->db->select('sum(volume) as volume, sum(nilai) as nilai')
+			->from('pemakaian_bahan')
+			->where("date between '$date1' and '$date2'")
+			->where("material_id = 22")
+			->where("status = 'PUBLISH'")
+			->get()->row_array();
+
+			$pemakaian_volume_boulder = $pemakaian_boulder['volume'];
+			$pemakaian_nilai_boulder = $pemakaian_boulder['nilai'];
+			$pemakaian_harsat_boulder = ($pemakaian_volume_boulder!=0)?$pemakaian_nilai_boulder / $pemakaian_volume_boulder * 1:0;
+
+			$total_volume_boulder_rap = $pemakaian_volume_boulder;
+			$total_nilai_boulder_rap = $pemakaian_volume_boulder * $harsat_bahan;
+			$total_harsat_boulder_rap = ($total_volume_boulder_rap!=0)?$total_nilai_boulder_rap / $total_volume_boulder_rap * 1:0;
+
+			$total_volume_boulder_realisasi = $pemakaian_volume_boulder;
+			$total_nilai_boulder_realisasi = $pemakaian_nilai_boulder;
+			$total_harsat_boulder_realisasi = $pemakaian_harsat_boulder;
+
+			$total_volume_boulder_evaluasi = $total_volume_boulder_rap - $total_volume_boulder_realisasi;
+			$total_nilai_boulder_evaluasi = $total_nilai_boulder_rap - $total_nilai_boulder_realisasi;
 	        ?>
 
 			<?php
@@ -15004,20 +15116,20 @@ class Reports extends CI_Controller {
 			<tr class="table-active3">
 	            <th class="text-center">1</th>
 				<th class="text-left">BAHAN</th>
-				<th class="text-right"><?php echo number_format($total_volume_komposisi,2,',','.');?></th>
-				<th class="text-right"><?php echo number_format($total_nilai_komposisi / $total_volume_komposisi,0,',','.');?></th>
-				<th class="text-right"><a target="_blank" href="<?= base_url("laporan/cetak_evaluasi_bahan_pemakaian?filter_date=".$filter_date = date('d-m-Y',strtotime($date1)).' - '.date('d-m-Y',strtotime($date2))) ?>"><?php echo number_format($total_nilai_komposisi,0,',','.');?></a></th>
-				<th class="text-right"><?php echo number_format($total_volume_realisasi,2,',','.');?></th>
-				<th class="text-right"><?php echo number_format($total_nilai_realisasi / $total_volume_realisasi,0,',','.');?></th>
-				<th class="text-right"><a target="_blank" href="<?= base_url("laporan/cetak_evaluasi_bahan_pemakaian?filter_date=".$filter_date = date('d-m-Y',strtotime($date1)).' - '.date('d-m-Y',strtotime($date2))) ?>"><?php echo number_format($total_nilai_realisasi,0,',','.');?></a></th>
+				<th class="text-right"><?php echo number_format($total_volume_boulder_rap,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($total_harsat_boulder_rap,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($total_nilai_boulder_rap,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($total_volume_boulder_realisasi,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($total_harsat_boulder_realisasi,0,',','.');?></th>
+				<th class="text-right"><a target="_blank" href="<?= base_url("laporan/cetak_detail_boulder?filter_date=".$filter_date = date('d-m-Y',strtotime($date1)).' - '.date('d-m-Y',strtotime($date2))) ?>"><?php echo number_format($total_nilai_boulder_realisasi,0,',','.');?></a></th>
 				<?php
-				$styleColor = $total_volume_evaluasi < 0 ? 'color:red' : 'color:black';
+				$styleColor = $total_volume_boulder_evaluasi < 0 ? 'color:red' : 'color:black';
 				?>
-				<th class="text-right" style="<?php echo $styleColor ?>"><?php echo $total_volume_evaluasi < 0 ? "(".number_format(-$total_volume_evaluasi,2,',','.').")" : number_format($total_volume_evaluasi,2,',','.');?></th>
+				<th class="text-right" style="<?php echo $styleColor ?>"><?php echo $total_volume_boulder_evaluasi < 0 ? "(".number_format(-$total_volume_boulder_evaluasi,2,',','.').")" : number_format($total_volume_boulder_evaluasi,2,',','.');?></th>
 				<?php
-				$styleColor = $total_nilai_evaluasi < 0 ? 'color:red' : 'color:black';
+				$styleColor = $total_nilai_boulder_evaluasi < 0 ? 'color:red' : 'color:black';
 				?>
-				<th class="text-right" style="<?php echo $styleColor ?>"><?php echo $total_nilai_evaluasi < 0 ? "(".number_format(-$total_nilai_evaluasi,0,',','.').")" : number_format($total_nilai_evaluasi,0,',','.');?></th>
+				<th class="text-right" style="<?php echo $styleColor ?>"><?php echo $total_nilai_boulder_evaluasi < 0 ? "(".number_format(-$total_nilai_boulder_evaluasi,0,',','.').")" : number_format($total_nilai_boulder_evaluasi,0,',','.');?></th>
 	        </tr>
 			<tr class="table-active3">
 	            <th class="text-center">2</th>

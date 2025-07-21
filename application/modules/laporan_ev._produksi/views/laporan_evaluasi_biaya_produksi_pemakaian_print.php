@@ -106,6 +106,39 @@
 		?>
 
 		<?php
+		$rap_bahan = $this->db->select('*')
+		->from('pmm_agregat ')
+		->where("date_agregat <= '$date2'")
+		->where('status','PUBLISH')
+		->group_by("id")
+		->order_by('date_agregat','desc')->limit(1)
+		->get()->result_array();
+
+		foreach ($rap_bahan as $x){
+			$harsat_bahan = $x['price_a'];
+		}
+
+		$pemakaian_boulder = $this->db->select('sum(volume) as volume, sum(nilai) as nilai')
+		->from('pemakaian_bahan')
+		->where("date between '$date1' and '$date2'")
+		->where("material_id = 22")
+		->where("status = 'PUBLISH'")
+		->get()->row_array();
+
+		$pemakaian_volume_boulder = $pemakaian_boulder['volume'];
+		$pemakaian_nilai_boulder = $pemakaian_boulder['nilai'];
+		$pemakaian_harsat_boulder = ($pemakaian_volume_boulder!=0)?$pemakaian_nilai_boulder / $pemakaian_volume_boulder * 1:0;
+
+		$total_volume_boulder_rap = $pemakaian_volume_boulder;
+		$total_nilai_boulder_rap = $pemakaian_volume_boulder * $harsat_bahan;
+		$total_harsat_boulder_rap = ($total_volume_boulder_rap!=0)?$total_nilai_boulder_rap / $total_volume_boulder_rap * 1:0;
+
+		$total_volume_boulder_realisasi = $pemakaian_volume_boulder;
+		$total_nilai_boulder_realisasi = $pemakaian_nilai_boulder;
+		$total_harsat_boulder_realisasi = $pemakaian_harsat_boulder;
+
+		$total_volume_boulder_evaluasi = $total_volume_boulder_rap - $total_volume_boulder_realisasi;
+		$total_nilai_boulder_evaluasi = $total_nilai_boulder_rap - $total_nilai_boulder_realisasi;
 		?>
 
 		<?php
@@ -749,20 +782,20 @@
 			<tr class="table-active3">
 	            <th align="center"><b>1</b></th>
 				<th align="left"><b>BAHAN</b></th>
-				<th align="right"><?php echo number_format($total_volume_komposisi,2,',','.');?></th>
-				<th align="right"><?php echo number_format($total_nilai_komposisi / $total_volume_komposisi,0,',','.');?></th>
-				<th align="right"><?php echo number_format($total_nilai_komposisi,0,',','.');?></th>
-				<th align="right"><?php echo number_format($total_volume_realisasi,2,',','.');?></th>
-				<th align="right"><?php echo number_format($total_nilai_realisasi / $total_volume_realisasi,0,',','.');?></th>
-				<th align="right"><?php echo number_format($total_nilai_realisasi,0,',','.');?></th>
+				<th align="right"><?php echo number_format($total_volume_boulder_rap,2,',','.');?></th>
+				<th align="right"><?php echo number_format($total_harsat_boulder_rap,0,',','.');?></th>
+				<th align="right"><?php echo number_format($total_nilai_boulder_rap,0,',','.');?></th>
+				<th align="right"><?php echo number_format($total_volume_boulder_realisasi,2,',','.');?></th>
+				<th align="right"><?php echo number_format($total_harsat_boulder_realisasi,0,',','.');?></th>
+				<th align="right"><?php echo number_format($total_nilai_boulder_realisasi,0,',','.');?></th>
 				<?php
-				$styleColor = $total_volume_evaluasi < 0 ? 'color:red' : 'color:black';
+				$styleColor = $total_volume_boulder_evaluasi < 0 ? 'color:red' : 'color:black';
 				?>
-				<th align="right" style="<?php echo $styleColor ?>"><?php echo $total_volume_evaluasi < 0 ? "(".number_format(-$total_volume_evaluasi,2,',','.').")" : number_format($total_volume_evaluasi,2,',','.');?></th>
+				<th align="right" style="<?php echo $styleColor ?>"><?php echo $total_volume_boulder_evaluasi < 0 ? "(".number_format(-$total_volume_boulder_evaluasi,2,',','.').")" : number_format($total_volume_boulder_evaluasi,2,',','.');?></th>
 				<?php
-				$styleColor = $total_nilai_evaluasi < 0 ? 'color:red' : 'color:black';
+				$styleColor = $total_nilai_boulder_evaluasi < 0 ? 'color:red' : 'color:black';
 				?>
-				<th align="right" style="<?php echo $styleColor ?>"><?php echo $total_nilai_evaluasi < 0 ? "(".number_format(-$total_nilai_evaluasi,0,',','.').")" : number_format($total_nilai_evaluasi,0,',','.');?></th>
+				<th align="right" style="<?php echo $styleColor ?>"><?php echo $total_nilai_boulder_evaluasi < 0 ? "(".number_format(-$total_nilai_boulder_evaluasi,0,',','.').")" : number_format($total_nilai_boulder_evaluasi,0,',','.');?></th>
 	        </tr>
 			<tr class="table-active3">
 	            <th align="center"><b>2</b></th>
