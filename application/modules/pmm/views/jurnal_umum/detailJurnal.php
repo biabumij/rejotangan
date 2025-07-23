@@ -132,6 +132,7 @@
                                             $akun_pusat = $approval['akun_pusat'];
                                             $akun_proyek = $approval['akun_proyek'];
                                             $menu_admin = $approval['menu_admin'];
+                                            $erika = $approval['admin_id'];
                                             ?>
                                             <a href="<?= base_url('admin/jurnal_umum') ?>" class="btn btn-info" style="width:10%; font-weight:bold; border-radius:5px;"> KEMBALI</a>
                                             <?php
@@ -163,14 +164,14 @@
                                                 ?>
 
                                                 <?php
-                                                if($akun_pusat == 1 && $erika == 2){
+                                                if($akun_pusat == 1 && $erika == 18){
                                                 ?>
                                                 <a  href="<?= base_url('pmm/jurnal_umum/form/'.$detail['id']) ?>" class="btn btn-default" style="width:10%; font-weight:bold; border-radius:5px;"> EDIT</a>
                                                 <?php
                                                 }
                                                 ?>
                                                 <?php
-                                                if($akun_pusat == 1 && $erika == 2){
+                                                if($akun_pusat == 1 && $erika == 18){
                                                 ?>
                                                 <a class="btn btn-danger" style="width:10%; font-weight:bold; border-radius:5px;" onclick="DeleteData('<?= site_url('pmm/jurnal_umum/delete/'.$detail['id']);?>')"> HAPUS</a>
                                                 <?php
