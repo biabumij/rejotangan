@@ -192,7 +192,6 @@
                                                 }
                                                 ?>
                                             <?php endif; ?>
-                                            
                                         </div>
                                     </div>
                                 
