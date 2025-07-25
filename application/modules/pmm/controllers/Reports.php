@@ -3713,20 +3713,32 @@ class Reports extends CI_Controller {
 			<style type="text/css">
 				table tr.table-judul{
 					background-color: #666666;
-					font-size: 10px;
+					font-size: 11px;
 					font-weight: bold;
 					color: white;
 				}
 					
 				table tr.table-baris{
 					background-color: #F0F0F0;
-					font-size: 10px;
+					font-size: 11px;
 					font-weight: bold;
 				}
 
 				table tr.table-total{
 					background-color: #FFFF00;
-					font-size: 10px;
+					font-size: 11px;
+					font-weight: bold;
+				}
+
+				table tr.table-subtotal{
+					background-color: #b1cee8;
+					font-size: 11px;
+					font-weight: bold;
+				}
+
+				table tr.table-total2{
+					background-color: #ea9999;
+					font-size: 11px;
 					font-weight: bold;
 				}
 				
@@ -3743,7 +3755,6 @@ class Reports extends CI_Controller {
 			->from('rak')
 			->where("tanggal_rencana_kerja between '$date_0_awal' and '$date_0_akhir'")
 			->get()->row_array();
-			file_put_contents("D:\\test.txt", $this->db->last_query());
 			$akumulasi_vol_produk_a = $akumulasi_produk['vol_produk_a'];
 			$akumulasi_produk_a = $akumulasi_produk['price_a'];
 			$akumulasi_vol_produk_b = $akumulasi_produk['vol_produk_b'];
@@ -3756,6 +3767,15 @@ class Reports extends CI_Controller {
 			$akumulasi_produk_e = $akumulasi_produk['price_e'];
 			$akumulasi_vol_produk_f = $akumulasi_produk['vol_produk_f'];
 			$akumulasi_produk_f = $akumulasi_produk['price_f'];
+			$akumulasi_vol_boulder = $akumulasi_produk['vol_boulder'];
+			$akumulasi_boulder = $akumulasi_produk['boulder'];
+			$akumulasi_stone_crusher = $akumulasi_produk['stone_crusher'];
+			$akumulasi_wheel_loader = $akumulasi_produk['wheel_loader'];
+			$akumulasi_maintenance = $akumulasi_produk['maintenance'];
+			$akumulasi_bbm_solar = $akumulasi_produk['bbm_solar'];
+			$akumulasi_tangki = $akumulasi_produk['tangki'];
+			$akumulasi_timbangan = $akumulasi_produk['timbangan'];
+			$akumulasi_overhead= $akumulasi_produk['overhead'];
 
 			//BULAN SAAT INI
 			$date_now = date('Y-m-d');
@@ -3777,6 +3797,15 @@ class Reports extends CI_Controller {
 			$rak1_produk_e = $rak1_produk['price_e'];
 			$rak1_vol_produk_f = $rak1_produk['vol_produk_f'];
 			$rak1_produk_f = $rak1_produk['price_f'];
+			$rak1_vol_boulder = $rak1_produk['vol_boulder'];
+			$rak1_boulder = $rak1_produk['boulder'];
+			$rak1_stone_crusher = $rak1_produk['stone_crusher'];
+			$rak1_wheel_loader = $rak1_produk['wheel_loader'];
+			$rak1_maintenance = $rak1_produk['maintenance'];
+			$rak1_bbm_solar = $rak1_produk['bbm_solar'];
+			$rak1_tangki = $rak1_produk['tangki'];
+			$rak1_timbangan = $rak1_produk['timbangan'];
+			$rak1_overhead= $rak1_produk['overhead'];
 
 			//BULAN 2
 			$date_2_awal = date('Y-m-d', strtotime('+1 days', strtotime($date_1_akhir)));
@@ -3797,6 +3826,15 @@ class Reports extends CI_Controller {
 			$rak2_produk_e = $rak2_produk['price_e'];
 			$rak2_vol_produk_f = $rak2_produk['vol_produk_f'];
 			$rak2_produk_f = $rak2_produk['price_f'];
+			$rak2_vol_boulder = $rak2_produk['vol_boulder'];
+			$rak2_boulder = $rak2_produk['boulder'];
+			$rak2_stone_crusher = $rak2_produk['stone_crusher'];
+			$rak2_wheel_loader = $rak2_produk['wheel_loader'];
+			$rak2_maintenance = $rak2_produk['maintenance'];
+			$rak2_bbm_solar = $rak2_produk['bbm_solar'];
+			$rak2_tangki = $rak2_produk['tangki'];
+			$rak2_timbangan = $rak2_produk['timbangan'];
+			$rak2_overhead= $rak2_produk['overhead'];
 			
 			//BULAN 3
 			$date_3_awal = date('Y-m-d', strtotime('+1 days', strtotime($date_2_akhir)));
@@ -3817,6 +3855,15 @@ class Reports extends CI_Controller {
 			$rak3_produk_e = $rak3_produk['price_e'];
 			$rak3_vol_produk_f = $rak3_produk['vol_produk_f'];
 			$rak3_produk_f = $rak3_produk['price_f'];
+			$rak3_vol_boulder = $rak3_produk['vol_boulder'];
+			$rak3_boulder = $rak3_produk['boulder'];
+			$rak3_stone_crusher = $rak3_produk['stone_crusher'];
+			$rak3_wheel_loader = $rak3_produk['wheel_loader'];
+			$rak3_maintenance = $rak3_produk['maintenance'];
+			$rak3_bbm_solar = $rak3_produk['bbm_solar'];
+			$rak3_tangki = $rak3_produk['tangki'];
+			$rak3_timbangan = $rak3_produk['timbangan'];
+			$rak3_overhead= $rak3_produk['overhead'];
 
 			//BULAN 4
 			$date_4_awal = date('Y-m-d', strtotime('+1 days', strtotime($date_3_akhir)));
@@ -3837,6 +3884,15 @@ class Reports extends CI_Controller {
 			$rak4_produk_e = $rak4_produk['price_e'];
 			$rak4_vol_produk_f = $rak4_produk['vol_produk_f'];
 			$rak4_produk_f = $rak4_produk['price_f'];
+			$rak4_vol_boulder = $rak4_produk['vol_boulder'];
+			$rak4_boulder = $rak4_produk['boulder'];
+			$rak4_stone_crusher = $rak4_produk['stone_crusher'];
+			$rak4_wheel_loader = $rak4_produk['wheel_loader'];
+			$rak4_maintenance = $rak4_produk['maintenance'];
+			$rak4_bbm_solar = $rak4_produk['bbm_solar'];
+			$rak4_tangki = $rak4_produk['tangki'];
+			$rak4_timbangan = $rak4_produk['timbangan'];
+			$rak4_overhead= $rak4_produk['overhead'];
 
 			//BULAN 5
 			$date_5_awal = date('Y-m-d', strtotime('+1 days', strtotime($date_4_akhir)));
@@ -3857,6 +3913,15 @@ class Reports extends CI_Controller {
 			$rak5_produk_e = $rak5_produk['price_e'];
 			$rak5_vol_produk_f = $rak5_produk['vol_produk_f'];
 			$rak5_produk_f = $rak5_produk['price_f'];
+			$rak5_vol_boulder = $rak5_produk['vol_boulder'];
+			$rak5_boulder = $rak5_produk['boulder'];
+			$rak5_stone_crusher = $rak5_produk['stone_crusher'];
+			$rak5_wheel_loader = $rak5_produk['wheel_loader'];
+			$rak5_maintenance = $rak5_produk['maintenance'];
+			$rak5_bbm_solar = $rak5_produk['bbm_solar'];
+			$rak5_tangki = $rak5_produk['tangki'];
+			$rak5_timbangan = $rak5_produk['timbangan'];
+			$rak5_overhead= $rak5_produk['overhead'];
 
 			//BULAN 6
 			$date_6_awal = date('Y-m-d', strtotime('+1 days', strtotime($date_5_akhir)));
@@ -3877,6 +3942,15 @@ class Reports extends CI_Controller {
 			$rak6_produk_e = $rak6_produk['price_e'];
 			$rak6_vol_produk_f = $rak6_produk['vol_produk_f'];
 			$rak6_produk_f = $rak6_produk['price_f'];
+			$rak6_vol_boulder = $rak6_produk['vol_boulder'];
+			$rak6_boulder = $rak6_produk['boulder'];
+			$rak6_stone_crusher = $rak6_produk['stone_crusher'];
+			$rak6_wheel_loader = $rak6_produk['wheel_loader'];
+			$rak6_maintenance = $rak6_produk['maintenance'];
+			$rak6_bbm_solar = $rak6_produk['bbm_solar'];
+			$rak6_tangki = $rak6_produk['tangki'];
+			$rak6_timbangan = $rak6_produk['timbangan'];
+			$rak6_overhead= $rak6_produk['overhead'];
 
 			//BULAN 7
 			$date_7_awal = date('Y-m-d', strtotime('+1 days', strtotime($date_6_akhir)));
@@ -3897,8 +3971,17 @@ class Reports extends CI_Controller {
 			$rak7_produk_e = $rak7_produk['price_e'];
 			$rak7_vol_produk_f = $rak7_produk['vol_produk_f'];
 			$rak7_produk_f = $rak7_produk['price_f'];
+			$rak7_vol_boulder = $rak7_produk['vol_boulder'];
+			$rak7_boulder = $rak7_produk['boulder'];
+			$rak7_stone_crusher = $rak7_produk['stone_crusher'];
+			$rak7_wheel_loader = $rak7_produk['wheel_loader'];
+			$rak7_maintenance = $rak7_produk['maintenance'];
+			$rak7_bbm_solar = $rak7_produk['bbm_solar'];
+			$rak7_tangki = $rak7_produk['tangki'];
+			$rak7_timbangan = $rak7_produk['timbangan'];
+			$rak7_overhead= $rak7_produk['overhead'];
 
-			//JUMLAH
+			//JUMLAH PENDAPATAN USAHA
 			$jumlah_vol_produk_a = $akumulasi_vol_produk_a + $rak1_vol_produk_a + $rak2_vol_produk_a + $rak3_vol_produk_a + $rak4_vol_produk_a + $rak5_vol_produk_a + $rak6_vol_produk_a + $rak7_vol_produk_a;
 			$jumlah_produk_a = $akumulasi_produk_a + $rak1_produk_a + $rak2_produk_a + $rak3_produk_a + $rak4_produk_a + $rak5_produk_a + $rak6_produk_a + $rak7_produk_a;
 
@@ -3943,10 +4026,93 @@ class Reports extends CI_Controller {
 
 			$total_jumlah_vol = $jumlah_vol_produk_a + $jumlah_vol_produk_b + $jumlah_vol_produk_c + $jumlah_vol_produk_d + $jumlah_vol_produk_e + $jumlah_vol_produk_f;
 			$total_jumlah = $jumlah_produk_a + $jumlah_produk_b + $jumlah_produk_c + $jumlah_produk_d + $jumlah_produk_e + $jumlah_produk_f;
+
+			//JUMLAH BAHAN
+			$jumlah_vol_boulder = $akumulasi_vol_boulder + $rak1_vol_boulder + $rak2_vol_boulder + $rak3_vol_boulder + $rak4_vol_boulder + $rak5_vol_boulder + $rak6_vol_boulder + $rak7_vol_boulder;
+			$jumlah_boulder = $akumulasi_boulder + $rak1_boulder + $rak2_boulder + $rak3_boulder + $rak4_boulder + $rak5_boulder + $rak6_boulder + $rak7_boulder;
+
+			$jumlah_akumulasi_vol_bahan = $akumulasi_vol_boulder;
+			$jumlah_akumulasi_bahan = $akumulasi_boulder;
+			$jumlah_vol_bahan_rak1 = $rak1_vol_boulder;
+			$jumlah_bahan_rak1 = $rak1_boulder;
+			$jumlah_vol_bahan_rak2 = $rak2_vol_boulder;
+			$jumlah_bahan_rak2 = $rak2_boulder;
+			$jumlah_vol_bahan_rak3 = $rak3_vol_boulder;
+			$jumlah_bahan_rak3 = $rak3_boulder;
+			$jumlah_vol_bahan_rak4 = $rak4_vol_boulder;
+			$jumlah_bahan_rak4 = $rak4_boulder;
+			$jumlah_vol_bahan_rak5 = $rak5_vol_boulder;
+			$jumlah_bahan_rak5 = $rak5_boulder;
+			$jumlah_vol_bahan_rak6 = $rak6_vol_boulder;
+			$jumlah_bahan_rak6 = $rak6_boulder;
+			$jumlah_vol_bahan_rak7 = $rak7_vol_boulder;
+			$jumlah_bahan_rak7 = $rak7_boulder;
+			$total_jumlah_vol_bahan = $jumlah_vol_boulder;
+			$total_jumlah_bahan = $jumlah_boulder;
+
+			//JUMLAH ALAT
+			$jumlah_stone_crusher = $akumulasi_stone_crusher + $rak1_stone_crusher + $rak2_stone_crusher + $rak3_stone_crusher + $rak4_stone_crusher + $rak5_stone_crusher + $rak6_stone_crusher + $rak7_stone_crusher;
+			$jumlah_wheel_loader = $akumulasi_wheel_loader + $rak1_wheel_loader + $rak2_wheel_loader + $rak3_wheel_loader + $rak4_wheel_loader + $rak5_wheel_loader + $rak6_wheel_loader + $rak7_wheel_loader;
+			$jumlah_maintenance = $akumulasi_maintenance + $rak1_maintenance + $rak2_maintenance + $rak3_maintenance + $rak4_maintenance + $rak5_maintenance + $rak6_maintenance + $rak7_maintenance;
+			$jumlah_bbm_solar = $akumulasi_bbm_solar + $rak1_bbm_solar + $rak2_bbm_solar + $rak3_bbm_solar + $rak4_bbm_solar + $rak5_bbm_solar + $rak6_bbm_solar + $rak7_bbm_solar;
+			$jumlah_tangki = $akumulasi_tangki + $rak1_tangki + $rak2_tangki + $rak3_tangki + $rak4_tangki + $rak5_tangki + $rak6_tangki + $rak7_tangki;
+			$jumlah_timbangan = $akumulasi_timbangan + $rak1_timbangan + $rak2_timbangan + $rak3_timbangan + $rak4_timbangan + $rak5_timbangan + $rak6_timbangan + $rak7_timbangan;
+
+			$jumlah_akumulasi_alat = $akumulasi_stone_crusher + $akumulasi_wheel_loader + $akumulasi_maintenance + $akumulasi_bbm_solar + $akumulasi_tangki + $akumulasi_timbangan;
+			$jumlah_alat_rak1 = $rak1_stone_crusher + $rak1_wheel_loader + $rak1_maintenance + $rak1_bbm_solar + $rak2_tangki + $rak1_timbangan;
+			$jumlah_alat_rak2 = $rak2_stone_crusher + $rak2_wheel_loader + $rak2_maintenance + $rak2_bbm_solar + $rak2_tangki + $rak2_timbangan;
+			$jumlah_alat_rak3 = $rak3_stone_crusher + $rak3_wheel_loader + $rak3_maintenance + $rak3_bbm_solar + $rak2_tangki + $rak3_timbangan;
+			$jumlah_alat_rak4 = $rak4_stone_crusher + $rak4_wheel_loader + $rak4_maintenance + $rak4_bbm_solar + $rak2_tangki + $rak4_timbangan;
+			$jumlah_alat_rak5 = $rak5_stone_crusher + $rak5_wheel_loader + $rak5_maintenance + $rak5_bbm_solar + $rak2_tangki + $rak5_timbangan;
+			$jumlah_alat_rak6 = $rak6_stone_crusher + $rak6_wheel_loader + $rak6_maintenance + $rak6_bbm_solar + $rak2_tangki + $rak6_timbangan;
+			$jumlah_alat_rak7 = $rak7_stone_crusher + $rak7_wheel_loader + $rak7_maintenance + $rak7_bbm_solar + $rak2_tangki + $rak7_timbangan;
+			$total_jumlah_alat = $jumlah_stone_crusher + $jumlah_wheel_loader + $jumlah_maintenance + $jumlah_bbm_solar + $jumlah_tangki + $jumlah_timbangan;
+
+			//JUMLAH OVERHEAD
+			$jumlah_overhead = $akumulasi_overhead + $rak1_overhead + $rak2_overhead + $rak3_overhead + $rak4_overhead + $rak5_overhead + $rak6_overhead + $rak7_overhead;
+			
+			$jumlah_akumulasi_overhead = $akumulasi_overhead;
+			$jumlah_overhead_rak1 = $rak1_overhead;
+			$jumlah_overhead_rak2 = $rak2_overhead;
+			$jumlah_overhead_rak3 = $rak3_overhead;
+			$jumlah_overhead_rak4 = $rak4_overhead;
+			$jumlah_overhead_rak5 = $rak5_overhead;
+			$jumlah_overhead_rak6 = $rak6_overhead;
+			$jumlah_overhead_rak7 = $rak7_overhead;
+			$total_jumlah_overhead = $jumlah_overhead;
+
+			$sub_vol_akumulasi = $jumlah_akumulasi_vol_bahan;
+			$sub_akumulasi = $jumlah_akumulasi_bahan + $jumlah_akumulasi_alat + $jumlah_akumulasi_overhead;
+			$sub_vol_rak1 = $jumlah_vol_bahan_rak1;
+			$sub_rak1 = $jumlah_bahan_rak1 + $jumlah_alat_rak1 + $jumlah_overhead_rak1;
+			$sub_vol_rak2 = $jumlah_vol_bahan_rak2;
+			$sub_rak2 = $jumlah_bahan_rak2 + $jumlah_alat_rak2 + $jumlah_overhead_rak2;
+			$sub_vol_rak3 = $jumlah_vol_bahan_rak3;
+			$sub_rak3 = $jumlah_bahan_rak3 + $jumlah_alat_rak3 + $jumlah_overhead_rak3;
+			$sub_vol_rak4 = $jumlah_vol_bahan_rak4;
+			$sub_rak4 = $jumlah_bahan_rak4 + $jumlah_alat_rak4 + $jumlah_overhead_rak4;
+			$sub_vol_rak5 = $jumlah_vol_bahan_rak5;
+			$sub_rak5 = $jumlah_bahan_rak5 + $jumlah_alat_rak5 + $jumlah_overhead_rak5;
+			$sub_vol_rak6 = $jumlah_vol_bahan_rak6;
+			$sub_rak6 = $jumlah_bahan_rak6 + $jumlah_alat_rak6 + $jumlah_overhead_rak6;
+			$sub_vol_rak7 = $jumlah_vol_bahan_rak7;
+			$sub_rak7 = $jumlah_bahan_rak7 + $jumlah_alat_rak7 + $jumlah_overhead_rak7;
+			$total_vol_sub = $total_jumlah_vol_bahan;
+			$total_sub = $total_jumlah_bahan + $total_jumlah_alat + $total_jumlah_overhead;
+
+			$laba_akumulasi = $jumlah_akumulasi - $sub_akumulasi;
+			$laba_rak1 = $jumlah_rak1 - $sub_rak1;
+			$laba_rak2 = $jumlah_rak2 - $sub_rak2;
+			$laba_rak3 = $jumlah_rak3 - $sub_rak3;
+			$laba_rak4 = $jumlah_rak4 - $sub_rak4;
+			$laba_rak5 = $jumlah_rak5 - $sub_rak5;
+			$laba_rak6 = $jumlah_rak6 - $sub_rak6;
+			$laba_rak7 = $jumlah_rak7 - $sub_rak7;
+			$total_laba = $total_jumlah - $total_sub;
 			?>
 
 			<tr class="table-judul">
-				<th width="5%" class="text-center" rowspan="2" style="vertical-align:middle;">NO.</th>
+				<th width="3%" class="text-center" rowspan="2" style="vertical-align:middle;">NO.</th>
 				<th class="text-center" rowspan="2" style="vertical-align:middle;">URAIAN</th>
 				<th class="text-center" colspan="2" style="text-transform:uppercase;">SD. <?php echo $date_2_awal = date('F Y', strtotime('-1 days', strtotime($date_1_awal)));?></th>
 				<th class="text-center" colspan="2" style="text-transform:uppercase;"><?php echo $date_1_awal = date('F Y');?></th>
@@ -4000,7 +4166,7 @@ class Reports extends CI_Controller {
 				<th class="text-right"><?php echo number_format($rak6_produk_a,0,',','.');?></th>
 				<th class="text-right"><?php echo number_format($rak7_vol_produk_a,2,',','.');?></th>
 				<th class="text-right"><?php echo number_format($rak7_produk_a,0,',','.');?></th>
-				<th class="text-right"><?php echo number_format($jumlah_vol_produk_a,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_vol_produk_a,2,',','.');?></th>
 				<th class="text-right"><?php echo number_format($jumlah_produk_a,0,',','.');?></th>
 			</tr>
 			<tr class="table-baris">
@@ -4022,7 +4188,7 @@ class Reports extends CI_Controller {
 				<th class="text-right"><?php echo number_format($rak6_produk_b,0,',','.');?></th>
 				<th class="text-right"><?php echo number_format($rak7_vol_produk_b,2,',','.');?></th>
 				<th class="text-right"><?php echo number_format($rak7_produk_b,0,',','.');?></th>
-				<th class="text-right"><?php echo number_format($jumlah_vol_produk_b,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_vol_produk_b,2,',','.');?></th>
 				<th class="text-right"><?php echo number_format($jumlah_produk_b,0,',','.');?></th>
 			</tr>
 			<tr class="table-baris">
@@ -4044,7 +4210,7 @@ class Reports extends CI_Controller {
 				<th class="text-right"><?php echo number_format($rak6_produk_c,0,',','.');?></th>
 				<th class="text-right"><?php echo number_format($rak7_vol_produk_c,2,',','.');?></th>
 				<th class="text-right"><?php echo number_format($rak7_produk_c,0,',','.');?></th>
-				<th class="text-right"><?php echo number_format($jumlah_vol_produk_c,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_vol_produk_c,2,',','.');?></th>
 				<th class="text-right"><?php echo number_format($jumlah_produk_c,0,',','.');?></th>
 			</tr>
 			<tr class="table-baris">
@@ -4065,7 +4231,7 @@ class Reports extends CI_Controller {
 				<th class="text-right"><?php echo number_format($rak6_produk_d,0,',','.');?></th>
 				<th class="text-right"><?php echo number_format($rak7_vol_produk_d,2,',','.');?></th>
 				<th class="text-right"><?php echo number_format($rak7_produk_d,0,',','.');?></th>
-				<th class="text-right"><?php echo number_format($jumlah_vol_produk_d,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_vol_produk_d,2,',','.');?></th>
 				<th class="text-right"><?php echo number_format($jumlah_produk_d,0,',','.');?></th>
 			</tr>
 			<tr class="table-baris">
@@ -4086,7 +4252,7 @@ class Reports extends CI_Controller {
 				<th class="text-right"><?php echo number_format($rak6_produk_e,0,',','.');?></th>
 				<th class="text-right"><?php echo number_format($rak7_vol_produk_e,2,',','.');?></th>
 				<th class="text-right"><?php echo number_format($rak7_produk_e,0,',','.');?></th>
-				<th class="text-right"><?php echo number_format($jumlah_vol_produk_e,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_vol_produk_e,2,',','.');?></th>
 				<th class="text-right"><?php echo number_format($jumlah_produk_e,0,',','.');?></th>
 			</tr>
 			<tr class="table-baris">
@@ -4107,7 +4273,7 @@ class Reports extends CI_Controller {
 				<th class="text-right"><?php echo number_format($rak6_produk_f,0,',','.');?></th>
 				<th class="text-right"><?php echo number_format($rak7_vol_produk_f,2,',','.');?></th>
 				<th class="text-right"><?php echo number_format($rak7_produk_f,0,',','.');?></th>
-				<th class="text-right"><?php echo number_format($jumlah_vol_produk_f,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_vol_produk_f,2,',','.');?></th>
 				<th class="text-right"><?php echo number_format($jumlah_produk_f,0,',','.');?></th>
 			</tr>
 			<tr class="table-total">
@@ -4130,6 +4296,296 @@ class Reports extends CI_Controller {
 				<th class="text-right"><?php echo number_format($jumlah_rak7,0,',','.');?></th>
 				<th class="text-right"><?php echo number_format($total_jumlah_vol,2,',','.');?></th>
 				<th class="text-right"><?php echo number_format($total_jumlah,0,',','.');?></th>
+			</tr>
+			<tr class="table-baris">
+				<th class="text-left" colspan="20"><b>B. BIAYA BAHAN</b></th>
+			</tr>
+			<tr class="table-baris">
+				<th class="text-center">1.</th>
+				<th class="text-left">Boulder</th>
+				<th class="text-right"><?php echo number_format($akumulasi_vol_boulder,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($akumulasi_boulder,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak1_vol_boulder,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak1_boulder,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak2_vol_boulder,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak2_boulder,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak3_vol_boulder,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak3_boulder,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak4_vol_boulder,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak4_boulder,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak5_vol_boulder,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak5_boulder,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak6_vol_boulder,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak6_boulder,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak7_vol_boulder,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak7_boulder,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_vol_boulder,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_boulder,0,',','.');?></th>
+			</tr>
+			<tr class="table-total">
+				<th class="text-right" colspan="2">JUMLAH</th>
+				<th class="text-right"><?php echo number_format($jumlah_akumulasi_vol_bahan,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_akumulasi_bahan,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_vol_bahan_rak1,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_bahan_rak1,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_vol_bahan_rak1,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_bahan_rak2,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_vol_bahan_rak3,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_bahan_rak3,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_vol_bahan_rak4,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_bahan_rak4,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_vol_bahan_rak5,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_bahan_rak5,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_vol_bahan_rak6,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_bahan_rak6,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_vol_bahan_rak7,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_bahan_rak7,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($total_jumlah_vol_bahan,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($total_jumlah_bahan,0,',','.');?></th>
+			</tr>
+			<tr class="table-baris">
+				<th class="text-left" colspan="20"><b>C. BIAYA PERALATAN</b></th>
+			</tr>
+			<tr class="table-baris">
+				<th class="text-center">1.</th>
+				<th class="text-left">Stone Crusher</th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($akumulasi_stone_crusher,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak1_stone_crusher,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak2_stone_crusher,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak3_stone_crusher,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak4_stone_crusher,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak5_stone_crusher,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak6_stone_crusher,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak7_stone_crusher,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_stone_crusher,0,',','.');?></th>
+			</tr>
+			<tr class="table-baris">
+				<th class="text-center">2.</th>
+				<th class="text-left">Wheel Loader</th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($akumulasi_wheel_loader,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak1_wheel_loader,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak2_wheel_loader,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak3_wheel_loader,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak4_wheel_loader,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak5_wheel_loader,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak6_wheel_loader,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak7_wheel_loader,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_wheel_loader,0,',','.');?></th>
+			</tr>
+			<tr class="table-baris">
+				<th class="text-center">3.</th>
+				<th class="text-left">Maintenance</th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($akumulasi_maintenance,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak1_maintenance,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak2_maintenance,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak3_maintenance,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak4_maintenance,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak5_maintenance,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak6_maintenance,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak7_maintenance,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_maintenance,0,',','.');?></th>
+			</tr>
+			<tr class="table-baris">
+				<th class="text-center">4.</th>
+				<th class="text-left">BBM Solar</th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($akumulasi_bbm_solar,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak1_bbm_solar,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak2_bbm_solar,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak3_bbm_solar,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak4_bbm_solar,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak5_bbm_solar,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak6_bbm_solar,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak7_bbm_solar,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_bbm_solar,0,',','.');?></th>
+			</tr>
+			<tr class="table-baris">
+				<th class="text-center">5.</th>
+				<th class="text-left">Tangkir Solar</th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($akumulasi_tangki,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak1_tangki,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak2_tangki,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak3_tangki,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak4_tangki,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak5_tangki,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak6_tangki,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak7_tangki,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_tangki,0,',','.');?></th>
+			</tr>
+			<tr class="table-baris">
+				<th class="text-center">6.</th>
+				<th class="text-left">Timbangan</th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($akumulasi_timbangan,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak1_timbangan,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak2_timbangan,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak3_timbangan,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak4_timbangan,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak5_timbangan,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak6_timbangan,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak7_timbangan,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_timbangan,0,',','.');?></th>
+			</tr>
+			<tr class="table-total">
+				<th class="text-right" colspan="2">JUMLAH</th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_akumulasi_alat,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_alat_rak1,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_alat_rak2,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_alat_rak3,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_alat_rak4,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_alat_rak5,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_alat_rak6,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_alat_rak7,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($total_jumlah_alat,0,',','.');?></th>
+			</tr>
+			<tr class="table-baris">
+				<th class="text-left" colspan="20"><b>D. BIAYA OVERHEAD</b></th>
+			</tr>
+			<tr class="table-baris">
+				<th class="text-center">1.</th>
+				<th class="text-left">Overhead</th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($akumulasi_overhead,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak1_overhead,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak2_overhead,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak3_overhead,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak4_overhead,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak5_overhead,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak6_overhead,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($rak7_overhead,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_overhead,0,',','.');?></th>
+			</tr>
+			<tr class="table-total">
+				<th class="text-right" colspan="2">JUMLAH</th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_akumulasi_overhead,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_overhead_rak1,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_overhead_rak2,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_overhead_rak3,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_overhead_rak4,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_overhead_rak5,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_overhead_rak6,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($jumlah_overhead_rak7,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($total_jumlah_overhead,0,',','.');?></th>
+			</tr>
+			<tr class="table-subtotal">
+				<th class="text-right" colspan="2">TOTAL (BAHAN+ALAT+OVERHEAD)</th>
+				<th class="text-right"><?php echo number_format($sub_vol_akumulasi,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($sub_akumulasi,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($sub_vol_rak1,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($sub_rak1,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($sub_vol_rak2,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($sub_rak2,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($sub_vol_rak3,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($sub_rak3,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($sub_vol_rak4,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($sub_rak4,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($sub_vol_rak5,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($sub_rak5,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($sub_vol_rak6,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($sub_rak6,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($sub_vol_rak7,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($sub_rak7,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($total_vol_sub,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($total_sub,0,',','.');?></th>
+			</tr>
+			<tr class="table-total2">
+				<th class="text-right" colspan="2">LABA</th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($laba_akumulasi,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($laba_rak1,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($laba_rak2,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($laba_rak3,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($laba_rak4,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($laba_rak5,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($laba_rak6,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($laba_rak7,0,',','.');?></th>
+				<th class="text-right"></th>
+				<th class="text-right"><?php echo number_format($total_laba,0,',','.');?></th>
 			</tr>
 		</table>
 		<?php
