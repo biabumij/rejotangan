@@ -9,6 +9,7 @@
 	  	}
         .table-center th{
             text-align:center;
+            border:2px solid gray;
         }
     </style>
 </head>
@@ -47,551 +48,141 @@
                                     <table id="table-product" class="table table-bordered table-striped table-condensed table-center">
                                         <thead>
                                             <tr class="text-center">
-                                                <th width="5%">NO.</th>
-                                                <th width="30%">URAIAN</th>
-                                                <th width="10%">VOLUME</th>
-                                                <th width="15%">HARGA SATUAN</th>
-                                                <th width="10%">SATUAN</th>
-                                                <th width="40%">KOMPOSISI</th>                                  
-                                            </tr>
+                                                    <th width="5%"></th>
+                                                    <th width="35%">URAIAN</th>
+                                                    <th width="30%">VOLUME</th>
+                                                    <th width="30%">NILAI</th>                                  
+                                                </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="text-center">1.</td>
-                                                <td class="text-left">Beton-K 125</td>
-                                                <td class="text-right"><input type="text" id="vol_produk_a" name="vol_produk_a" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_a"],2,',','.');?>" onchange="changeData(1)"  autocomplete="off"></td>
-                                                <td class="text-right"><input type="text" id="price_a" name="price_a" class="form-control rupiahformat text-right" value="<?php echo number_format($rak['price_a'],0,',','.');?>" autocomplete="off"></td>
-                                                <td class="text-center">M3</td>
-                                                <td class="text-center">
-                                                    <select id="komposisi_125" name="komposisi_125" class="form-control input-sm">
-                                                        <option value="">Pilih Komposisi</option>
-                                                        <?php
-                                                        if (!empty($komposisi)) {
-                                                            foreach ($komposisi as $kom) {
-                                                        ?>
-                                                                <option value="<?php echo $kom['id']; ?>"><?php echo $kom['jobs_type']; ?></option>
-                                                            <?php
-                                                            }
-                                                        }
-                                                        ?>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">2.</td>
-                                                <td class="text-left">Beton K-175</td>
-                                                <td class="text-right"><input type="text" id="vol_produk_b" name="vol_produk_b" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_b"],2,',','.');?>" onchange="changeData(1)"  autocomplete="off"></td>
-                                                <td class="text-right"><input type="text" id="price_b" name="price_b" class="form-control rupiahformat text-right" value="<?php echo number_format($rak['price_b'],0,',','.');?>" autocomplete="off"></td>
-                                                <td class="text-center">M3</td>
-                                                <td class="text-center">
-                                                    <select id="komposisi_175" name="komposisi_175" class="form-control input-sm">
-                                                        <option value="">Pilih Komposisi</option>
-                                                        <?php
-                                                        if (!empty($komposisi)) {
-                                                            foreach ($komposisi as $kom) {
-                                                        ?>
-                                                                <option value="<?php echo $kom['id']; ?>"><?php echo $kom['jobs_type']; ?></option>
-                                                            <?php
-                                                            }
-                                                        }
-                                                        ?>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">3.</td>
-                                                <td class="text-left">Beton K 225</td>
-                                                <td class="text-right"><input type="text" id="vol_produk_c" name="vol_produk_c" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_c"],2,',','.');?>" onchange="changeData(1)"  autocomplete="off"></td>
-                                                <td class="text-right"><input type="text" id="price_c" name="price_c" class="form-control rupiahformat text-right" value="<?php echo number_format($rak['price_c'],0,',','.');?>" autocomplete="off"></td>
-                                                <td class="text-center">M3</td>
-                                                <td class="text-center">
-                                                    <select id="komposisi_225" name="komposisi_225" class="form-control input-sm">
-                                                        <option value="">Pilih Komposisi</option>
-                                                        <?php
-                                                        if (!empty($komposisi)) {
-                                                            foreach ($komposisi as $kom) {
-                                                        ?>
-                                                                <option value="<?php echo $kom['id']; ?>"><?php echo $kom['jobs_type']; ?></option>
-                                                            <?php
-                                                            }
-                                                        }
-                                                        ?>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">4.</td>
-                                                <td class="text-left">Beton K-250</td>
-                                                <td class="text-right"><input type="text" id="vol_produk_d" name="vol_produk_d" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_d"],2,',','.');?>" onchange="changeData(1)" autocomplete="off"></td>
-                                                <td class="text-right"><input type="text" id="price_d" name="price_d" class="form-control rupiahformat text-right" value="<?php echo number_format($rak['price_d'],0,',','.');?>" autocomplete="off"></td>
-                                                <td class="text-center">M3</td>
-                                                <td class="text-center">
-                                                    <select id="komposisi_250" name="komposisi_250" class="form-control input-sm">
-                                                        <option value="">Pilih Komposisi</option>
-                                                        <?php
-                                                        if (!empty($komposisi)) {
-                                                            foreach ($komposisi as $kom) {
-                                                        ?>
-                                                                <option value="<?php echo $kom['id']; ?>"><?php echo $kom['jobs_type']; ?></option>
-                                                            <?php
-                                                            }
-                                                        }
-                                                        ?>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">5.</td>
-                                                <td class="text-left">Beton K-300</td>
-                                                <td class="text-right"><input type="text" id="vol_produk_e" name="vol_produk_e" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_e"],2,',','.');?>" onchange="changeData(1)" autocomplete="off"></td>
-                                                <td class="text-right"><input type="text" id="price_e" name="price_e" class="form-control rupiahformat text-right" value="<?php echo number_format($rak['price_e'],0,',','.');?>" autocomplete="off"></td>
-                                                <td class="text-center">M3</td>
-                                                <td class="text-center">
-                                                    <select id="komposisi_300" name="komposisi_300" class="form-control input-sm">
-                                                        <option value="">Pilih Komposisi</option>
-                                                        <?php
-                                                        if (!empty($komposisi)) {
-                                                            foreach ($komposisi as $kom) {
-                                                        ?>
-                                                                <option value="<?php echo $kom['id']; ?>"><?php echo $kom['jobs_type']; ?></option>
-                                                            <?php
-                                                            }
-                                                        }
-                                                        ?>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">6.</td>
-                                                <td class="text-left">Beton K-350</td>
-                                                <td class="text-right"><input type="text" id="vol_produk_f" name="vol_produk_f" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_f"],2,',','.');?>" onchange="changeData(1)" autocomplete="off"></td>
-                                                <td class="text-right"><input type="text" id="price_f" name="price_f" class="form-control rupiahformat text-right" value="<?php echo number_format($rak['price_f'],0,',','.');?>" autocomplete="off"></td>
-                                                <td class="text-center">M3</td>
-                                                <td class="text-center">
-                                                    <select id="komposisi_350" name="komposisi_350" class="form-control input-sm">
-                                                        <option value="">Pilih Komposisi</option>
-                                                        <?php
-                                                        if (!empty($komposisi)) {
-                                                            foreach ($komposisi as $kom) {
-                                                        ?>
-                                                                <option value="<?php echo $kom['id']; ?>"><?php echo $kom['jobs_type']; ?></option>
-                                                            <?php
-                                                            }
-                                                        }
-                                                        ?>
-                                                    </select>
-                                                </td>
+                                                    <td class="text-center" rowspan="6" style="font-weight:bold;vertical-align:middle;">P<br />E<br />N<br />D<br />A<br />P<br />A<br />T<br />A<br />N</td>
+                                                    <td style="vertical-align:middle;">LPA (JLS Brantas) - Batu Split 0,5 - 10 mm (Upah Giling)</td>
+													<td>
+                                                    <input type="text" id="vol_produk_a" name="vol_produk_a" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_a"],2,',','.');?>" autocomplete="off">
+                                                    </td>
+                                                    <td>
+                                                    <input type="text" id="price_a" name="price_a" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["price_a"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="vertical-align:middle;">Bu Tampi - Batu Split 0,5 - 10 mm</td>
+													<td>
+                                                    <input type="text" id="vol_produk_b" name="vol_produk_b" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_b"],2,',','.');?>" autocomplete="off">
+                                                    </td>
+                                                    <td>
+                                                    <input type="text" id="price_b" name="price_b" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["price_b"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="vertical-align:middle;">P. Antoni - Abu Batu</td>
+													<td>
+                                                    <input type="text" id="vol_produk_c" name="vol_produk_c" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_c"],2,',','.');?>" autocomplete="off">
+                                                    </td>
+                                                    <td>
+                                                    <input type="text" id="price_c" name="price_c" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["price_c"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="vertical-align:middle;">P. Antoni - Batu Split 0,5 - 10 mm</td>
+													<td>
+                                                    <input type="text" id="vol_produk_d" name="vol_produk_d" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_d"],2,',','.');?>" autocomplete="off">
+                                                    </td>
+                                                    <td>
+                                                    <input type="text" id="price_d" name="price_d" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["price_d"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="vertical-align:middle;">P. Antoni - Batu Split 10 - 15 mm</td>
+													<td>
+                                                    <input type="text" id="vol_produk_e" name="vol_produk_e" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_e"],2,',','.');?>" autocomplete="off">
+                                                    </td>
+                                                    <td>
+                                                    <input type="text" id="price_e" name="price_e" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["price_e"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="vertical-align:middle;">P. Antoni - Batu Split 10 - 20 mm</td>
+													<td>
+                                                    <input type="text" id="vol_produk_f" name="vol_produk_f" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_f"],2,',','.');?>" autocomplete="off">
+                                                    </td>
+                                                    <td>
+                                                    <input type="text" id="price_f" name="price_f" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["price_f"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center" style="font-weight:bold; vertical-align:middle;">BAHAN</td>
+                                                    <td style="vertical-align:middle;">Boulder</td>
+													<td>
+                                                    <input type="text" id="vol_boulder" name="vol_boulder" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_boulder"],2,',','.');?>" autocomplete="off">
+                                                    </td>
+                                                    <td>
+                                                    <input type="text" id="boulder" name="boulder" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["boulder"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center" rowspan="6" style="font-weight:bold; vertical-align:middle;">A<br />L<br />A<br />T</td>
+                                                    <td style="vertical-align:middle;">Stone Crusher + Gendet</td>
+													<td></td>
+                                                    <td>
+                                                    <input type="text" id="stone_crusher" name="stone_crusher" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["stone_crusher"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="vertical-align:middle;">Wheel Loader</td>
+													<td></td>
+                                                    <td>
+                                                    <input type="text" id="wheel_loader" name="wheel_loader" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["wheel_loader"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="vertical-align:middle;">Maintenance</td>
+													<td></td>
+                                                    <td>
+                                                    <input type="text" id="maintenance" name="maintenance" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["maintenance"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="vertical-align:middle;">BBM Solar</td>
+													<td></td>
+                                                    <td>
+                                                    <input type="text" id="bbm_solar" name="bbm_solar" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["bbm_solar"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="vertical-align:middle;">Tangki Solar</td>
+													<td></td>
+                                                    <td>
+                                                    <input type="text" id="tangki" name="tangki" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["tangki"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="vertical-align:middle;">Timbangan</td>
+													<td></td>
+                                                    <td>
+                                                    <input type="text" id="timbangan" name="timbangan" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["timbangan"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center" style="font-weight:bold; vertical-align:middle;">BUA</td>
+                                                    <td style="vertical-align:middle;">Overhead</td>
+													<td></td>
+                                                    <td>
+                                                    <input type="text" id="overhead" name="overhead" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["overhead"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
+                                                    </td>
+                                                </tr>
                                             </tr>
                                         </tbody>
                                         <tfoot>
-                                            <tr>
-                                                <td colspan="2" class="text-right">GRAND TOTAL</td>
-                                                <td>
-                                                <input type="text" id="sub-total-val" name="sub_total" value="0" class="form-control numberformat tex-left text-right" readonly="">
-                                                </td>
-                                                <td></td>
-                                            </tr> 
-                                        </tfoot>
+                                                <tr>
+                                                    <td colspan="3" class="text-right">GRAND TOTAL</td>
+                                                    <td>
+                                                    <input type="text" id="sub-total-val" name="sub_total" value="0" class="form-control rupiahformat tex-left text-right" readonly="">
+                                                    </td>
+                                                    <td></td>
+                                                </tr> 
+                                            </tfoot>
                                     </table>
-
-                                    <table id="table-product" class="table table-bordered table-striped table-condensed table-center">
-                                        <thead>
-                                            <tr class="text-center">
-                                                <th width="5%">NO.</th>
-                                                <th width="25%">KEBUTUHAN BAHAN</th>
-                                                <th width="40%">PENAWARAN</th>
-                                                <th width="30%">HARGA SATUAN</th>                                 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                                <td class="text-center">1.</td>
-                                                <td>Semen</td>
-                                                <td class="text-center"><select id="penawaran_id_semen" name="penawaran_id_semen" class="form-control">
-                                                    <option value="">Pilih Penawaran</option>
-                                                    <?php
-
-                                                    foreach ($semen as $key => $sm) {
-                                                        ?>
-                                                        <option value="<?php echo $sm['penawaran_id'];?>" data-supplier_id="<?php echo $sm['supplier_id'];?>" data-measure="<?php echo $sm['measure'];?>" data-price="<?php echo $sm['price'];?>" data-tax_id="<?php echo $sm['tax_id'];?>" data-tax="<?php echo $sm['tax'];?>" data-penawaran_id="<?php echo $sm['penawaran_id'];?>"><?php echo $sm['nama'];?> - <?php echo $sm['nomor_penawaran'];?></option>
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                </select>
-                                                </td>
-                                                <td>
-                                                    <input type="text" id="price_semen" name="price_semen" class="form-control rupiahformat text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="measure_semen" name="measure_semen" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="tax_id_semen" name="tax_id_semen" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="pajak_id_semen" name="pajak_id_semen" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="supplier_id_semen" name="supplier_id_semen" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">2.</td>
-                                                <td>Pasir</td>
-                                                <td class="text-center"><select id="penawaran_id_pasir" name="penawaran_id_pasir" class="form-control">
-                                                    <option value="">Pilih Penawaran</option>
-                                                    <?php
-
-                                                    foreach ($pasir as $key => $sm) {
-                                                        ?>
-                                                        <option value="<?php echo $sm['penawaran_id'];?>" data-supplier_id="<?php echo $sm['supplier_id'];?>" data-measure="<?php echo $sm['measure'];?>" data-price="<?php echo $sm['price'];?>" data-tax_id="<?php echo $sm['tax_id'];?>" data-tax="<?php echo $sm['tax'];?>" data-penawaran_id="<?php echo $sm['penawaran_id'];?>"><?php echo $sm['nama'];?> - <?php echo $sm['nomor_penawaran'];?></option>
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                </select>
-                                                </td>
-                                                <td>
-                                                    <input type="text" id="price_pasir" name="price_pasir" class="form-control rupiahformat text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="measure_pasir" name="measure_pasir" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="tax_id_pasir" name="tax_id_pasir" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="pajak_id_pasir" name="pajak_id_pasir" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="supplier_id_pasir" name="supplier_id_pasir" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">3.</td>
-                                                <td>Batu Split 10-20</td>
-                                                <td class="text-center"><select id="penawaran_id_batu1020" name="penawaran_id_batu1020" class="form-control">
-                                                    <option value="">Pilih Penawaran</option>
-                                                    <?php
-
-                                                    foreach ($batu1020 as $key => $sm) {
-                                                        ?>
-                                                        <option value="<?php echo $sm['penawaran_id'];?>" data-supplier_id="<?php echo $sm['supplier_id'];?>" data-measure="<?php echo $sm['measure'];?>" data-price="<?php echo $sm['price'];?>" data-tax_id="<?php echo $sm['tax_id'];?>" data-tax="<?php echo $sm['tax'];?>" data-penawaran_id="<?php echo $sm['penawaran_id'];?>"><?php echo $sm['nama'];?> - <?php echo $sm['nomor_penawaran'];?></option>
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                </select>
-                                                </td>
-                                                <td>
-                                                    <input type="text" id="price_batu1020" name="price_batu1020" class="form-control rupiahformat text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="measure_batu1020" name="measure_batu1020" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="tax_id_batu1020" name="tax_id_batu1020" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="pajak_id_batu1020" name="pajak_id_batu1020" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="supplier_id_batu1020" name="supplier_id_batu1020" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">4.</td>
-                                                <td>Batu Split 20-30</td>
-                                                <td class="text-center"><select id="penawaran_id_batu2030" name="penawaran_id_batu2030" class="form-control">
-                                                    <option value="">Pilih Penawaran</option>
-                                                    <?php
-
-                                                    foreach ($batu2030 as $key => $sm) {
-                                                        ?>
-                                                        <option value="<?php echo $sm['penawaran_id'];?>" data-supplier_id="<?php echo $sm['supplier_id'];?>" data-measure="<?php echo $sm['measure'];?>" data-price="<?php echo $sm['price'];?>" data-tax_id="<?php echo $sm['tax_id'];?>" data-tax="<?php echo $sm['tax'];?>" data-penawaran_id="<?php echo $sm['penawaran_id'];?>"><?php echo $sm['nama'];?> - <?php echo $sm['nomor_penawaran'];?></option>
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                </select>
-                                                </td>
-                                                <td>
-                                                    <input type="text" id="price_batu2030" name="price_batu2030" class="form-control rupiahformat text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="measure_batu2030" name="measure_batu2030" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="tax_id_batu2030" name="tax_id_batu2030" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="pajak_id_batu2030" name="pajak_id_batu2030" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="supplier_id_batu2030" name="supplier_id_batu2030" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">5.</td>
-                                                <td>Additive</td>
-                                                <td class="text-center"><select id="penawaran_id_additive" name="penawaran_id_additive" class="form-control">
-                                                    <option value="">Pilih Penawaran</option>
-                                                    <?php
-
-                                                    foreach ($additive as $key => $sm) {
-                                                        ?>
-                                                        <option value="<?php echo $sm['penawaran_id'];?>" data-supplier_id="<?php echo $sm['supplier_id'];?>" data-measure="<?php echo $sm['measure'];?>" data-price="<?php echo $sm['price'];?>" data-tax_id="<?php echo $sm['tax_id'];?>" data-tax="<?php echo $sm['tax'];?>" data-penawaran_id="<?php echo $sm['penawaran_id'];?>"><?php echo $sm['nama'];?> - <?php echo $sm['nomor_penawaran'];?></option>
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                </select>
-                                                </td>
-                                                <td>
-                                                    <input type="text" id="price_additive" name="price_additive" class="form-control rupiahformat text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="measure_additive" name="measure_additive" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="tax_id_additive" name="tax_id_additive" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="pajak_id_additive" name="pajak_id_additive" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="supplier_id_additive" name="supplier_id_additive" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <br />
-                                    <table id="table-product" class="table table-bordered table-striped table-condensed table-center">
-                                        <thead>
-                                        <tr class="text-center">
-                                            <th width="5%">NO.</th>
-                                            <th width="25%">KEBUTUHAN BAHAN</th>
-                                            <th width="40%">PENAWARAN</th>
-                                            <th width="30%">HARGA SATUAN</th>                                 
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-center">1.</td>
-                                                <td>Batching Plant</td>
-                                                <td class="text-center"><select id="penawaran_id_bp" name="penawaran_id_bp" class="form-control">
-                                                    <option value="">Pilih Penawaran</option>
-                                                    <?php
-
-                                                    foreach ($bp as $key => $sm) {
-                                                        ?>
-                                                        <option value="<?php echo $sm['penawaran_id'];?>" data-supplier_id="<?php echo $sm['supplier_id'];?>" data-measure="<?php echo $sm['measure'];?>" data-price="<?php echo $sm['price'];?>" data-tax_id="<?php echo $sm['tax_id'];?>" data-tax="<?php echo $sm['tax'];?>" data-penawaran_id="<?php echo $sm['penawaran_id'];?>"><?php echo $sm['nama'];?> - <?php echo $sm['nomor_penawaran'];?></option>
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                </select>
-                                                </td>
-                                                <td>
-                                                    <input type="text" id="price_bp" name="price_bp" class="form-control rupiahformat text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="measure_bp" name="measure_bp" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="tax_id_bp" name="tax_id_bp" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="pajak_id_bp" name="pajak_id_bp" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="supplier_id_bp" name="supplier_id_bp" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">2.</td>
-                                                <td>Truck Mixer</td>
-                                                <td class="text-center"><select id="penawaran_id_tm" name="penawaran_id_tm" class="form-control">
-                                                    <option value="">Pilih Penawaran</option>
-                                                    <?php
-
-                                                    foreach ($tm as $key => $sm) {
-                                                        ?>
-                                                        <option value="<?php echo $sm['penawaran_id'];?>" data-supplier_id="<?php echo $sm['supplier_id'];?>" data-measure="<?php echo $sm['measure'];?>" data-price="<?php echo $sm['price'];?>" data-tax_id="<?php echo $sm['tax_id'];?>" data-tax="<?php echo $sm['tax'];?>" data-penawaran_id="<?php echo $sm['penawaran_id'];?>"><?php echo $sm['nama'];?> - <?php echo $sm['nomor_penawaran'];?></option>
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                </select>
-                                                </td>
-                                                <td>
-                                                    <input type="text" id="price_tm" name="price_tm" class="form-control rupiahformat text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="measure_tm" name="measure_tm" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="tax_id_tm" name="tax_id_tm" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="pajak_id_tm" name="pajak_id_tm" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="supplier_id_tm" name="supplier_id_tm" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">3.</td>
-                                                <td>Wheel Loader</td>
-                                                <td class="text-center"><select id="penawaran_id_wl" name="penawaran_id_wl" class="form-control">
-                                                    <option value="">Pilih Penawaran</option>
-                                                    <?php
-
-                                                    foreach ($wl as $key => $sm) {
-                                                        ?>
-                                                        <option value="<?php echo $sm['penawaran_id'];?>" data-supplier_id="<?php echo $sm['supplier_id'];?>" data-measure="<?php echo $sm['measure'];?>" data-price="<?php echo $sm['price'];?>" data-tax_id="<?php echo $sm['tax_id'];?>" data-tax="<?php echo $sm['tax'];?>" data-penawaran_id="<?php echo $sm['penawaran_id'];?>"><?php echo $sm['nama'];?> - <?php echo $sm['nomor_penawaran'];?></option>
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                </select>
-                                                </td>
-                                                <td>
-                                                    <input type="text" id="price_wl" name="price_wl" class="form-control rupiahformat text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="measure_wl" name="measure_wl" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="tax_id_wl" name="tax_id_wl" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="pajak_id_wl" name="pajak_id_wl" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="supplier_id_wl" name="supplier_id_wl" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">4.</td>
-                                                <td>BBM Solar</td>
-                                                <td class="text-center"><select id="penawaran_id_solar" name="penawaran_id_solar" class="form-control">
-                                                    <option value="">Pilih Penawaran</option>
-                                                    <?php
-
-                                                    foreach ($solar as $key => $sm) {
-                                                        ?>
-                                                        <option value="<?php echo $sm['penawaran_id'];?>" data-supplier_id="<?php echo $sm['supplier_id'];?>" data-measure="<?php echo $sm['measure'];?>" data-price="<?php echo $sm['price'];?>" data-tax_id="<?php echo $sm['tax_id'];?>" data-tax="<?php echo $sm['tax'];?>" data-penawaran_id="<?php echo $sm['penawaran_id'];?>"><?php echo $sm['nama'];?> - <?php echo $sm['nomor_penawaran'];?></option>
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                </select>
-                                                </td>
-                                                <td>
-                                                    <input type="text" id="price_solar" name="price_solar" class="form-control rupiahformat text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="measure_solar" name="measure_solar" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="tax_id_solar" name="tax_id_solar" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="pajak_id_solar" name="pajak_id_solar" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                    <input type="hidden" id="supplier_id_solar" name="supplier_id_solar" class="form-control text-right" value=""  readonly="" autocomplete="off">
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <br />
-                                    <table id="table-product" class="table table-bordered table-striped table-condensed table-center">
-                                        <thead>
-                                            <tr class="text-center">
-                                                <th width="5%">NO.</th>
-                                                <th width="45%">BUA</th>
-                                                <th width="50%">NILAI</th>                                 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-center">1.</td>
-                                                <td>BUA</td>
-                                                <td colspan="2">
-                                                    <input type="text" id="overhead" name="overhead" class="form-control text-right" value="<?php echo number_format($rak["overhead"],0,',','.');?>"  autocomplete="off">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">2.</td>
-                                                <td>Diskonto</td>
-                                                <td colspan="2">
-                                                    <input type="text" id="diskonto" name="diskonto" class="form-control text-right" value="<?php echo number_format($rak["diskonto"],0,',','.');?>"  autocomplete="off">
-                                                </td>
-                                            </tr>		
-                                        </tbody>
-                                    </table>
-                                    <br />
-                                    <div class="table-responsive">
-                                        <table id="table-product" class="table table-bordered table-striped table-condensed table-center">
-                                            <tr>
-                                                <td style="vertical-align:middle" class="text-right" width="50%">Input Realisasi?</td>
-                                                <td width="50%">
-                                                    <table width="100%">
-                                                        <tr>
-                                                            <td width="20%">Ya </td>
-                                                            <td><input type="checkbox" name="realisasi" id="realisasi" value="0" <?= (isset($rak) && $rak['realisasi'] == 0) ? 'checked' : '' ;?> /></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td width="20%">Tidak </td>
-                                                            <td><input type="checkbox" name="realisasi" id="realisasi" value="1"<?= (isset($rak) && $rak['realisasi'] == 1) ? 'checked' : '' ;?> /></td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </table>    
-                                    </div>
-                                    <br />
-                                    <div class="table-responsive">
-                                        <table id="table-product" class="table table-bordered table-striped table-condensed table-center">
-                                            <thead>
-                                                <tr class="text-center">
-                                                    <th width="5%">NO.</th>
-                                                    <th width="30%">URAIAN</th>
-                                                    <th width="35%">VOLUME</th>
-                                                    <th width="35%">NILAI</th>                                 
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="text-center">1.</td>
-                                                    <td class="text-left">Semen</td>
-                                                    <td>
-                                                        <input type="text" id="vol_realisasi_a" name="vol_realisasi_a" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_realisasi_a"],2,',','.');?>" autocomplete="off">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" id="nilai_realisasi_a" name="nilai_realisasi_a" class="form-control text-right" value="<?php echo number_format($rak["nilai_realisasi_a"],0,',','.');?>"  autocomplete="off">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">2.</td>
-                                                    <td class="text-left">Pasir</td>
-                                                    <td>
-                                                        <input type="text" id="vol_realisasi_b" name="vol_realisasi_b" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_realisasi_b"],2,',','.');?>" autocomplete="off">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" id="nilai_realisasi_b" name="nilai_realisasi_b" class="form-control text-right" value="<?php echo number_format($rak["nilai_realisasi_b"],0,',','.');?>"  autocomplete="off">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">3.</td>
-                                                    <td class="text-left">Batu 10-20</td>
-                                                    <td>
-                                                        <input type="text" id="vol_realisasi_c" name="vol_realisasi_c" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_realisasi_c"],2,',','.');?>" autocomplete="off">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" id="nilai_realisasi_c" name="nilai_realisasi_c" class="form-control text-right" value="<?php echo number_format($rak["nilai_realisasi_c"],0,',','.');?>"  autocomplete="off">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">4.</td>
-                                                    <td class="text-left">Batu 20-30</td>
-                                                    <td>
-                                                        <input type="text" id="vol_realisasi_d" name="vol_realisasi_d" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_realisasi_d"],2,',','.');?>" autocomplete="off">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" id="nilai_realisasi_d" name="nilai_realisasi_d" class="form-control text-right" value="<?php echo number_format($rak["nilai_realisasi_d"],0,',','.');?>"  autocomplete="off">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">5.</td>
-                                                    <td class="text-left">Additive</td>
-                                                    <td>
-                                                        <input type="text" id="vol_realisasi_e" name="vol_realisasi_e" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_realisasi_e"],2,',','.');?>" autocomplete="off">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" id="nilai_realisasi_e" name="nilai_realisasi_e" class="form-control text-right" value="<?php echo number_format($rak["nilai_realisasi_e"],0,',','.');?>"  autocomplete="off">
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>    
-                                    </div>
-                                    <br />
-                                    <div class="table-responsive">
-                                        <table id="table-product" class="table table-bordered table-striped table-condensed table-center">
-                                            <thead>
-                                                <tr class="text-center">
-                                                    <th width="5%">NO.</th>
-                                                    <th width="30%">URAIAN</th>
-                                                    <th width="35%">VOLUME</th>
-                                                    <th width="35%">NILAI</th>                                 
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="text-center">1.</td>
-                                                    <td class="text-left">Batching Plant + Genset </td>
-                                                    <td>
-                                                        <input type="text" id="vol_realisasi_bp" name="vol_realisasi_bp" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_realisasi_bp"],2,',','.');?>" readonly="" autocomplete="off">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" id="nilai_realisasi_bp" name="nilai_realisasi_bp" class="form-control text-right" value="<?php echo number_format($rak["nilai_realisasi_bp"],0,',','.');?>"  autocomplete="off">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">2.</td>
-                                                    <td class="text-left">Wheel Loader</td>
-                                                    <td>
-                                                        <input type="text" id="vol_realisasi_tm" name="vol_realisasi_tm" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_realisasi_tm"],2,',','.');?>" readonly="" autocomplete="off">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" id="nilai_realisasi_tm" name="nilai_realisasi_tm" class="form-control text-right" value="<?php echo number_format($rak["nilai_realisasi_tm"],0,',','.');?>"  autocomplete="off">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">3.</td>
-                                                    <td class="text-left">Truck Mixer</td>
-                                                    <td>
-                                                        <input type="text" id="vol_realisasi_wl" name="vol_realisasi_wl" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_realisasi_wl"],2,',','.');?>" readonly="" autocomplete="off">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" id="nilai_realisasi_wl" name="nilai_realisasi_wl" class="form-control text-right" value="<?php echo number_format($rak["nilai_realisasi_wl"],0,',','.');?>"  autocomplete="off">
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center">4.</td>
-                                                    <td class="text-left">BBM Solar</td>
-                                                    <td>
-                                                        <input type="text" id="vol_realisasi_solar" name="vol_realisasi_solar" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_realisasi_solar"],2,',','.');?>" autocomplete="off">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" id="nilai_realisasi_solar" name="nilai_realisasi_solar" class="form-control text-right" value="<?php echo number_format($rak["nilai_realisasi_solar"],0,',','.');?>"  autocomplete="off">
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>    
-                                    </div>
                                     <br />
                                     <div class="row">
                                         <div class="col-sm-12 text-center">
@@ -670,25 +261,49 @@
 
         function changeData(id)
         {
-			var vol_produk_a = $('#vol_produk_a').val();
-            var vol_produk_b = $('#vol_produk_b').val();
-            var vol_produk_c = $('#vol_produk_c').val();
-            var vol_produk_d = $('#vol_produk_d').val();
-            var vol_produk_e = $('#vol_produk_e').val();
-            var vol_produk_f = $('#vol_produk_f').val();
-
-			vol_produk_a = ( vol_produk_a);
-            $('#vol_produk_a').val(vol_produk_a);
-            vol_produk_b = ( vol_produk_b);
-            $('#vol_produk_b').val(vol_produk_b);
+			var price_a = $('#price_a').val();
+            var price_b = $('#price_b').val();
+            var price_c = $('#price_c').val();
+            var price_d = $('#price_d').val();
+            var price_e = $('#price_e').val();
+            var price_f = $('#price_f').val();
+            var boulder = $('#boulder').val();
+            var stone_crusher = $('#stone_crusher').val();
+            var wheel_loader = $('#wheel_loader').val();
+            var maintenance = $('#maintenance').val();
+            var bbm_solar = $('#bbm_solar').val();
+            var tangki = $('#tangki').val();
+            var timbangan = $('#timbangan').val();
+            var overhead = $('#overhead').val();
+            				
+			price_a = ( price_a);
+            $('#price_a').val(price_a);
+            price_b = ( price_b);
+            $('#price_b').val(price_b);
             vol_produk_c = ( vol_produk_c);
-            $('#vol_produk_c').val(vol_produk_c);
-            vol_produk_d = ( vol_produk_d);
-            $('#vol_produk_d').val(vol_produk_d);
-            vol_produk_e = ( vol_produk_e);
-            $('#vol_produk_e').val(vol_produk_e);
-            vol_produk_f = ( vol_produk_f);
-            $('#vol_produk_f').val(vol_produk_f);
+            $('#price_c').val(price_c);
+            price_d = ( price_d);
+            $('#price_d').val(price_d);
+            price_e = ( price_e);
+            $('#price_e').val(price_e);
+            price_f = ( price_f);
+            $('#price_f').val(price_f);
+            boulder = ( boulder);
+            $('#boulder').val(boulder);
+            stone_crusher = ( stone_crusher);
+            $('#stone_crusher').val(stone_crusher);
+            wheel_loader = ( wheel_loader);
+            $('#wheel_loader').val(wheel_loader);
+            maintenance = ( maintenance);
+            $('#maintenance').val(maintenance);
+            bbm_solar = ( bbm_solar);
+            $('#bbm_solar').val(bbm_solar);
+            tangki = ( tangki);
+            $('#tangki').val(tangki);
+            timbangan = ( timbangan);
+            $('#timbangan').val(timbangan);
+            overhead = ( overhead);
+            $('#overhead').val(overhead);
             getTotal();
         }
 
@@ -696,398 +311,15 @@
         {
             var sub_total = $('#sub-total-val').val();
 
-            sub_total = parseFloat($('#vol_produk_a').val()) + parseFloat($('#vol_produk_b').val()) + parseFloat($('#vol_produk_c').val()) + parseFloat($('#vol_produk_d').val()) + parseFloat($('#vol_produk_e').val()) + parseFloat($('#vol_produk_f').val());
+            sub_total = (parseFloat($('#price_a').val()) + parseFloat($('#price_b').val()) + parseFloat($('#price_c').val()) + parseFloat($('#price_d').val()) + parseFloat($('#price_e').val()) + parseFloat($('#price_f').val())) - (parseFloat($('#boulder').val()) + parseFloat($('#stone_crusher').val()) + parseFloat($('#wheel_loader').val()) + parseFloat($('#maintenance').val()) + parseFloat($('#bbm_solar').val()) + parseFloat($('#tangki').val()) + parseFloat($('#timbangan').val()) + parseFloat($('#overhead').val()));
             
             $('#sub-total-val').val(sub_total);
-            $('#sub-total').text($.number( sub_total, 2,',','.' ));
+            $('#sub-total').text($.number( sub_total, 0,',','.' ));
 
             total_total = parseFloat(sub_total);
             $('#total-val').val(total_total);
-            $('#total').text($.number( total_total, 2,',','.' ));
+            $('#total').text($.number( total_total, 0,',','.' ));
         }
-
-        $(document).ready(function(){
-            $('#komposisi_125').val(<?= $rak['komposisi_125'];?>).trigger('change');
-            $('#komposisi_175').val(<?= $rak['komposisi_175'];?>).trigger('change');
-            $('#komposisi_225').val(<?= $rak['komposisi_225'];?>).trigger('change');
-            $('#komposisi_250').val(<?= $rak['komposisi_250'];?>).trigger('change');
-            $('#komposisi_300').val(<?= $rak['komposisi_300'];?>).trigger('change');
-            $('#komposisi_350').val(<?= $rak['komposisi_350'];?>).trigger('change');
-
-            $('#penawaran_id_semen').val(<?= $rak['penawaran_id_semen'];?>).trigger('change');
-            $('#penawaran_id_pasir').val(<?= $rak['penawaran_id_pasir'];?>).trigger('change');
-            $('#penawaran_id_batu1020').val(<?= $rak['penawaran_id_batu1020'];?>).trigger('change');
-            $('#penawaran_id_batu2030').val(<?= $rak['penawaran_id_batu2030'];?>).trigger('change');
-            $('#penawaran_id_solar').val(<?= $rak['penawaran_id_solar'];?>).trigger('change');
-            $('#penawaran_id_tm').val(<?= $rak['penawaran_id_tm'];?>).trigger('change');
-            $('#penawaran_id_exc').val(<?= $rak['penawaran_id_exc'];?>).trigger('change');
-            $('#penawaran_id_tr').val(<?= $rak['penawaran_id_tr'];?>).trigger('change');
-        });
-
-        $('#penawaran_id_semen').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_semen').val(penawaran_id);
-			var price = $(this).find(':selected').data('price');
-            $('#price_semen').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_semen').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_semen').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_semen').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_semen').val(pajak_id);
-        });
-
-        $('#penawaran_id_pasir').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_pasir').val(penawaran_id);
-			var price = $(this).find(':selected').data('price');
-            $('#price_pasir').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_pasir').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_pasir').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_pasir').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_pasir').val(pajak_id);
-        });
-
-        $('#penawaran_id_batu1020').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_batu1020').val(penawaran_id);
-			var price = $(this).find(':selected').data('price');
-            $('#price_batu1020').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_batu1020').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_batu1020').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_batu1020').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_batu1020').val(pajak_id);
-        });
-
-        $('#penawaran_id_batu2030').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_batu2030').val(penawaran_id);
-			var price = $(this).find(':selected').data('price');
-            $('#price_batu2030').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_batu2030').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_batu2030').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_batu2030').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_batu2030').val(pajak_id);
-        });
-
-        $('#penawaran_id_solar').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_solar').val(penawaran_id);
-			var price = $(this).find(':selected').data('price');
-            $('#price_solar').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_solar').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_solar').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_solar').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_solar').val(pajak_id);
-        });
-
-        $('#penawaran_id_bp').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_bp').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_bp').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_bp').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_bp').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_bp').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_bp').val(pajak_id);
-        });
-
-        $('#penawaran_id_bp_2').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_bp_2').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_bp_2').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_bp_2').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_bp_2').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_bp_2').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_bp_2').val(pajak_id);
-        });
-
-        $('#penawaran_id_bp_3').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_bp_3').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_bp_3').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_bp_3').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_bp_3').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_bp_3').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_bp_3').val(pajak_id);
-        });
-
-        $('#penawaran_id_tm').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_tm').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_tm').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_tm').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_tm').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_tm').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_tm').val(pajak_id);
-        });
-
-        $('#penawaran_id_tm_2').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_tm_2').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_tm_2').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_tm_2').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_tm_2').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_tm_2').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_tm_2').val(pajak_id);
-        });
-
-        $('#penawaran_id_tm_3').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_tm_3').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_tm_3').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_tm_3').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_tm_3').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_tm_3').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_tm_3').val(pajak_id);
-        });
-
-        $('#penawaran_id_tm_4').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_tm_4').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_tm_4').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_tm_4').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_tm_4').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_tm_4').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_tm_4').val(pajak_id);
-        });
-
-        $('#penawaran_id_wl').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_wl').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_wl').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_wl').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_wl').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_wl').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_wl').val(pajak_id);
-        });
-
-        $('#penawaran_id_wl_2').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_wl_2').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_wl_2').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_wl_2').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_wl_2').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_wl_2').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_wl_2').val(pajak_id);
-        });
-
-        $('#penawaran_id_wl_3').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_wl_3').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_wl_3').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_wl_3').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_wl_3').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_wl_3').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_wl_3').val(pajak_id);
-        });
-
-        $('#penawaran_id_tr').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_tr').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_tr').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_tr').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_tr').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_tr').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_tr').val(pajak_id);
-        });
-
-        $('#penawaran_id_tr_2').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_tr_2').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_tr_2').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_tr_2').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_tr_2').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_tr_2').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_tr_2').val(pajak_id);
-        });
-
-        $('#penawaran_id_tr_3').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_tr_3').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_tr_3').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_tr_3').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_tr_3').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_tr_3').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_tr_3').val(pajak_id);
-        });
-
-        $('#penawaran_id_exc').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_exc').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_exc').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_exc').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_exc').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_exc').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_exc').val(pajak_id);
-        });
-
-        $('#penawaran_id_dmp_4m3').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_dmp_4m3').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_dmp_4m3').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_dmp_4m3').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_dmp_4m3').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_dmp_4m3').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_dmp_4m3').val(pajak_id);
-        });
-
-        $('#penawaran_id_dmp_10m3').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_dmp_10m3').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_dmp_10m3').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_dmp_10m3').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_dmp_10m3').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_dmp_10m3').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_dmp_10m3').val(pajak_id);
-        });
-
-        $('#penawaran_id_sc').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_sc').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_sc').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_sc').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_sc').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_sc').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_sc').val(pajak_id);
-        });
-
-        $('#penawaran_id_gns').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_gns').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_gns').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_gns').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_gns').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_gns').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_gns').val(pajak_id);
-        });
-
-        $('#penawaran_id_wl_sc').change(function(){
-            var penawaran_id = $(this).find(':selected').data('penawaran_id');
-            $('#penawaran_id_wl_sc').val(penawaran_id);
-            var price = $(this).find(':selected').data('price');
-            $('#price_wl_sc').val(price);
-            var supplier_id = $(this).find(':selected').data('supplier_id');
-            $('#supplier_id_wl_sc').val(supplier_id);
-            var measure = $(this).find(':selected').data('measure');
-            $('#measure_wl_sc').val(measure);
-            var tax_id = $(this).find(':selected').data('tax_id');
-            $('#tax_id_wl_sc').val(tax_id);
-            var pajak_id = $(this).find(':selected').data('pajak_id');
-            $('#pajak_id_wl_sc').val(pajak_id);
-        });
-
-        $(document).ready(function(){
-            $('#insentif').val(<?= $rak['insentif'];?>).trigger('change');
-            $('#overhead').val(<?= $rak['overhead'];?>).trigger('change');
-        });
 
     </script>
 
