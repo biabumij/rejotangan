@@ -241,7 +241,6 @@
 
                                 <?php if($sales_po["status"] === "OPEN") : ?>
                                 <a href="<?= base_url("penjualan/cetak_sales_order/".$sales_po["id"]) ?>" target="_blank" class="btn btn-default" style="margin-top:10px; width:150px; font-weight:bold; border-radius:5px;"> PRINT</a>
-                                
                                 <a href="<?= base_url("pmm/productions/add?po_id=".$sales_po["id"]) ?>"  class="btn btn-default" style="margin-top:10px; width:150px; font-weight:bold; border-radius:5px;"> KIRIM PRODUK</a>
                                 
                                 <?php
