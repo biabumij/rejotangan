@@ -225,9 +225,7 @@
         var form_control = '';
     </script>
     <?php echo $this->Templates->Footer();?>
-
     <script src="<?php echo base_url();?>assets/back/theme/vendor/jquery.number.min.js"></script>
-    
     <script src="<?php echo base_url();?>assets/back/theme/vendor/daterangepicker/moment.min.js"></script>
     <script src="<?php echo base_url();?>assets/back/theme/vendor/daterangepicker/daterangepicker.js"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/back/theme/vendor/daterangepicker/daterangepicker.css">
