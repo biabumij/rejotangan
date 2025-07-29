@@ -2,7 +2,6 @@
 <html lang="en" class="fixed">
 <head>
     <?php echo $this->Templates->Header();?>
-
     <style type="text/css">
         body{
 			font-family: helvetica;
@@ -262,6 +261,7 @@
             //minDate: moment().startOf('month').toDate(),
 			//maxDate: moment().endOf('month').toDate(),
         });
+		
         $('.dtpicker').on('apply.daterangepicker', function(ev, picker) {
               $(this).val(picker.startDate.format('DD-MM-YYYY'));
         });
@@ -382,9 +382,7 @@
                     }
                 }
             });
-
             event.preventDefault();
-            
         });
 
         function OpenFormMain(id='')
@@ -442,9 +440,7 @@
                     }
                 }
             });
-
             event.preventDefault();
-            
         });
 
         function OpenForm(id='')
