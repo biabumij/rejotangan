@@ -2,7 +2,6 @@
 <html lang="en" class="fixed">
 <head>
     <?php echo $this->Templates->Header();?>
-
     <style type="text/css">
         body{
 			font-family: helvetica;
@@ -166,8 +165,7 @@
         });
         
         $('.dtpicker').on('apply.daterangepicker', function(ev, picker) {
-              $(this).val(picker.startDate.format('DD-MM-YYYY'));
-              // table.ajax.reload();
+            $(this).val(picker.startDate.format('DD-MM-YYYY'));
         });
 
         function tambahData()
