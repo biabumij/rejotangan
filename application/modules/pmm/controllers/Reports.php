@@ -4168,7 +4168,7 @@ class Reports extends CI_Controller {
 			</tr>
 			<tr class="table-baris">
 				<th class="text-center">1.</th>
-				<th class="text-left">LPA (JLS Brantas) - Batu Split 0,5 - 10 mm (Upah Giling)</th>
+				<th class="text-left">LPA (JLS Brantas)</th>
 				<th class="text-right"><?php echo number_format($akumulasi_vol_produk_a,2,',','.');?></th>
 				<th class="text-right"><?php echo number_format($akumulasi_produk_a,0,',','.');?></th>
 				<th class="text-right"><?php echo number_format($rak1_vol_produk_a,2,',','.');?></th>
