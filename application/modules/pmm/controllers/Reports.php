@@ -4100,23 +4100,14 @@ class Reports extends CI_Controller {
 			$jumlah_overhead_rak7 = $rak7_overhead;
 			$total_jumlah_overhead = $jumlah_overhead;
 
-			$sub_vol_akumulasi = $jumlah_akumulasi_vol_bahan;
 			$sub_akumulasi = $jumlah_akumulasi_bahan + $jumlah_akumulasi_alat + $jumlah_akumulasi_overhead;
-			$sub_vol_rak1 = $jumlah_vol_bahan_rak1;
 			$sub_rak1 = $jumlah_bahan_rak1 + $jumlah_alat_rak1 + $jumlah_overhead_rak1;
-			$sub_vol_rak2 = $jumlah_vol_bahan_rak2;
 			$sub_rak2 = $jumlah_bahan_rak2 + $jumlah_alat_rak2 + $jumlah_overhead_rak2;
-			$sub_vol_rak3 = $jumlah_vol_bahan_rak3;
 			$sub_rak3 = $jumlah_bahan_rak3 + $jumlah_alat_rak3 + $jumlah_overhead_rak3;
-			$sub_vol_rak4 = $jumlah_vol_bahan_rak4;
 			$sub_rak4 = $jumlah_bahan_rak4 + $jumlah_alat_rak4 + $jumlah_overhead_rak4;
-			$sub_vol_rak5 = $jumlah_vol_bahan_rak5;
 			$sub_rak5 = $jumlah_bahan_rak5 + $jumlah_alat_rak5 + $jumlah_overhead_rak5;
-			$sub_vol_rak6 = $jumlah_vol_bahan_rak6;
 			$sub_rak6 = $jumlah_bahan_rak6 + $jumlah_alat_rak6 + $jumlah_overhead_rak6;
-			$sub_vol_rak7 = $jumlah_vol_bahan_rak7;
 			$sub_rak7 = $jumlah_bahan_rak7 + $jumlah_alat_rak7 + $jumlah_overhead_rak7;
-			$total_vol_sub = $total_jumlah_vol_bahan;
 			$total_sub = $total_jumlah_bahan + $total_jumlah_alat + $total_jumlah_overhead;
 
 			$laba_akumulasi = $jumlah_akumulasi - $sub_akumulasi;
@@ -4587,23 +4578,23 @@ class Reports extends CI_Controller {
 			</tr>
 			<tr class="table-subtotal">
 				<th class="text-right" colspan="2">TOTAL (BAHAN+ALAT+OVERHEAD)</th>
-				<th class="text-right"><?php echo number_format($sub_vol_akumulasi,2,',','.');?></th>
+				<th class="text-right"></th>
 				<th class="text-right"><?php echo number_format($sub_akumulasi,0,',','.');?></th>
-				<th class="text-right"><?php echo number_format($sub_vol_rak1,2,',','.');?></th>
+				<th class="text-right"></th>
 				<th class="text-right"><?php echo number_format($sub_rak1,0,',','.');?></th>
-				<th class="text-right"><?php echo number_format($sub_vol_rak2,2,',','.');?></th>
+				<th class="text-right"></th>
 				<th class="text-right"><?php echo number_format($sub_rak2,0,',','.');?></th>
-				<th class="text-right"><?php echo number_format($sub_vol_rak3,2,',','.');?></th>
+				<th class="text-right"></th>
 				<th class="text-right"><?php echo number_format($sub_rak3,0,',','.');?></th>
-				<th class="text-right"><?php echo number_format($sub_vol_rak4,2,',','.');?></th>
+				<th class="text-right"></th>
 				<th class="text-right"><?php echo number_format($sub_rak4,0,',','.');?></th>
-				<th class="text-right"><?php echo number_format($sub_vol_rak5,2,',','.');?></th>
+				<th class="text-right"></th>
 				<th class="text-right"><?php echo number_format($sub_rak5,0,',','.');?></th>
-				<th class="text-right"><?php echo number_format($sub_vol_rak6,2,',','.');?></th>
+				<th class="text-right"></th>
 				<th class="text-right"><?php echo number_format($sub_rak6,0,',','.');?></th>
-				<th class="text-right"><?php echo number_format($sub_vol_rak7,2,',','.');?></th>
+				<th class="text-right"></th>
 				<th class="text-right"><?php echo number_format($sub_rak7,0,',','.');?></th>
-				<th class="text-right"><?php echo number_format($total_vol_sub,2,',','.');?></th>
+				<th class="text-right"></th>
 				<th class="text-right"><?php echo number_format($total_sub,0,',','.');?></th>
 			</tr>
 			<tr class="table-total2">
