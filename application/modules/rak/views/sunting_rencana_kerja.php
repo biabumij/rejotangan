@@ -57,7 +57,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="text-center" rowspan="7" style="font-weight:bold;vertical-align:middle;">P<br />E<br />N<br />D<br />A<br />P<br />A<br />T<br />A<br />N</td>
-                                                <td style="vertical-align:middle;">LPA (JLS Brantas) - Batu Split 0,5 - 10 mm (Upah Giling)</td>
+                                                <td style="vertical-align:middle;">LPA (JLS Brantas)</td>
                                                 <td>
                                                 <input type="text" id="vol_produk_a" name="vol_produk_a" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_a"],2,',','.');?>" autocomplete="off">
                                                 </td>
