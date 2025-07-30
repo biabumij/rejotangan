@@ -443,13 +443,13 @@
 		$jumlah_timbangan = $akumulasi_timbangan + $rak1_timbangan + $rak2_timbangan + $rak3_timbangan + $rak4_timbangan + $rak5_timbangan + $rak6_timbangan + $rak7_timbangan;
 
 		$jumlah_akumulasi_alat = $akumulasi_stone_crusher + $akumulasi_wheel_loader + $akumulasi_maintenance + $akumulasi_bbm_solar + $akumulasi_tangki + $akumulasi_timbangan;
-		$jumlah_alat_rak1 = $rak1_stone_crusher + $rak1_wheel_loader + $rak1_maintenance + $rak1_bbm_solar + $rak2_tangki + $rak1_timbangan;
+		$jumlah_alat_rak1 = $rak1_stone_crusher + $rak1_wheel_loader + $rak1_maintenance + $rak1_bbm_solar + $rak1_tangki + $rak1_timbangan;
 		$jumlah_alat_rak2 = $rak2_stone_crusher + $rak2_wheel_loader + $rak2_maintenance + $rak2_bbm_solar + $rak2_tangki + $rak2_timbangan;
-		$jumlah_alat_rak3 = $rak3_stone_crusher + $rak3_wheel_loader + $rak3_maintenance + $rak3_bbm_solar + $rak2_tangki + $rak3_timbangan;
-		$jumlah_alat_rak4 = $rak4_stone_crusher + $rak4_wheel_loader + $rak4_maintenance + $rak4_bbm_solar + $rak2_tangki + $rak4_timbangan;
-		$jumlah_alat_rak5 = $rak5_stone_crusher + $rak5_wheel_loader + $rak5_maintenance + $rak5_bbm_solar + $rak2_tangki + $rak5_timbangan;
-		$jumlah_alat_rak6 = $rak6_stone_crusher + $rak6_wheel_loader + $rak6_maintenance + $rak6_bbm_solar + $rak2_tangki + $rak6_timbangan;
-		$jumlah_alat_rak7 = $rak7_stone_crusher + $rak7_wheel_loader + $rak7_maintenance + $rak7_bbm_solar + $rak2_tangki + $rak7_timbangan;
+		$jumlah_alat_rak3 = $rak3_stone_crusher + $rak3_wheel_loader + $rak3_maintenance + $rak3_bbm_solar + $rak3_tangki + $rak3_timbangan;
+		$jumlah_alat_rak4 = $rak4_stone_crusher + $rak4_wheel_loader + $rak4_maintenance + $rak4_bbm_solar + $rak4_tangki + $rak4_timbangan;
+		$jumlah_alat_rak5 = $rak5_stone_crusher + $rak5_wheel_loader + $rak5_maintenance + $rak5_bbm_solar + $rak5_tangki + $rak5_timbangan;
+		$jumlah_alat_rak6 = $rak6_stone_crusher + $rak6_wheel_loader + $rak6_maintenance + $rak6_bbm_solar + $rak6_tangki + $rak6_timbangan;
+		$jumlah_alat_rak7 = $rak7_stone_crusher + $rak7_wheel_loader + $rak7_maintenance + $rak7_bbm_solar + $rak7_tangki + $rak7_timbangan;
 		$total_jumlah_alat = $jumlah_stone_crusher + $jumlah_wheel_loader + $jumlah_maintenance + $jumlah_bbm_solar + $jumlah_tangki + $jumlah_timbangan;
 
 		//JUMLAH OVERHEAD
