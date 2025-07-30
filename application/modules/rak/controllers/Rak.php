@@ -52,6 +52,8 @@ class Rak extends Secure_Controller {
 		$vol_produk_e =  str_replace(',', '.', $vol_produk_e);
 		$vol_produk_f =  str_replace('.', '', $this->input->post('vol_produk_f'));
 		$vol_produk_f =  str_replace(',', '.', $vol_produk_f);
+		$vol_produk_g =  str_replace('.', '', $this->input->post('vol_produk_g'));
+		$vol_produk_g =  str_replace(',', '.', $vol_produk_g);
 
 		$price_a =  str_replace('.', '', $this->input->post('price_a'));
 		$price_b =  str_replace('.', '', $this->input->post('price_b'));
@@ -59,6 +61,7 @@ class Rak extends Secure_Controller {
 		$price_d =  str_replace('.', '', $this->input->post('price_d'));
 		$price_e =  str_replace('.', '', $this->input->post('price_e'));
 		$price_f =  str_replace('.', '', $this->input->post('price_f'));
+		$price_g =  str_replace('.', '', $this->input->post('price_g'));
 
 		$vol_boulder =  str_replace('.', '', $this->input->post('vol_boulder'));
 		$vol_boulder =  str_replace(',', '.', $vol_boulder);
@@ -84,12 +87,14 @@ class Rak extends Secure_Controller {
 			'vol_produk_d' => $vol_produk_d,
 			'vol_produk_e' => $vol_produk_e,
 			'vol_produk_f' => $vol_produk_f,
+			'vol_produk_g' => $vol_produk_g,
 			'price_a' => $price_a,
 			'price_b' => $price_b,
 			'price_c' => $price_c,
 			'price_d' => $price_d,
 			'price_e' => $price_e,
 			'price_f' => $price_f,
+			'price_g' => $price_g,
 			'vol_boulder' => $vol_boulder,
 			'boulder' => $boulder,
 			'stone_crusher' => $stone_crusher,
@@ -277,6 +282,8 @@ class Rak extends Secure_Controller {
 		$vol_produk_e =  str_replace(',', '.', $vol_produk_e);
 		$vol_produk_f =  str_replace('.', '', $this->input->post('vol_produk_f'));
 		$vol_produk_f =  str_replace(',', '.', $vol_produk_f);
+		$vol_produk_g =  str_replace('.', '', $this->input->post('vol_produk_g'));
+		$vol_produk_g =  str_replace(',', '.', $vol_produk_g);
 
 		$price_a =  str_replace('.', '', $this->input->post('price_a'));
 		$price_b =  str_replace('.', '', $this->input->post('price_b'));
@@ -284,6 +291,7 @@ class Rak extends Secure_Controller {
 		$price_d =  str_replace('.', '', $this->input->post('price_d'));
 		$price_e =  str_replace('.', '', $this->input->post('price_e'));
 		$price_f =  str_replace('.', '', $this->input->post('price_f'));
+		$price_g =  str_replace('.', '', $this->input->post('price_g'));
 
 		$vol_boulder =  str_replace('.', '', $this->input->post('vol_boulder'));
 		$vol_boulder =  str_replace(',', '.', $vol_boulder);
@@ -306,12 +314,14 @@ class Rak extends Secure_Controller {
 			'vol_produk_d' => $vol_produk_d,
 			'vol_produk_e' => $vol_produk_e,
 			'vol_produk_f' => $vol_produk_f,
+			'vol_produk_g' => $vol_produk_g,
 			'price_a' => $price_a,
 			'price_b' => $price_b,
 			'price_c' => $price_c,
 			'price_d' => $price_d,
 			'price_e' => $price_e,
 			'price_f' => $price_f,
+			'price_g' => $price_g,
 			'vol_boulder' => $vol_boulder,
 			'boulder' => $boulder,
 			'stone_crusher' => $stone_crusher,

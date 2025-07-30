@@ -47,13 +47,22 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td class="text-center" rowspan="6" style="font-weight:bold;vertical-align:middle;">P<br />E<br />N<br />D<br />A<br />P<br />A<br />T<br />A<br />N</td>
-                                                    <td style="vertical-align:middle;">LPA (JLS Brantas) - Batu Split 0,5 - 10 mm (Upah Giling)</td>
+                                                    <td class="text-center" rowspan="7" style="font-weight:bold;vertical-align:middle;">P<br />E<br />N<br />D<br />A<br />P<br />A<br />T<br />A<br />N</td>
+                                                    <td style="vertical-align:middle;">LPA (JLS Brantas)</td>
 													<td>
                                                     <input type="text" id="vol_produk_a" name="vol_produk_a" class="form-control numberformat text-right" value="" autocomplete="off">
                                                     </td>
                                                     <td>
                                                     <input type="text" id="price_a" name="price_a" class="form-control rupiahformat text-right" value="" onchange="changeData(1)" autocomplete="off">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="vertical-align:middle;">Bu Tampi - Batu Split 0,5 - 10 mm (Upah Giling)</td>
+													<td>
+                                                    <input type="text" id="vol_produk_g" name="vol_produk_g" class="form-control numberformat text-right" value="" autocomplete="off">
+                                                    </td>
+                                                    <td>
+                                                    <input type="text" id="price_g" name="price_g" class="form-control rupiahformat text-right" value="" onchange="changeData(1)" autocomplete="off">
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -263,6 +272,7 @@
             var price_d = $('#price_d').val();
             var price_e = $('#price_e').val();
             var price_f = $('#price_f').val();
+            var price_g = $('#price_g').val();
             var boulder = $('#boulder').val();
             var stone_crusher = $('#stone_crusher').val();
             var wheel_loader = $('#wheel_loader').val();
@@ -284,6 +294,8 @@
             $('#price_e').val(price_e);
             price_f = ( price_f);
             $('#price_f').val(price_f);
+            price_g = ( price_g);
+            $('#price_g').val(price_g);
             boulder = ( boulder);
             $('#boulder').val(boulder);
             stone_crusher = ( stone_crusher);
@@ -307,7 +319,7 @@
         {
             var sub_total = $('#sub-total-val').val();
 
-            sub_total = (parseFloat($('#price_a').val()) + parseFloat($('#price_b').val()) + parseFloat($('#price_c').val()) + parseFloat($('#price_d').val()) + parseFloat($('#price_e').val()) + parseFloat($('#price_f').val())) - (parseFloat($('#boulder').val()) + parseFloat($('#stone_crusher').val()) + parseFloat($('#wheel_loader').val()) + parseFloat($('#maintenance').val()) + parseFloat($('#bbm_solar').val()) + parseFloat($('#tangki').val()) + parseFloat($('#timbangan').val()) + parseFloat($('#overhead').val()));
+            sub_total = (parseFloat($('#price_a').val()) + parseFloat($('#price_b').val()) + parseFloat($('#price_c').val()) + parseFloat($('#price_d').val()) + parseFloat($('#price_e').val()) + parseFloat($('#price_f').val()) + parseFloat($('#price_g').val())) - (parseFloat($('#boulder').val()) + parseFloat($('#stone_crusher').val()) + parseFloat($('#wheel_loader').val()) + parseFloat($('#maintenance').val()) + parseFloat($('#bbm_solar').val()) + parseFloat($('#tangki').val()) + parseFloat($('#timbangan').val()) + parseFloat($('#overhead').val()));
             
             $('#sub-total-val').val(sub_total);
             $('#sub-total').text($.number( sub_total, 0,',','.' ));

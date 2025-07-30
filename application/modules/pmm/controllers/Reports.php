@@ -3751,7 +3751,7 @@ class Reports extends CI_Controller {
 			$date_0_awal = date('2025-01-01');
 			$date_0_akhir = date('Y-m-d', strtotime($last_opname));
 
-			$akumulasi_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f')
+			$akumulasi_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g')
 			->from('rak')
 			->where("tanggal_rencana_kerja between '$date_0_awal' and '$date_0_akhir'")
 			->get()->row_array();
@@ -3767,6 +3767,8 @@ class Reports extends CI_Controller {
 			$akumulasi_produk_e = $akumulasi_produk['price_e'];
 			$akumulasi_vol_produk_f = $akumulasi_produk['vol_produk_f'];
 			$akumulasi_produk_f = $akumulasi_produk['price_f'];
+			$akumulasi_vol_produk_g = $akumulasi_produk['vol_produk_g'];
+			$akumulasi_produk_g = $akumulasi_produk['price_g'];
 			$akumulasi_vol_boulder = $akumulasi_produk['vol_boulder'];
 			$akumulasi_boulder = $akumulasi_produk['boulder'];
 			$akumulasi_stone_crusher = $akumulasi_produk['stone_crusher'];
@@ -3781,7 +3783,7 @@ class Reports extends CI_Controller {
 			$date_now = date('Y-m-d');
 			$date_1_awal = date('Y-m-01', (strtotime($date_now)));
 			$date_1_akhir = date('Y-m-d', strtotime('-1 days +1 months', strtotime($date_1_awal)));
-			$rak1_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f')
+			$rak1_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g')
 			->from('rak')
 			->where("tanggal_rencana_kerja between '$date_1_awal' and '$date_1_akhir'")
 			->get()->row_array();
@@ -3797,6 +3799,8 @@ class Reports extends CI_Controller {
 			$rak1_produk_e = $rak1_produk['price_e'];
 			$rak1_vol_produk_f = $rak1_produk['vol_produk_f'];
 			$rak1_produk_f = $rak1_produk['price_f'];
+			$rak1_vol_produk_g = $rak1_produk['vol_produk_g'];
+			$rak1_produk_g = $rak1_produk['price_g'];
 			$rak1_vol_boulder = $rak1_produk['vol_boulder'];
 			$rak1_boulder = $rak1_produk['boulder'];
 			$rak1_stone_crusher = $rak1_produk['stone_crusher'];
@@ -3810,7 +3814,7 @@ class Reports extends CI_Controller {
 			//BULAN 2
 			$date_2_awal = date('Y-m-d', strtotime('+1 days', strtotime($date_1_akhir)));
 			$date_2_akhir = date('Y-m-d', strtotime('-1 days +1 months', strtotime($date_2_awal)));
-			$rak2_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f')
+			$rak2_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g')
 			->from('rak')
 			->where("tanggal_rencana_kerja between '$date_2_awal' and '$date_2_akhir'")
 			->get()->row_array();
@@ -3826,6 +3830,8 @@ class Reports extends CI_Controller {
 			$rak2_produk_e = $rak2_produk['price_e'];
 			$rak2_vol_produk_f = $rak2_produk['vol_produk_f'];
 			$rak2_produk_f = $rak2_produk['price_f'];
+			$rak2_vol_produk_g = $rak2_produk['vol_produk_g'];
+			$rak2_produk_g = $rak2_produk['price_g'];
 			$rak2_vol_boulder = $rak2_produk['vol_boulder'];
 			$rak2_boulder = $rak2_produk['boulder'];
 			$rak2_stone_crusher = $rak2_produk['stone_crusher'];
@@ -3839,7 +3845,7 @@ class Reports extends CI_Controller {
 			//BULAN 3
 			$date_3_awal = date('Y-m-d', strtotime('+1 days', strtotime($date_2_akhir)));
 			$date_3_akhir = date('Y-m-d', strtotime('-1 days +1 months', strtotime($date_3_awal)));
-			$rak3_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f')
+			$rak3_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g')
 			->from('rak')
 			->where("tanggal_rencana_kerja between '$date_3_awal' and '$date_3_akhir'")
 			->get()->row_array();
@@ -3855,6 +3861,8 @@ class Reports extends CI_Controller {
 			$rak3_produk_e = $rak3_produk['price_e'];
 			$rak3_vol_produk_f = $rak3_produk['vol_produk_f'];
 			$rak3_produk_f = $rak3_produk['price_f'];
+			$rak3_vol_produk_g = $rak3_produk['vol_produk_g'];
+			$rak3_produk_g = $rak3_produk['price_g'];
 			$rak3_vol_boulder = $rak3_produk['vol_boulder'];
 			$rak3_boulder = $rak3_produk['boulder'];
 			$rak3_stone_crusher = $rak3_produk['stone_crusher'];
@@ -3868,7 +3876,7 @@ class Reports extends CI_Controller {
 			//BULAN 4
 			$date_4_awal = date('Y-m-d', strtotime('+1 days', strtotime($date_3_akhir)));
 			$date_4_akhir = date('Y-m-d', strtotime('-1 days +1 months', strtotime($date_4_awal)));
-			$rak4_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f')
+			$rak4_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g')
 			->from('rak')
 			->where("tanggal_rencana_kerja between '$date_4_awal' and '$date_4_akhir'")
 			->get()->row_array();
@@ -3884,6 +3892,8 @@ class Reports extends CI_Controller {
 			$rak4_produk_e = $rak4_produk['price_e'];
 			$rak4_vol_produk_f = $rak4_produk['vol_produk_f'];
 			$rak4_produk_f = $rak4_produk['price_f'];
+			$rak4_vol_produk_g = $rak4_produk['vol_produk_g'];
+			$rak4_produk_g = $rak4_produk['price_g'];
 			$rak4_vol_boulder = $rak4_produk['vol_boulder'];
 			$rak4_boulder = $rak4_produk['boulder'];
 			$rak4_stone_crusher = $rak4_produk['stone_crusher'];
@@ -3897,7 +3907,7 @@ class Reports extends CI_Controller {
 			//BULAN 5
 			$date_5_awal = date('Y-m-d', strtotime('+1 days', strtotime($date_4_akhir)));
 			$date_5_akhir = date('Y-m-d', strtotime('-1 days +1 months', strtotime($date_5_awal)));
-			$rak5_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f')
+			$rak5_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g')
 			->from('rak')
 			->where("tanggal_rencana_kerja between '$date_5_awal' and '$date_5_akhir'")
 			->get()->row_array();
@@ -3913,6 +3923,8 @@ class Reports extends CI_Controller {
 			$rak5_produk_e = $rak5_produk['price_e'];
 			$rak5_vol_produk_f = $rak5_produk['vol_produk_f'];
 			$rak5_produk_f = $rak5_produk['price_f'];
+			$rak5_vol_produk_g = $rak5_produk['vol_produk_g'];
+			$rak5_produk_g = $rak5_produk['price_g'];
 			$rak5_vol_boulder = $rak5_produk['vol_boulder'];
 			$rak5_boulder = $rak5_produk['boulder'];
 			$rak5_stone_crusher = $rak5_produk['stone_crusher'];
@@ -3926,7 +3938,7 @@ class Reports extends CI_Controller {
 			//BULAN 6
 			$date_6_awal = date('Y-m-d', strtotime('+1 days', strtotime($date_5_akhir)));
 			$date_6_akhir = date('Y-m-d', strtotime('-1 days +1 months', strtotime($date_6_awal)));
-			$rak6_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f')
+			$rak6_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g')
 			->from('rak')
 			->where("tanggal_rencana_kerja between '$date_6_awal' and '$date_6_akhir'")
 			->get()->row_array();
@@ -3942,6 +3954,8 @@ class Reports extends CI_Controller {
 			$rak6_produk_e = $rak6_produk['price_e'];
 			$rak6_vol_produk_f = $rak6_produk['vol_produk_f'];
 			$rak6_produk_f = $rak6_produk['price_f'];
+			$rak6_vol_produk_g = $rak6_produk['vol_produk_g'];
+			$rak6_produk_g = $rak6_produk['price_g'];
 			$rak6_vol_boulder = $rak6_produk['vol_boulder'];
 			$rak6_boulder = $rak6_produk['boulder'];
 			$rak6_stone_crusher = $rak6_produk['stone_crusher'];
@@ -3955,7 +3969,7 @@ class Reports extends CI_Controller {
 			//BULAN 7
 			$date_7_awal = date('Y-m-d', strtotime('+1 days', strtotime($date_6_akhir)));
 			$date_7_akhir = date('Y-m-d', strtotime('-1 days +1 months', strtotime($date_7_awal)));
-			$rak7_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f')
+			$rak7_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g')
 			->from('rak')
 			->where("tanggal_rencana_kerja between '$date_7_awal' and '$date_7_akhir'")
 			->get()->row_array();
@@ -3971,6 +3985,8 @@ class Reports extends CI_Controller {
 			$rak7_produk_e = $rak7_produk['price_e'];
 			$rak7_vol_produk_f = $rak7_produk['vol_produk_f'];
 			$rak7_produk_f = $rak7_produk['price_f'];
+			$rak7_vol_produk_g = $rak7_produk['vol_produk_g'];
+			$rak7_produk_g = $rak7_produk['price_g'];
 			$rak7_vol_boulder = $rak7_produk['vol_boulder'];
 			$rak7_boulder = $rak7_produk['boulder'];
 			$rak7_stone_crusher = $rak7_produk['stone_crusher'];
@@ -4000,32 +4016,35 @@ class Reports extends CI_Controller {
 			$jumlah_vol_produk_f = $akumulasi_vol_produk_f + $rak1_vol_produk_f + $rak2_vol_produk_f + $rak3_vol_produk_f + $rak4_vol_produk_f + $rak5_vol_produk_f + $rak6_vol_produk_f + $rak7_vol_produk_f;
 			$jumlah_produk_f = $akumulasi_produk_f + $rak1_produk_f + $rak2_produk_f + $rak3_produk_f + $rak4_produk_f + $rak5_produk_f + $rak6_produk_f + $rak7_produk_f;
 
-			$jumlah_vol_akumulasi = $akumulasi_vol_produk_a + $akumulasi_vol_produk_b + $akumulasi_vol_produk_c + $akumulasi_vol_produk_d + $akumulasi_vol_produk_e + $akumulasi_vol_produk_f;
-			$jumlah_akumulasi = $akumulasi_produk_a + $akumulasi_produk_b + $akumulasi_produk_c + $akumulasi_produk_d + $akumulasi_produk_e + $akumulasi_produk_f;
+			$jumlah_vol_produk_g = $akumulasi_vol_produk_g + $rak1_vol_produk_g + $rak2_vol_produk_g + $rak3_vol_produk_g + $rak4_vol_produk_g + $rak5_vol_produk_g + $rak6_vol_produk_g + $rak7_vol_produk_g;
+			$jumlah_produk_g = $akumulasi_produk_g + $rak1_produk_g + $rak2_produk_g + $rak3_produk_g + $rak4_produk_g + $rak5_produk_g + $rak6_produk_g + $rak7_produk_g;
 
-			$jumlah_vol_rak1 = $rak1_vol_produk_a + $rak1_vol_produk_b + $rak1_vol_produk_c + $rak1_vol_produk_d + $rak1_vol_produk_e + $rak1_vol_produk_f;
-			$jumlah_rak1 = $rak1_produk_a + $rak1_produk_b + $rak1_produk_c + $rak1_produk_d + $rak1_produk_e + $rak1_produk_f;
+			$jumlah_vol_akumulasi = $akumulasi_vol_produk_a + $akumulasi_vol_produk_b + $akumulasi_vol_produk_c + $akumulasi_vol_produk_d + $akumulasi_vol_produk_e + $akumulasi_vol_produk_f + $akumulasi_vol_produk_g;
+			$jumlah_akumulasi = $akumulasi_produk_a + $akumulasi_produk_b + $akumulasi_produk_c + $akumulasi_produk_d + $akumulasi_produk_e + $akumulasi_produk_f + $akumulasi_produk_g;
 
-			$jumlah_vol_rak2 = $rak2_vol_produk_a + $rak2_vol_produk_b + $rak2_vol_produk_c + $rak2_vol_produk_d + $rak2_vol_produk_e + $rak2_vol_produk_f;
-			$jumlah_rak2 = $rak2_produk_a + $rak2_produk_b + $rak2_produk_c + $rak2_produk_d + $rak2_produk_e + $rak2_produk_f;
+			$jumlah_vol_rak1 = $rak1_vol_produk_a + $rak1_vol_produk_b + $rak1_vol_produk_c + $rak1_vol_produk_d + $rak1_vol_produk_e + $rak1_vol_produk_f + $rak1_vol_produk_g;
+			$jumlah_rak1 = $rak1_produk_a + $rak1_produk_b + $rak1_produk_c + $rak1_produk_d + $rak1_produk_e + $rak1_produk_f + $rak1_produk_g;
 
-			$jumlah_vol_rak3 = $rak3_vol_produk_a + $rak3_vol_produk_b + $rak3_vol_produk_c + $rak3_vol_produk_d + $rak3_vol_produk_e + $rak3_vol_produk_f;
-			$jumlah_rak3 = $rak3_produk_a + $rak3_produk_b + $rak3_produk_c + $rak3_produk_d + $rak3_produk_e + $rak3_produk_f;
+			$jumlah_vol_rak2 = $rak2_vol_produk_a + $rak2_vol_produk_b + $rak2_vol_produk_c + $rak2_vol_produk_d + $rak2_vol_produk_e + $rak2_vol_produk_f + $rak2_vol_produk_g;
+			$jumlah_rak2 = $rak2_produk_a + $rak2_produk_b + $rak2_produk_c + $rak2_produk_d + $rak2_produk_e + $rak2_produk_f + $rak2_produk_g;
 
-			$jumlah_vol_rak4 = $rak4_vol_produk_a + $rak4_vol_produk_b + $rak4_vol_produk_c + $rak4_vol_produk_d + $rak4_vol_produk_e + $rak4_vol_produk_f;
-			$jumlah_rak4 = $rak4_produk_a + $rak4_produk_b + $rak4_produk_c + $rak4_produk_d + $rak4_produk_e + $rak4_produk_f;
+			$jumlah_vol_rak3 = $rak3_vol_produk_a + $rak3_vol_produk_b + $rak3_vol_produk_c + $rak3_vol_produk_d + $rak3_vol_produk_e + $rak3_vol_produk_f + $rak3_vol_produk_g;
+			$jumlah_rak3 = $rak3_produk_a + $rak3_produk_b + $rak3_produk_c + $rak3_produk_d + $rak3_produk_e + $rak3_produk_f + $rak3_produk_g;
 
-			$jumlah_vol_rak5 = $rak5_vol_produk_a + $rak5_vol_produk_b + $rak5_vol_produk_c + $rak5_vol_produk_d + $rak5_vol_produk_e + $rak5_vol_produk_f;
-			$jumlah_rak5 = $rak5_produk_a + $rak5_produk_b + $rak5_produk_c + $rak5_produk_d + $rak5_produk_e + $rak5_produk_f;
+			$jumlah_vol_rak4 = $rak4_vol_produk_a + $rak4_vol_produk_b + $rak4_vol_produk_c + $rak4_vol_produk_d + $rak4_vol_produk_e + $rak4_vol_produk_f + $rak4_vol_produk_g;
+			$jumlah_rak4 = $rak4_produk_a + $rak4_produk_b + $rak4_produk_c + $rak4_produk_d + $rak4_produk_e + $rak4_produk_f + $rak4_produk_g;
 
-			$jumlah_vol_rak6 = $rak6_vol_produk_a + $rak6_vol_produk_b + $rak6_vol_produk_c + $rak6_vol_produk_d + $rak6_vol_produk_e + $rak6_vol_produk_f;
-			$jumlah_rak6 = $rak6_produk_a + $rak6_produk_b + $rak6_produk_c + $rak6_produk_d + $rak6_produk_e + $rak6_produk_f;
+			$jumlah_vol_rak5 = $rak5_vol_produk_a + $rak5_vol_produk_b + $rak5_vol_produk_c + $rak5_vol_produk_d + $rak5_vol_produk_e + $rak5_vol_produk_f + $rak5_vol_produk_g;
+			$jumlah_rak5 = $rak5_produk_a + $rak5_produk_b + $rak5_produk_c + $rak5_produk_d + $rak5_produk_e + $rak5_produk_f + $rak5_produk_g;
 
-			$jumlah_vol_rak7 = $rak7_vol_produk_a + $rak7_vol_produk_b + $rak7_vol_produk_c + $rak7_vol_produk_d + $rak7_vol_produk_e + $rak7_vol_produk_f;
-			$jumlah_rak7 = $rak7_produk_a + $rak7_produk_b + $rak7_produk_c + $rak7_produk_d + $rak7_produk_e + $rak7_produk_f;
+			$jumlah_vol_rak6 = $rak6_vol_produk_a + $rak6_vol_produk_b + $rak6_vol_produk_c + $rak6_vol_produk_d + $rak6_vol_produk_e + $rak6_vol_produk_f + $rak6_vol_produk_g;
+			$jumlah_rak6 = $rak6_produk_a + $rak6_produk_b + $rak6_produk_c + $rak6_produk_d + $rak6_produk_e + $rak6_produk_f + $rak6_produk_g;
 
-			$total_jumlah_vol = $jumlah_vol_produk_a + $jumlah_vol_produk_b + $jumlah_vol_produk_c + $jumlah_vol_produk_d + $jumlah_vol_produk_e + $jumlah_vol_produk_f;
-			$total_jumlah = $jumlah_produk_a + $jumlah_produk_b + $jumlah_produk_c + $jumlah_produk_d + $jumlah_produk_e + $jumlah_produk_f;
+			$jumlah_vol_rak7 = $rak7_vol_produk_a + $rak7_vol_produk_b + $rak7_vol_produk_c + $rak7_vol_produk_d + $rak7_vol_produk_e + $rak7_vol_produk_f + $rak7_vol_produk_g;
+			$jumlah_rak7 = $rak7_produk_a + $rak7_produk_b + $rak7_produk_c + $rak7_produk_d + $rak7_produk_e + $rak7_produk_f + $rak7_produk_g;
+
+			$total_jumlah_vol = $jumlah_vol_produk_a + $jumlah_vol_produk_b + $jumlah_vol_produk_c + $jumlah_vol_produk_d + $jumlah_vol_produk_e + $jumlah_vol_produk_f + $jumlah_vol_produk_g;
+			$total_jumlah = $jumlah_produk_a + $jumlah_produk_b + $jumlah_produk_c + $jumlah_produk_d + $jumlah_produk_e + $jumlah_produk_f + $jumlah_produk_g;
 
 			//JUMLAH BAHAN
 			$jumlah_vol_boulder = $akumulasi_vol_boulder + $rak1_vol_boulder + $rak2_vol_boulder + $rak3_vol_boulder + $rak4_vol_boulder + $rak5_vol_boulder + $rak6_vol_boulder + $rak7_vol_boulder;
@@ -4170,7 +4189,28 @@ class Reports extends CI_Controller {
 				<th class="text-right"><?php echo number_format($jumlah_produk_a,0,',','.');?></th>
 			</tr>
 			<tr class="table-baris">
-				<th class="text-center">2.</th>
+				<th class="text-center" rowspan="2" style="vertical-align:middle;">2.</th>
+				<th class="text-left">Bu Tampi - Batu Split 0,5 - 10 mm (Upah Giling)</th>
+				<th class="text-right"><?php echo number_format($akumulasi_vol_produk_g,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($akumulasi_produk_g,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak1_vol_produk_g,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak1_produk_g,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak2_vol_produk_g,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak2_produk_g,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak3_vol_produk_g,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak3_produk_g,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak4_vol_produk_g,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak4_produk_g,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak5_vol_produk_g,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak5_produk_g,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak6_vol_produk_g,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak6_produk_g,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak7_vol_produk_g,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak7_produk_g,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_vol_produk_g,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_produk_g,0,',','.');?></th>
+			</tr>
+			<tr class="table-baris">
 				<th class="text-left">Bu Tampi - Batu Split 0,5 - 10 mm</th>
 				<th class="text-right"><?php echo number_format($akumulasi_vol_produk_b,2,',','.');?></th>
 				<th class="text-right"><?php echo number_format($akumulasi_produk_b,0,',','.');?></th>
