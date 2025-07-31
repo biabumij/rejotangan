@@ -89,8 +89,7 @@
 
 	</head>
 	<body>
-		<div align="center" style="display: block;font-weight: bold;font-size: 8px;">Laporan Rencana Kerja</div>
-		<div align="center" style="display: block;font-weight: bold;font-size: 8px;">Divisi Stone Crusher</div>
+		<div align="center" style="display: block;font-weight: bold;font-size: 7px;">Laporan Rencana Kerja - Divisi Stone Crusher</div>
 		<br /><br />
 		<?php
 		$data = array();
