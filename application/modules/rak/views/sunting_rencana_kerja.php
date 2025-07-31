@@ -66,20 +66,21 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="vertical-align:middle;">Bu Tampi - Batu Boulder</td>
-                                                <td>
-                                                <input type="text" id="vol_produk_h" name="vol_produk_h" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_h"],2,',','.');?>" autocomplete="off">
-                                                </td>
-                                                <td>
-                                                <input type="text" id="price_h" name="price_h" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["price_h"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
-                                                </td>
-                                            <tr>
                                                 <td style="vertical-align:middle;">Bu Tampi - Batu Split 0,5 - 10 mm (Upah Giling)</td>
                                                 <td>
                                                 <input type="text" id="vol_produk_g" name="vol_produk_g" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_g"],2,',','.');?>" autocomplete="off">
                                                 </td>
                                                 <td>
                                                 <input type="text" id="price_g" name="price_g" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["price_g"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="vertical-align:middle;">Bu Tampi - Batu Boulder</td>
+                                                <td>
+                                                <input type="text" id="vol_produk_h" name="vol_produk_h" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_h"],2,',','.');?>" autocomplete="off">
+                                                </td>
+                                                <td>
+                                                <input type="text" id="price_h" name="price_h" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["price_h"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
                                                 </td>
                                             </tr>
                                             <tr>

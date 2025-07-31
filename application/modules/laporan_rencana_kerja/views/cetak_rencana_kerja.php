@@ -564,28 +564,7 @@
 				<th align="right"><?php echo number_format($jumlah_produk_a,0,',','.');?></th>
 			</tr>
 			<tr class="table-baris">
-				<th align="center" rowspan="2">&nbsp; <br />2.</th>
-				<th align="left">Bu Tampi - Batu Boulder</th>
-				<th align="right"><?php echo number_format($akumulasi_vol_produk_h,2,',','.');?></th>
-				<th align="right"><?php echo number_format($akumulasi_produk_h,0,',','.');?></th>
-				<th align="right"><?php echo number_format($rak1_vol_produk_h,2,',','.');?></th>
-				<th align="right"><?php echo number_format($rak1_produk_h,0,',','.');?></th>
-				<th align="right"><?php echo number_format($rak2_vol_produk_h,2,',','.');?></th>
-				<th align="right"><?php echo number_format($rak2_produk_h,0,',','.');?></th>
-				<th align="right"><?php echo number_format($rak3_vol_produk_h,2,',','.');?></th>
-				<th align="right"><?php echo number_format($rak3_produk_h,0,',','.');?></th>
-				<th align="right"><?php echo number_format($rak4_vol_produk_h,2,',','.');?></th>
-				<th align="right"><?php echo number_format($rak4_produk_h,0,',','.');?></th>
-				<th align="right"><?php echo number_format($rak5_vol_produk_h,2,',','.');?></th>
-				<th align="right"><?php echo number_format($rak5_produk_h,0,',','.');?></th>
-				<th align="right"><?php echo number_format($rak6_vol_produk_h,2,',','.');?></th>
-				<th align="right"><?php echo number_format($rak6_produk_h,0,',','.');?></th>
-				<th align="right"><?php echo number_format($rak7_vol_produk_h,2,',','.');?></th>
-				<th align="right"><?php echo number_format($rak7_produk_h,0,',','.');?></th>
-				<th align="right"><?php echo number_format($jumlah_vol_produk_h,2,',','.');?></th>
-				<th align="right"><?php echo number_format($jumlah_produk_h,0,',','.');?></th>
-			</tr>
-			<tr class="table-baris">
+				<th align="center" rowspan="3">&nbsp; <br />2.</th>
 				<th align="left">Bu Tampi - Batu Split 0,5 - 10 mm (Upah Giling)</th>
 				<th align="right"><?php echo number_format($akumulasi_vol_produk_g,2,',','.');?></th>
 				<th align="right"><?php echo number_format($akumulasi_produk_g,0,',','.');?></th>
@@ -605,6 +584,27 @@
 				<th align="right"><?php echo number_format($rak7_produk_g,0,',','.');?></th>
 				<th align="right"><?php echo number_format($jumlah_vol_produk_g,2,',','.');?></th>
 				<th align="right"><?php echo number_format($jumlah_produk_g,0,',','.');?></th>
+			</tr>
+			<tr class="table-baris">
+				<th align="left">Bu Tampi - Batu Boulder</th>
+				<th align="right"><?php echo number_format($akumulasi_vol_produk_h,2,',','.');?></th>
+				<th align="right"><?php echo number_format($akumulasi_produk_h,0,',','.');?></th>
+				<th align="right"><?php echo number_format($rak1_vol_produk_h,2,',','.');?></th>
+				<th align="right"><?php echo number_format($rak1_produk_h,0,',','.');?></th>
+				<th align="right"><?php echo number_format($rak2_vol_produk_h,2,',','.');?></th>
+				<th align="right"><?php echo number_format($rak2_produk_h,0,',','.');?></th>
+				<th align="right"><?php echo number_format($rak3_vol_produk_h,2,',','.');?></th>
+				<th align="right"><?php echo number_format($rak3_produk_h,0,',','.');?></th>
+				<th align="right"><?php echo number_format($rak4_vol_produk_h,2,',','.');?></th>
+				<th align="right"><?php echo number_format($rak4_produk_h,0,',','.');?></th>
+				<th align="right"><?php echo number_format($rak5_vol_produk_h,2,',','.');?></th>
+				<th align="right"><?php echo number_format($rak5_produk_h,0,',','.');?></th>
+				<th align="right"><?php echo number_format($rak6_vol_produk_h,2,',','.');?></th>
+				<th align="right"><?php echo number_format($rak6_produk_h,0,',','.');?></th>
+				<th align="right"><?php echo number_format($rak7_vol_produk_h,2,',','.');?></th>
+				<th align="right"><?php echo number_format($rak7_produk_h,0,',','.');?></th>
+				<th align="right"><?php echo number_format($jumlah_vol_produk_h,2,',','.');?></th>
+				<th align="right"><?php echo number_format($jumlah_produk_h,0,',','.');?></th>
 			</tr>
 			<tr class="table-baris">
 				<th align="left">Bu Tampi - Batu Split 0,5 - 10 mm</th>
