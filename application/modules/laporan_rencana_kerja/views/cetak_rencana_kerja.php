@@ -6,7 +6,7 @@
 	  <style type="text/css">
 		body {
 			font-family: helvetica;
-			font-size: 7px;
+			font-size: 6px;
 		}
 
 		table.table-border-pojok-kiri, th.table-border-pojok-kiri, td.table-border-pojok-kiri {
