@@ -506,16 +506,16 @@
 		<table width="99%" cellpadding="3" border="1">
 			<tr class="table-judul">
 				<th width="3%" align="center" rowspan="2">&nbsp; <br />NO.</th>
-				<th width="16%" align="center" rowspan="2">&nbsp; <br />URAIAN</th>
-				<th width="9%" align="center" colspan="2" style="text-transform:uppercase;">SD. <?php echo $date_2_awal = date('F Y', strtotime('-1 days', strtotime($date_1_awal)));?></th>
-				<th width="9%" align="center" colspan="2" style="text-transform:uppercase;"><?php echo $date_1_awal = date('F Y');?></th>
-				<th width="9%" align="center" colspan="2" style="text-transform:uppercase;"><?php echo $date_2_awal = date('F Y', strtotime('+1 days', strtotime($date_1_akhir)));?></th>
-				<th width="9%" align="center" colspan="2" style="text-transform:uppercase;"><?php echo $date_2_awal = date('F Y', strtotime('+1 days', strtotime($date_2_akhir)));?></th>
-				<th width="9%" align="center" colspan="2" style="text-transform:uppercase;"><?php echo $date_2_awal = date('F Y', strtotime('+1 days', strtotime($date_3_akhir)));?></th>
-				<th width="9%" align="center" colspan="2" style="text-transform:uppercase;"><?php echo $date_2_awal = date('F Y', strtotime('+1 days', strtotime($date_4_akhir)));?></th>
-				<th width="9%" align="center" colspan="2" style="text-transform:uppercase;"><?php echo $date_2_awal = date('F Y', strtotime('+1 days', strtotime($date_5_akhir)));?></th>
-				<th width="9%" align="center" colspan="2" style="text-transform:uppercase;"><?php echo $date_2_awal = date('F Y', strtotime('+1 days', strtotime($date_6_akhir)));?></th>
-				<th width="9%" align="center" colspan="2">JUMLAH</th>
+				<th width="7%" align="center" rowspan="2">&nbsp; <br />URAIAN</th>
+				<th width="10%" align="center" colspan="2" style="text-transform:uppercase;">SD. <?php echo $date_2_awal = date('F Y', strtotime('-1 days', strtotime($date_1_awal)));?></th>
+				<th width="10%" align="center" colspan="2" style="text-transform:uppercase;"><?php echo $date_1_awal = date('F Y');?></th>
+				<th width="10%" align="center" colspan="2" style="text-transform:uppercase;"><?php echo $date_2_awal = date('F Y', strtotime('+1 days', strtotime($date_1_akhir)));?></th>
+				<th width="10%" align="center" colspan="2" style="text-transform:uppercase;"><?php echo $date_2_awal = date('F Y', strtotime('+1 days', strtotime($date_2_akhir)));?></th>
+				<th width="10%" align="center" colspan="2" style="text-transform:uppercase;"><?php echo $date_2_awal = date('F Y', strtotime('+1 days', strtotime($date_3_akhir)));?></th>
+				<th width="10%" align="center" colspan="2" style="text-transform:uppercase;"><?php echo $date_2_awal = date('F Y', strtotime('+1 days', strtotime($date_4_akhir)));?></th>
+				<th width="10%" align="center" colspan="2" style="text-transform:uppercase;"><?php echo $date_2_awal = date('F Y', strtotime('+1 days', strtotime($date_5_akhir)));?></th>
+				<th width="10%" align="center" colspan="2" style="text-transform:uppercase;"><?php echo $date_2_awal = date('F Y', strtotime('+1 days', strtotime($date_6_akhir)));?></th>
+				<th width="10%" align="center" colspan="2">JUMLAH</th>
 	        </tr>
 			<tr class="table-judul">
 				<th align="center" ><b>VOL.</b></th>
