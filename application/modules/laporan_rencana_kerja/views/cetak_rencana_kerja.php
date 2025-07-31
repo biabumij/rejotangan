@@ -116,7 +116,7 @@
 		$date_0_awal = date('2025-01-01');
 		$date_0_akhir = date('Y-m-d', strtotime($last_opname));
 
-		$akumulasi_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g, SUM(vol_produk_g) as vol_produk_h, SUM(price_a) as price_a, SUM(price_b) as price_b, SUM(price_c) as price_c, SUM(price_d) as price_d, SUM(price_e) as price_e, SUM(price_f) as price_f, SUM(price_g) as price_g, SUM(price_h) as price_h')
+		$akumulasi_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g, SUM(vol_produk_h) as vol_produk_h, SUM(price_a) as price_a, SUM(price_b) as price_b, SUM(price_c) as price_c, SUM(price_d) as price_d, SUM(price_e) as price_e, SUM(price_f) as price_f, SUM(price_g) as price_g, SUM(price_h) as price_h')
 		->from('rak')
 		->where("tanggal_rencana_kerja between '$date_0_awal' and '$date_0_akhir'")
 		->get()->row_array();
@@ -150,7 +150,7 @@
 		$date_now = date('Y-m-d');
 		$date_1_awal = date('Y-m-01', (strtotime($date_now)));
 		$date_1_akhir = date('Y-m-d', strtotime('-1 days +1 months', strtotime($date_1_awal)));
-		$rak1_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g, SUM(vol_produk_g) as vol_produk_h, SUM(price_a) as price_a, SUM(price_b) as price_b, SUM(price_c) as price_c, SUM(price_d) as price_d, SUM(price_e) as price_e, SUM(price_f) as price_f, SUM(price_g) as price_g, SUM(price_h) as price_h')
+		$rak1_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g, SUM(vol_produk_h) as vol_produk_h, SUM(price_a) as price_a, SUM(price_b) as price_b, SUM(price_c) as price_c, SUM(price_d) as price_d, SUM(price_e) as price_e, SUM(price_f) as price_f, SUM(price_g) as price_g, SUM(price_h) as price_h')
 		->from('rak')
 		->where("tanggal_rencana_kerja between '$date_1_awal' and '$date_1_akhir'")
 		->get()->row_array();
@@ -183,7 +183,7 @@
 		//BULAN 2
 		$date_2_awal = date('Y-m-d', strtotime('+1 days', strtotime($date_1_akhir)));
 		$date_2_akhir = date('Y-m-d', strtotime('-1 days +1 months', strtotime($date_2_awal)));
-		$rak2_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g, SUM(vol_produk_g) as vol_produk_h, SUM(price_a) as price_a, SUM(price_b) as price_b, SUM(price_c) as price_c, SUM(price_d) as price_d, SUM(price_e) as price_e, SUM(price_f) as price_f, SUM(price_g) as price_g, SUM(price_h) as price_h')
+		$rak2_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g, SUM(vol_produk_h) as vol_produk_h, SUM(price_a) as price_a, SUM(price_b) as price_b, SUM(price_c) as price_c, SUM(price_d) as price_d, SUM(price_e) as price_e, SUM(price_f) as price_f, SUM(price_g) as price_g, SUM(price_h) as price_h')
 		->from('rak')
 		->where("tanggal_rencana_kerja between '$date_2_awal' and '$date_2_akhir'")
 		->get()->row_array();
@@ -216,7 +216,7 @@
 		//BULAN 3
 		$date_3_awal = date('Y-m-d', strtotime('+1 days', strtotime($date_2_akhir)));
 		$date_3_akhir = date('Y-m-d', strtotime('-1 days +1 months', strtotime($date_3_awal)));
-		$rak3_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g, SUM(vol_produk_g) as vol_produk_h, SUM(price_a) as price_a, SUM(price_b) as price_b, SUM(price_c) as price_c, SUM(price_d) as price_d, SUM(price_e) as price_e, SUM(price_f) as price_f, SUM(price_g) as price_g, SUM(price_h) as price_h')
+		$rak3_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g, SUM(vol_produk_h) as vol_produk_h, SUM(price_a) as price_a, SUM(price_b) as price_b, SUM(price_c) as price_c, SUM(price_d) as price_d, SUM(price_e) as price_e, SUM(price_f) as price_f, SUM(price_g) as price_g, SUM(price_h) as price_h')
 		->from('rak')
 		->where("tanggal_rencana_kerja between '$date_3_awal' and '$date_3_akhir'")
 		->get()->row_array();
@@ -249,7 +249,7 @@
 		//BULAN 4
 		$date_4_awal = date('Y-m-d', strtotime('+1 days', strtotime($date_3_akhir)));
 		$date_4_akhir = date('Y-m-d', strtotime('-1 days +1 months', strtotime($date_4_awal)));
-		$rak4_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g, SUM(vol_produk_g) as vol_produk_h, SUM(price_a) as price_a, SUM(price_b) as price_b, SUM(price_c) as price_c, SUM(price_d) as price_d, SUM(price_e) as price_e, SUM(price_f) as price_f, SUM(price_g) as price_g, SUM(price_h) as price_h')
+		$rak4_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g, SUM(vol_produk_h) as vol_produk_h, SUM(price_a) as price_a, SUM(price_b) as price_b, SUM(price_c) as price_c, SUM(price_d) as price_d, SUM(price_e) as price_e, SUM(price_f) as price_f, SUM(price_g) as price_g, SUM(price_h) as price_h')
 		->from('rak')
 		->where("tanggal_rencana_kerja between '$date_4_awal' and '$date_4_akhir'")
 		->get()->row_array();
@@ -282,7 +282,7 @@
 		//BULAN 5
 		$date_5_awal = date('Y-m-d', strtotime('+1 days', strtotime($date_4_akhir)));
 		$date_5_akhir = date('Y-m-d', strtotime('-1 days +1 months', strtotime($date_5_awal)));
-		$rak5_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g, SUM(vol_produk_g) as vol_produk_h, SUM(price_a) as price_a, SUM(price_b) as price_b, SUM(price_c) as price_c, SUM(price_d) as price_d, SUM(price_e) as price_e, SUM(price_f) as price_f, SUM(price_g) as price_g, SUM(price_h) as price_h')
+		$rak5_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g, SUM(vol_produk_h) as vol_produk_h, SUM(price_a) as price_a, SUM(price_b) as price_b, SUM(price_c) as price_c, SUM(price_d) as price_d, SUM(price_e) as price_e, SUM(price_f) as price_f, SUM(price_g) as price_g, SUM(price_h) as price_h')
 		->from('rak')
 		->where("tanggal_rencana_kerja between '$date_5_awal' and '$date_5_akhir'")
 		->get()->row_array();
@@ -315,7 +315,7 @@
 		//BULAN 6
 		$date_6_awal = date('Y-m-d', strtotime('+1 days', strtotime($date_5_akhir)));
 		$date_6_akhir = date('Y-m-d', strtotime('-1 days +1 months', strtotime($date_6_awal)));
-		$rak6_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g, SUM(vol_produk_g) as vol_produk_h, SUM(price_a) as price_a, SUM(price_b) as price_b, SUM(price_c) as price_c, SUM(price_d) as price_d, SUM(price_e) as price_e, SUM(price_f) as price_f, SUM(price_g) as price_g, SUM(price_h) as price_h')
+		$rak6_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g, SUM(vol_produk_h) as vol_produk_h, SUM(price_a) as price_a, SUM(price_b) as price_b, SUM(price_c) as price_c, SUM(price_d) as price_d, SUM(price_e) as price_e, SUM(price_f) as price_f, SUM(price_g) as price_g, SUM(price_h) as price_h')
 		->from('rak')
 		->where("tanggal_rencana_kerja between '$date_6_awal' and '$date_6_akhir'")
 		->get()->row_array();
@@ -348,7 +348,7 @@
 		//BULAN 7
 		$date_7_awal = date('Y-m-d', strtotime('+1 days', strtotime($date_6_akhir)));
 		$date_7_akhir = date('Y-m-d', strtotime('-1 days +1 months', strtotime($date_7_awal)));
-		$rak7_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g, SUM(vol_produk_g) as vol_produk_h, SUM(price_a) as price_a, SUM(price_b) as price_b, SUM(price_c) as price_c, SUM(price_d) as price_d, SUM(price_e) as price_e, SUM(price_f) as price_f, SUM(price_g) as price_g, SUM(price_h) as price_h')
+		$rak7_produk = $this->db->select('*, SUM(vol_produk_a) as vol_produk_a, SUM(vol_produk_b) as vol_produk_b, SUM(vol_produk_c) as vol_produk_c, SUM(vol_produk_d) as vol_produk_d, SUM(vol_produk_e) as vol_produk_e, SUM(vol_produk_f) as vol_produk_f, SUM(vol_produk_g) as vol_produk_g, SUM(vol_produk_h) as vol_produk_h, SUM(price_a) as price_a, SUM(price_b) as price_b, SUM(price_c) as price_c, SUM(price_d) as price_d, SUM(price_e) as price_e, SUM(price_f) as price_f, SUM(price_g) as price_g, SUM(price_h) as price_h')
 		->from('rak')
 		->where("tanggal_rencana_kerja between '$date_7_awal' and '$date_7_akhir'")
 		->get()->row_array();
