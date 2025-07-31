@@ -22,7 +22,7 @@ class Produk extends Secure_Controller {
 		if($tipe == 1){
 			$this->db->where('kategori_produk',1);
 		}else if($tipe == 2){
-			$this->db->where('kategori_produk',2);
+			$this->db->where('kategori_produk',6);
 		}else if($tipe == 3){
 			$this->db->where('kategori_produk',3);
 		}else if($tipe == 4){
