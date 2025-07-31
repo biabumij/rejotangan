@@ -56,7 +56,7 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="text-center" rowspan="7" style="font-weight:bold;vertical-align:middle;">P<br />E<br />N<br />D<br />A<br />P<br />A<br />T<br />A<br />N</td>
+                                                <td class="text-center" rowspan="8" style="font-weight:bold;vertical-align:middle;">P<br />E<br />N<br />D<br />A<br />P<br />A<br />T<br />A<br />N</td>
                                                 <td style="vertical-align:middle;">LPA (JLS Brantas)</td>
                                                 <td>
                                                 <input type="text" id="vol_produk_a" name="vol_produk_a" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_a"],2,',','.');?>" autocomplete="off">
@@ -65,6 +65,14 @@
                                                 <input type="text" id="price_a" name="price_a" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["price_a"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
                                                 </td>
                                             </tr>
+                                            <tr>
+                                                <td style="vertical-align:middle;">Bu Tampi - Batu Boulder</td>
+                                                <td>
+                                                <input type="text" id="vol_produk_h" name="vol_produk_h" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_h"],2,',','.');?>" autocomplete="off">
+                                                </td>
+                                                <td>
+                                                <input type="text" id="price_h" name="price_h" class="form-control rupiahformat text-right" value="<?php echo number_format($rak["price_h"],0,',','.');?>" onchange="changeData(1)" autocomplete="off">
+                                                </td>
                                             <tr>
                                                 <td style="vertical-align:middle;">Bu Tampi - Batu Split 0,5 - 10 mm (Upah Giling)</td>
                                                 <td>

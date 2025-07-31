@@ -3769,6 +3769,8 @@ class Reports extends CI_Controller {
 			$akumulasi_produk_f = $akumulasi_produk['price_f'];
 			$akumulasi_vol_produk_g = $akumulasi_produk['vol_produk_g'];
 			$akumulasi_produk_g = $akumulasi_produk['price_g'];
+			$akumulasi_vol_produk_h = $akumulasi_produk['vol_produk_h'];
+			$akumulasi_produk_h = $akumulasi_produk['price_h'];
 			$akumulasi_vol_boulder = $akumulasi_produk['vol_boulder'];
 			$akumulasi_boulder = $akumulasi_produk['boulder'];
 			$akumulasi_stone_crusher = $akumulasi_produk['stone_crusher'];
@@ -3801,6 +3803,8 @@ class Reports extends CI_Controller {
 			$rak1_produk_f = $rak1_produk['price_f'];
 			$rak1_vol_produk_g = $rak1_produk['vol_produk_g'];
 			$rak1_produk_g = $rak1_produk['price_g'];
+			$rak1_vol_produk_h = $rak1_produk['vol_produk_h'];
+			$rak1_produk_h = $rak1_produk['price_h'];
 			$rak1_vol_boulder = $rak1_produk['vol_boulder'];
 			$rak1_boulder = $rak1_produk['boulder'];
 			$rak1_stone_crusher = $rak1_produk['stone_crusher'];
@@ -3832,6 +3836,8 @@ class Reports extends CI_Controller {
 			$rak2_produk_f = $rak2_produk['price_f'];
 			$rak2_vol_produk_g = $rak2_produk['vol_produk_g'];
 			$rak2_produk_g = $rak2_produk['price_g'];
+			$rak2_vol_produk_h = $rak2_produk['vol_produk_h'];
+			$rak2_produk_h = $rak2_produk['price_h'];
 			$rak2_vol_boulder = $rak2_produk['vol_boulder'];
 			$rak2_boulder = $rak2_produk['boulder'];
 			$rak2_stone_crusher = $rak2_produk['stone_crusher'];
@@ -3863,6 +3869,8 @@ class Reports extends CI_Controller {
 			$rak3_produk_f = $rak3_produk['price_f'];
 			$rak3_vol_produk_g = $rak3_produk['vol_produk_g'];
 			$rak3_produk_g = $rak3_produk['price_g'];
+			$rak3_vol_produk_h = $rak3_produk['vol_produk_h'];
+			$rak3_produk_h = $rak3_produk['price_h'];
 			$rak3_vol_boulder = $rak3_produk['vol_boulder'];
 			$rak3_boulder = $rak3_produk['boulder'];
 			$rak3_stone_crusher = $rak3_produk['stone_crusher'];
@@ -3894,6 +3902,8 @@ class Reports extends CI_Controller {
 			$rak4_produk_f = $rak4_produk['price_f'];
 			$rak4_vol_produk_g = $rak4_produk['vol_produk_g'];
 			$rak4_produk_g = $rak4_produk['price_g'];
+			$rak4_vol_produk_h = $rak4_produk['vol_produk_h'];
+			$rak4_produk_h = $rak4_produk['price_h'];
 			$rak4_vol_boulder = $rak4_produk['vol_boulder'];
 			$rak4_boulder = $rak4_produk['boulder'];
 			$rak4_stone_crusher = $rak4_produk['stone_crusher'];
@@ -3925,6 +3935,8 @@ class Reports extends CI_Controller {
 			$rak5_produk_f = $rak5_produk['price_f'];
 			$rak5_vol_produk_g = $rak5_produk['vol_produk_g'];
 			$rak5_produk_g = $rak5_produk['price_g'];
+			$rak5_vol_produk_h = $rak5_produk['vol_produk_h'];
+			$rak5_produk_h = $rak5_produk['price_h'];
 			$rak5_vol_boulder = $rak5_produk['vol_boulder'];
 			$rak5_boulder = $rak5_produk['boulder'];
 			$rak5_stone_crusher = $rak5_produk['stone_crusher'];
@@ -3956,6 +3968,8 @@ class Reports extends CI_Controller {
 			$rak6_produk_f = $rak6_produk['price_f'];
 			$rak6_vol_produk_g = $rak6_produk['vol_produk_g'];
 			$rak6_produk_g = $rak6_produk['price_g'];
+			$rak6_vol_produk_h = $rak6_produk['vol_produk_h'];
+			$rak6_produk_h = $rak6_produk['price_h'];
 			$rak6_vol_boulder = $rak6_produk['vol_boulder'];
 			$rak6_boulder = $rak6_produk['boulder'];
 			$rak6_stone_crusher = $rak6_produk['stone_crusher'];
@@ -3987,6 +4001,8 @@ class Reports extends CI_Controller {
 			$rak7_produk_f = $rak7_produk['price_f'];
 			$rak7_vol_produk_g = $rak7_produk['vol_produk_g'];
 			$rak7_produk_g = $rak7_produk['price_g'];
+			$rak7_vol_produk_h = $rak7_produk['vol_produk_h'];
+			$rak7_produk_h = $rak7_produk['price_h'];
 			$rak7_vol_boulder = $rak7_produk['vol_boulder'];
 			$rak7_boulder = $rak7_produk['boulder'];
 			$rak7_stone_crusher = $rak7_produk['stone_crusher'];
@@ -4019,32 +4035,35 @@ class Reports extends CI_Controller {
 			$jumlah_vol_produk_g = $akumulasi_vol_produk_g + $rak1_vol_produk_g + $rak2_vol_produk_g + $rak3_vol_produk_g + $rak4_vol_produk_g + $rak5_vol_produk_g + $rak6_vol_produk_g + $rak7_vol_produk_g;
 			$jumlah_produk_g = $akumulasi_produk_g + $rak1_produk_g + $rak2_produk_g + $rak3_produk_g + $rak4_produk_g + $rak5_produk_g + $rak6_produk_g + $rak7_produk_g;
 
-			$jumlah_vol_akumulasi = $akumulasi_vol_produk_a + $akumulasi_vol_produk_b + $akumulasi_vol_produk_c + $akumulasi_vol_produk_d + $akumulasi_vol_produk_e + $akumulasi_vol_produk_f + $akumulasi_vol_produk_g;
-			$jumlah_akumulasi = $akumulasi_produk_a + $akumulasi_produk_b + $akumulasi_produk_c + $akumulasi_produk_d + $akumulasi_produk_e + $akumulasi_produk_f + $akumulasi_produk_g;
+			$jumlah_vol_produk_h = $akumulasi_vol_produk_h + $rak1_vol_produk_h + $rak2_vol_produk_h + $rak3_vol_produk_h + $rak4_vol_produk_h + $rak5_vol_produk_h + $rak6_vol_produk_h + $rak7_vol_produk_h;
+			$jumlah_produk_h = $akumulasi_produk_h + $rak1_produk_h + $rak2_produk_h + $rak3_produk_h + $rak4_produk_h + $rak5_produk_h + $rak6_produk_h + $rak7_produk_h;
 
-			$jumlah_vol_rak1 = $rak1_vol_produk_a + $rak1_vol_produk_b + $rak1_vol_produk_c + $rak1_vol_produk_d + $rak1_vol_produk_e + $rak1_vol_produk_f + $rak1_vol_produk_g;
-			$jumlah_rak1 = $rak1_produk_a + $rak1_produk_b + $rak1_produk_c + $rak1_produk_d + $rak1_produk_e + $rak1_produk_f + $rak1_produk_g;
+			$jumlah_vol_akumulasi = $akumulasi_vol_produk_a + $akumulasi_vol_produk_b + $akumulasi_vol_produk_c + $akumulasi_vol_produk_d + $akumulasi_vol_produk_e + $akumulasi_vol_produk_f + $akumulasi_vol_produk_g + $akumulasi_vol_produk_h;
+			$jumlah_akumulasi = $akumulasi_produk_a + $akumulasi_produk_b + $akumulasi_produk_c + $akumulasi_produk_d + $akumulasi_produk_e + $akumulasi_produk_f + $akumulasi_produk_g + $akumulasi_produk_h;
 
-			$jumlah_vol_rak2 = $rak2_vol_produk_a + $rak2_vol_produk_b + $rak2_vol_produk_c + $rak2_vol_produk_d + $rak2_vol_produk_e + $rak2_vol_produk_f + $rak2_vol_produk_g;
-			$jumlah_rak2 = $rak2_produk_a + $rak2_produk_b + $rak2_produk_c + $rak2_produk_d + $rak2_produk_e + $rak2_produk_f + $rak2_produk_g;
+			$jumlah_vol_rak1 = $rak1_vol_produk_a + $rak1_vol_produk_b + $rak1_vol_produk_c + $rak1_vol_produk_d + $rak1_vol_produk_e + $rak1_vol_produk_f + $rak1_vol_produk_g + $rak1_vol_produk_h;
+			$jumlah_rak1 = $rak1_produk_a + $rak1_produk_b + $rak1_produk_c + $rak1_produk_d + $rak1_produk_e + $rak1_produk_f + $rak1_produk_g + $rak1_produk_h;
 
-			$jumlah_vol_rak3 = $rak3_vol_produk_a + $rak3_vol_produk_b + $rak3_vol_produk_c + $rak3_vol_produk_d + $rak3_vol_produk_e + $rak3_vol_produk_f + $rak3_vol_produk_g;
-			$jumlah_rak3 = $rak3_produk_a + $rak3_produk_b + $rak3_produk_c + $rak3_produk_d + $rak3_produk_e + $rak3_produk_f + $rak3_produk_g;
+			$jumlah_vol_rak2 = $rak2_vol_produk_a + $rak2_vol_produk_b + $rak2_vol_produk_c + $rak2_vol_produk_d + $rak2_vol_produk_e + $rak2_vol_produk_f + $rak2_vol_produk_g + $rak2_vol_produk_h;
+			$jumlah_rak2 = $rak2_produk_a + $rak2_produk_b + $rak2_produk_c + $rak2_produk_d + $rak2_produk_e + $rak2_produk_f + $rak2_produk_g + $rak2_produk_h;
 
-			$jumlah_vol_rak4 = $rak4_vol_produk_a + $rak4_vol_produk_b + $rak4_vol_produk_c + $rak4_vol_produk_d + $rak4_vol_produk_e + $rak4_vol_produk_f + $rak4_vol_produk_g;
-			$jumlah_rak4 = $rak4_produk_a + $rak4_produk_b + $rak4_produk_c + $rak4_produk_d + $rak4_produk_e + $rak4_produk_f + $rak4_produk_g;
+			$jumlah_vol_rak3 = $rak3_vol_produk_a + $rak3_vol_produk_b + $rak3_vol_produk_c + $rak3_vol_produk_d + $rak3_vol_produk_e + $rak3_vol_produk_f + $rak3_vol_produk_g + $rak3_vol_produk_h;
+			$jumlah_rak3 = $rak3_produk_a + $rak3_produk_b + $rak3_produk_c + $rak3_produk_d + $rak3_produk_e + $rak3_produk_f + $rak3_produk_g + $rak3_produk_h;
 
-			$jumlah_vol_rak5 = $rak5_vol_produk_a + $rak5_vol_produk_b + $rak5_vol_produk_c + $rak5_vol_produk_d + $rak5_vol_produk_e + $rak5_vol_produk_f + $rak5_vol_produk_g;
-			$jumlah_rak5 = $rak5_produk_a + $rak5_produk_b + $rak5_produk_c + $rak5_produk_d + $rak5_produk_e + $rak5_produk_f + $rak5_produk_g;
+			$jumlah_vol_rak4 = $rak4_vol_produk_a + $rak4_vol_produk_b + $rak4_vol_produk_c + $rak4_vol_produk_d + $rak4_vol_produk_e + $rak4_vol_produk_f + $rak4_vol_produk_g + $rak4_vol_produk_h;
+			$jumlah_rak4 = $rak4_produk_a + $rak4_produk_b + $rak4_produk_c + $rak4_produk_d + $rak4_produk_e + $rak4_produk_f + $rak4_produk_g + $rak4_produk_h;
 
-			$jumlah_vol_rak6 = $rak6_vol_produk_a + $rak6_vol_produk_b + $rak6_vol_produk_c + $rak6_vol_produk_d + $rak6_vol_produk_e + $rak6_vol_produk_f + $rak6_vol_produk_g;
-			$jumlah_rak6 = $rak6_produk_a + $rak6_produk_b + $rak6_produk_c + $rak6_produk_d + $rak6_produk_e + $rak6_produk_f + $rak6_produk_g;
+			$jumlah_vol_rak5 = $rak5_vol_produk_a + $rak5_vol_produk_b + $rak5_vol_produk_c + $rak5_vol_produk_d + $rak5_vol_produk_e + $rak5_vol_produk_f + $rak5_vol_produk_g + $rak5_vol_produk_h;
+			$jumlah_rak5 = $rak5_produk_a + $rak5_produk_b + $rak5_produk_c + $rak5_produk_d + $rak5_produk_e + $rak5_produk_f + $rak5_produk_g + $rak5_produk_h;
 
-			$jumlah_vol_rak7 = $rak7_vol_produk_a + $rak7_vol_produk_b + $rak7_vol_produk_c + $rak7_vol_produk_d + $rak7_vol_produk_e + $rak7_vol_produk_f + $rak7_vol_produk_g;
-			$jumlah_rak7 = $rak7_produk_a + $rak7_produk_b + $rak7_produk_c + $rak7_produk_d + $rak7_produk_e + $rak7_produk_f + $rak7_produk_g;
+			$jumlah_vol_rak6 = $rak6_vol_produk_a + $rak6_vol_produk_b + $rak6_vol_produk_c + $rak6_vol_produk_d + $rak6_vol_produk_e + $rak6_vol_produk_f + $rak6_vol_produk_g + $rak6_vol_produk_h;
+			$jumlah_rak6 = $rak6_produk_a + $rak6_produk_b + $rak6_produk_c + $rak6_produk_d + $rak6_produk_e + $rak6_produk_f + $rak6_produk_g + $rak6_produk_h;
 
-			$total_jumlah_vol = $jumlah_vol_produk_a + $jumlah_vol_produk_b + $jumlah_vol_produk_c + $jumlah_vol_produk_d + $jumlah_vol_produk_e + $jumlah_vol_produk_f + $jumlah_vol_produk_g;
-			$total_jumlah = $jumlah_produk_a + $jumlah_produk_b + $jumlah_produk_c + $jumlah_produk_d + $jumlah_produk_e + $jumlah_produk_f + $jumlah_produk_g;
+			$jumlah_vol_rak7 = $rak7_vol_produk_a + $rak7_vol_produk_b + $rak7_vol_produk_c + $rak7_vol_produk_d + $rak7_vol_produk_e + $rak7_vol_produk_f + $rak7_vol_produk_g + $rak7_vol_produk_h;
+			$jumlah_rak7 = $rak7_produk_a + $rak7_produk_b + $rak7_produk_c + $rak7_produk_d + $rak7_produk_e + $rak7_produk_f + $rak7_produk_g + $rak7_produk_h;
+
+			$total_jumlah_vol = $jumlah_vol_produk_a + $jumlah_vol_produk_b + $jumlah_vol_produk_c + $jumlah_vol_produk_d + $jumlah_vol_produk_e + $jumlah_vol_produk_f + $jumlah_vol_produk_g + $jumlah_vol_produk_h;
+			$total_jumlah = $jumlah_produk_a + $jumlah_produk_b + $jumlah_produk_c + $jumlah_produk_d + $jumlah_produk_e + $jumlah_produk_f + $jumlah_produk_g + $jumlah_produk_h;
 
 			//JUMLAH BAHAN
 			$jumlah_vol_boulder = $akumulasi_vol_boulder + $rak1_vol_boulder + $rak2_vol_boulder + $rak3_vol_boulder + $rak4_vol_boulder + $rak5_vol_boulder + $rak6_vol_boulder + $rak7_vol_boulder;
@@ -4180,7 +4199,28 @@ class Reports extends CI_Controller {
 				<th class="text-right"><?php echo number_format($jumlah_produk_a,0,',','.');?></th>
 			</tr>
 			<tr class="table-baris">
-				<th class="text-center" rowspan="2" style="vertical-align:middle;">2.</th>
+				<th class="text-center" rowspan="3" style="vertical-align:middle;">2.</th>
+				<th class="text-left">Bu Tampi - Batu Batu Boulder</th>
+				<th class="text-right"><?php echo number_format($akumulasi_vol_produk_h,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($akumulasi_produk_h,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak1_vol_produk_h,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak1_produk_h,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak2_vol_produk_h,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak2_produk_h,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak3_vol_produk_h,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak3_produk_h,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak4_vol_produk_h,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak4_produk_h,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak5_vol_produk_h,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak5_produk_h,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak6_vol_produk_h,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak6_produk_h,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak7_vol_produk_h,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($rak7_produk_h,0,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_vol_produk_h,2,',','.');?></th>
+				<th class="text-right"><?php echo number_format($jumlah_produk_h,0,',','.');?></th>
+			</tr>
+			<tr class="table-baris">
 				<th class="text-left">Bu Tampi - Batu Split 0,5 - 10 mm (Upah Giling)</th>
 				<th class="text-right"><?php echo number_format($akumulasi_vol_produk_g,2,',','.');?></th>
 				<th class="text-right"><?php echo number_format($akumulasi_produk_g,0,',','.');?></th>
@@ -4200,6 +4240,7 @@ class Reports extends CI_Controller {
 				<th class="text-right"><?php echo number_format($rak7_produk_g,0,',','.');?></th>
 				<th class="text-right"><?php echo number_format($jumlah_vol_produk_g,2,',','.');?></th>
 				<th class="text-right"><?php echo number_format($jumlah_produk_g,0,',','.');?></th>
+				
 			</tr>
 			<tr class="table-baris">
 				<th class="text-left">Bu Tampi - Batu Split 0,5 - 10 mm</th>
