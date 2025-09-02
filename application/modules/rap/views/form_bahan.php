@@ -27,13 +27,13 @@
                                 </div>
                             </div>
                             <div class="panel-content">
-                                <form method="POST" action="<?php echo site_url('rap/submit_agregat');?>" id="form-po" enctype="multipart/form-data" autocomplete="off">
+                                <form method="POST" action="<?php echo site_url('rap/submit_rap_bahan');?>" id="form-po" enctype="multipart/form-data" autocomplete="off">
                                     <div class="row">
 										<div class="col-sm-2">
                                             <label>Tanggal</label>
                                         </div>
 										<div class="col-sm-2">
-                                            <input type="text" class="form-control dtpicker" name="date_agregat" required="" value="" />
+                                            <input type="text" class="form-control dtpicker" name="date_bahan" required="" value="" />
                                         </div>
 										<br />
 										<br />
@@ -277,7 +277,7 @@
         });
 		$(document).ready(function() {
             setTimeout(function(){
-                $('#produk_a').prop('selectedIndex', 6).trigger('change');
+                $('#produk_a').prop('selectedIndex', 4).trigger('change');
             }, 1000);
         });
 		$(document).ready(function() {

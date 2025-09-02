@@ -31,9 +31,9 @@ class Rap extends Secure_Controller {
 		}
 	}
 	
-	public function submit_agregat()
+	public function submit_rap_bahan()
 	{
-		$date_agregat = $this->input->post('date_agregat');
+		$date_bahan = $this->input->post('date');
 		$jobs_type = $this->input->post('jobs_type');
 		$volume = str_replace(',', '.', $this->input->post('volume'));
 		$measure = $this->input->post('measure');
@@ -51,7 +51,7 @@ class Rap extends Secure_Controller {
 		$this->db->trans_strict(FALSE); # See Note 01. If you wish can remove as well 
 
 		$arr_insert = array(
-			'date_agregat' =>  date('Y-m-d', strtotime($date_agregat)),
+			'date_bahan' =>  date('Y-m-d', strtotime($date_bahan)),
 			'jobs_type' => $jobs_type,
 			'volume' => $volume,
 			'measure' => $measure,
@@ -69,11 +69,11 @@ class Rap extends Secure_Controller {
 			'created_on' => date('Y-m-d H:i:s')
 		);
 
-		if ($this->db->insert('pmm_agregat', $arr_insert)) {
-			$agregat_id = $this->db->insert_id();
+		if ($this->db->insert('rap_bahan', $arr_insert)) {
+			$rap_bahan_id = $this->db->insert_id();
 
-			if (!file_exists('uploads/agregat')) {
-			    mkdir('uploads/agregat', 0777, true);
+			if (!file_exists('uploads/rap_bahan')) {
+			    mkdir('uploads/rap_bahan', 0777, true);
 			}
 
 			$data = [];
@@ -88,7 +88,7 @@ class Rap extends Secure_Controller {
 					$_FILES['file']['error'] = $_FILES['files']['error'][$i];
 					$_FILES['file']['size'] = $_FILES['files']['size'][$i];
 
-					$config['upload_path'] = 'uploads/agregat';
+					$config['upload_path'] = 'uploads/rap_bahan';
 					$config['allowed_types'] = 'jpg|jpeg|png|pdf';
 					$config['file_name'] = $_FILES['files']['name'][$i];
 
@@ -102,11 +102,11 @@ class Rap extends Secure_Controller {
 
 
 						$data[$i] = array(
-							'agregat_id' => $agregat_id,
+							'rap_bahan_id' => $rap_bahan_id,
 							'lampiran'  => $data['totalFiles'][$i]
 						);
 
-						$this->db->insert('pmm_lampiran_agregat', $data[$i]);
+						$this->db->insert('lampiran_rap_bahan', $data[$i]);
 						
 					} 
 				}
@@ -128,7 +128,7 @@ class Rap extends Secure_Controller {
 		}
 	}
 	
-	public function table_agregat()
+	public function table_rap_bahan()
 	{   
         $data = array();
 		$filter_date = $this->input->post('filter_date');
@@ -137,17 +137,17 @@ class Rap extends Secure_Controller {
 			$this->db->where('ag.created_on >=',date('Y-m-d',strtotime($arr_date[0])));
 			$this->db->where('ag.created_on <=',date('Y-m-d',strtotime($arr_date[1])));
 		}
-        $this->db->select('ag.id, ag.jobs_type, lk.agregat_id, lk.lampiran, ag.status, ag.created_by, ag.created_on');
-		$this->db->join('pmm_lampiran_agregat lk', 'ag.id = lk.agregat_id','left');
+        $this->db->select('ag.id, ag.jobs_type, lk.rap_bahan_id, lk.lampiran, ag.status, ag.created_by, ag.created_on');
+		$this->db->join('lampiran_rap_bahan lk', 'ag.id = lk.rap_bahan_id','left');
 		$this->db->where("ag.status = 'PUBLISH'");
 		$this->db->order_by('ag.created_on','desc');	
-		$query = $this->db->get('pmm_agregat ag');
+		$query = $this->db->get('rap_bahan ag');
 		
        if($query->num_rows() > 0){
 			foreach ($query->result_array() as $key => $row) {
                 $row['no'] = $key+1;
 				$row['jobs_type'] = $row['jobs_type'];
-				$row['lampiran'] = '<a href="' . base_url('uploads/agregat/' . $row['lampiran']) .'" target="_blank">' . $row['lampiran'] . '</a>';           
+				$row['lampiran'] = '<a href="' . base_url('uploads/rap_bahan/' . $row['lampiran']) .'" target="_blank">' . $row['lampiran'] . '</a>';           
                 $row['admin_name'] = $this->crud_global->GetField('tbl_admin',array('admin_id'=>$row['created_by']),'admin_name');
                 $row['created_on'] = date('d/m/Y H:i:s',strtotime($row['created_on']));
 				$row['print'] = '<a href="'.site_url().'rap/cetak_komposisi/'.$row['id'].'" target="_blank" class="btn btn-info" style="border-radius:5px;"><i class="fa fa-print"></i> </a>';
@@ -179,17 +179,17 @@ class Rap extends Secure_Controller {
 		$id = $this->input->post('id');
 		if(!empty($id)){
 
-			$file = $this->db->select('ag.id as agregat_id, ag.lampiran')
-			->from('pmm_lampiran_agregat ag')
-			->where("ag.agregat_id = $id")
+			$file = $this->db->select('ag.id as rap_bahan_id, ag.lampiran')
+			->from('lampiran_rap_bahan ag')
+			->where("ag.rap_bahan_id = $id")
 			->get()->row_array();
 
-			$path = './uploads/agregat/'.$file['lampiran'];
+			$path = './uploads/rap_bahan/'.$file['lampiran'];
 			chmod($path, 0777);
 			unlink($path);
 
-			$this->db->delete('pmm_lampiran_agregat', array('agregat_id' => $id));
-			$this->db->delete('pmm_agregat', array('id' => $id));
+			$this->db->delete('lampiran_rap_bahan', array('rap_bahan_id' => $id));
+			$this->db->delete('rap_bahan', array('id' => $id));
 			{
 				$output['output'] = true;
 			}
@@ -202,15 +202,15 @@ class Rap extends Secure_Controller {
 		$check = $this->m_admin->check_login();
 		if ($check == true) {
 			$data['tes'] = '';
-			$data['agregat'] = $this->db->get_where("pmm_agregat", ["id" => $id])->row_array();
-			$data['lampiran'] = $this->db->get_where("pmm_lampiran_agregat", ["agregat_id" => $id])->result_array();
+			$data['rap_bahan'] = $this->db->get_where("rap_bahan", ["id" => $id])->row_array();
+			$data['lampiran'] = $this->db->get_where("lampiran_rap_bahan", ["rap_bahan_id" => $id])->result_array();
 			$this->load->view('rap/data_komposisi', $data);
 		} else {
 			redirect('admin');
 		}
 	}
 
-	public function submit_sunting_agregat()
+	public function submit_sunting_rap_bahan()
 	{
 
 		$this->db->trans_start(); # Starting Transaction
@@ -269,7 +269,7 @@ class Rap extends Secure_Controller {
 			);
 
 			$this->db->where('id', $id);
-			if ($this->db->update('pmm_agregat', $arr_update)) {
+			if ($this->db->update('rap_bahan', $arr_update)) {
 				
 			}
 
@@ -277,7 +277,7 @@ class Rap extends Secure_Controller {
 				# Something went wrong.
 				$this->db->trans_rollback();
 				$this->session->set_flashdata('notif_error', '<b>ERROR</b>');
-				redirect('rap/komposisi_agregat/' . $this->input->post('id_penagihan'));
+				redirect('rap/komposisi_rap_bahan/' . $this->input->post('id_penagihan'));
 			} else {
 				# Everything is Perfect. 
 				# Committing data to the database.
@@ -299,9 +299,9 @@ class Rap extends Secure_Controller {
 		$pdf->setHtmlVSpace($tagvs);
 		$pdf->AddPage('P');
 
-		$data['row'] = $this->db->get_where('pmm_agregat',array('id'=>$id))->row_array();
+		$data['row'] = $this->db->get_where('rap_bahan',array('id'=>$id))->row_array();
         $html = $this->load->view('rap/cetak_komposisi',$data,TRUE);
-        $row = $this->db->get_where('pmm_agregat',array('id'=>$id))->row_array();
+        $row = $this->db->get_where('rap_bahan',array('id'=>$id))->row_array();
 
 
         
@@ -314,7 +314,7 @@ class Rap extends Secure_Controller {
     {
         $this->db->set("status", "CLOSED");
         $this->db->where("id", $id);
-        $this->db->update("pmm_agregat");
+        $this->db->update("rap_bahan");
         $this->session->set_flashdata('notif_success', '<b>CLOSED</b>');
         redirect("admin/rap");
     }

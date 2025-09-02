@@ -83,12 +83,12 @@
                                 <!-- Table Bahan -->
                                     <div role="tabpanel" class="tab-pane active" id="bahan">
 										<!--<div class="col-sm-3">
-											<input type="text" id="filter_date_agregat" name="filter_date" class="form-control dtpickerange" autocomplete="off" placeholder="Filter By Date">
+											<input type="text" id="filter_date" name="filter_date" class="form-control dtpickerange" autocomplete="off" placeholder="Filter By Date">
 										</div>-->
                                         <button style="background-color:#88b93c; border-radius:5px; line-height:30px;"><a href="<?php echo site_url('rap/form_bahan'); ?>"><b style="color:white;">BUAT BAHAN</b></a></button>
                                         <br />									
                                         <div class="table-responsive">
-                                            <table class="table table-striped table-hover" id="table_agregat" style="width:100%">
+                                            <table class="table table-striped table-hover" id="table_rap_bahan" style="width:100%">
                                                 <thead>
                                                     <tr>
                                                         <th>No</th>
@@ -192,14 +192,14 @@
             showDropdowns: true,
         });
 		
-		var table_agregat = $('#table_agregat').DataTable( {"bAutoWidth": false,
+		var table_rap_bahan = $('#table_rap_bahan').DataTable( {"bAutoWidth": false,
             ajax: {
                 processing: true,
                 serverSide: true,
-                url: '<?php echo site_url('rap/table_agregat'); ?>',
+                url: '<?php echo site_url('rap/table_rap_bahan'); ?>',
                 type: 'POST',
                 data: function(d) {
-                    d.filter_date = $('#filter_date_agregat').val();
+                    d.filter_date = $('#filter_date').val();
                 }
             },
             responsive: true,
@@ -230,9 +230,9 @@
             ],
         });
 
-        $('#filter_date_agregat').on('apply.daterangepicker', function(ev, picker) {
+        $('#filter_date_bahan').on('apply.daterangepicker', function(ev, picker) {
             $(this).val(picker.startDate.format('DD-MM-YYYY') + ' - ' + picker.endDate.format('DD-MM-YYYY'));
-            table_agregat.ajax.reload();
+            table_rap_bahan.ajax.reload();
         });
 
         function DeleteDataBahan(id) {
@@ -248,7 +248,7 @@
                         },
                         success: function(result) {
                             if (result.output) {
-                                table_agregat.ajax.reload();
+                                table_rap_bahan.ajax.reload();
                                 bootbox.alert('<b>DELETED</b>');
                             } else if (result.err) {
                                 bootbox.alert(result.err);
