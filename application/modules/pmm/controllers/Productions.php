@@ -220,7 +220,7 @@ class Productions extends Secure_Controller {
 		$id = $this->input->post('id');
 		$sales_po_id = $this->input->post('po_penjualan');
 		$date_production = date('Y-m-d',strtotime($this->input->post('date')));
-		$komposisi_id = $this->input->post('komposisi_id');
+		//$komposisi_id = $this->input->post('komposisi_id');
 		$product_id = $this->input->post('product_id');
 		$volume = str_replace(',', '.', $this->input->post('volume'));
 		$price = $this->pmm_model->GetPriceProductions($sales_po_id,$product_id,$volume);
@@ -295,7 +295,7 @@ class Productions extends Secure_Controller {
 				'display_volume' => $volume,
 				'measure' => $this->input->post('measure'),
 				'convert_measure' => $this->input->post('measure'),
-				'komposisi_id' => $this->input->post('komposisi_id'),
+				//'komposisi_id' => $this->input->post('komposisi_id'),
 				'nopol_truck' => $this->input->post('nopol_truck'),
 				'driver' => $this->input->post('driver'),
 				'lokasi' => $this->input->post('lokasi'),
