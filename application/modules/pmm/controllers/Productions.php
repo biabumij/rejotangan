@@ -24,12 +24,12 @@ class Productions extends Secure_Controller {
 			$client_id = $this->input->get('client_id');
 			$data['client_id'] = $client_id;
 			$data['clients'] = $this->db->select('id,nama')->order_by('nama','asc')->get_where('penerima',array('pelanggan'=>1))->result_array();
-			$data['komposisi'] = $this->db->select('ag.id, ag.jobs_type, p.nama_produk')
+			/*$data['komposisi'] = $this->db->select('ag.id, ag.jobs_type, p.nama_produk')
 			->from('pmm_agregat ag')
 			->join('produk p', 'ag.mutu_beton = p.id','left')
 			->where("ag.status = 'PUBLISH'")
 			->order_by('p.nama_produk','asc')
-			->get()->result_array();
+			->get()->result_array();*/
 			
 			$get_data = $this->db->get_where('pmm_sales_po',array('id'=>$po_id,'status'=>'OPEN'))->row_array();
 			$data['contract_number'] = $this->db->get_where('pmm_sales_po',array('client_id'=>$get_data['client_id'],'status'=>'OPEN'))->result_array();
