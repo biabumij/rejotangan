@@ -75,10 +75,15 @@
                                         ->from('tbl_admin')
                                         ->where("admin_id = $admin_id ")
                                         ->get()->row_array();
+                                        $menu_admin =  $approval['menu_admin'];
                                         $kunci_rakor =  $approval['kunci_rakor'];
                                         ?>
-                                        <?php if($kunci_rakor == 1){?>
+                                        <?php if($menu_admin == 1){?>
                                         <li role="presentation"  class="active"><a href="#pemakaian" aria-controls="pemakaian" role="tab" data-toggle="tab" style="border-radius:5px; font-weight:bold;">VERIFIKASI PEMAKAIAN BAHAN</a></li>
+                                        <?php
+                                        }
+                                        ?>
+                                        <?php if($kunci_rakor == 1){?>
                                         <li role="presentation"><a href="#rakor" aria-controls="rakor" role="tab" data-toggle="tab" style="border-radius:5px; font-weight:bold;">KUNCI DATA RAKOR</a></li>
                                         <?php
                                         }
