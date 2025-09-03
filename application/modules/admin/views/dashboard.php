@@ -356,8 +356,7 @@
                             </table>
                             <table width="100%">
                                 <tr>
-                                    <th width="25%" class="text-center">
-                                    </th>
+                                    <th width="25%" class="text-center"></th>
                                     <th width="25%" class="text-center">
                                         <ul class="row text-center list-inline  wowload bounceInUp collapse" id="settings">
                                             <li class="text-center" style="background: linear-gradient(110deg, #696969 20%, #696969 20%, #444444 80%);">
