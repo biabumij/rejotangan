@@ -74,9 +74,9 @@ class Pdf extends TCPDF {
         $style = array();
         $date = date("Y-m-d H:i:s");
         $date = date('d-m-Y H:i', strtotime($date));
-        $this->SetTextColor(192,192,192);
+        $this->SetTextColor(128,128,128);
         $this->SetFont('helvetica', 'I', 5);
         $this->SetMargins(25, 25, 25, true);
-        $this->Cell(0, 12, 'Dicetak pada :'.'.'.$date.'', 0, 0,'R');
+        $this->Cell(0, 10, 'Dicetak pada :'.''.$date.'', 0, 0,'R');
     }
 } 
