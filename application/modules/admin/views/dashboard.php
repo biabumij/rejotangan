@@ -167,6 +167,7 @@
                     ->where("admin_id = $admin_id ")
                     ->get()->row_array();
                     $menu_admin =  $approval['menu_admin'];
+                    $kunci_rakor =  $approval['kunci_rakor'];
                     ?>
                     <div id="flippy_menu">
                         <button title="Click to show/hide content" type="button" onclick="if(document.getElementById('spoiler_menu') .style.display=='none') {document.getElementById('spoiler_menu') .style.display=''}else{document.getElementById('spoiler_menu') .style.display='none'}"><i class="fa-regular fa-hand-point-right"></i> MENU</button>
@@ -322,6 +323,21 @@
                             </table>
                             <table width="100%">
                                 <tr>
+                                    <?php
+                                    if($kunci_rakor == 1){
+                                    ?>
+                                    <th width="25%" class="text-center" data-toggle="collapse" data-target="#" aria-expanded="false" aria-controls="beton">
+                                        <ul class="row text-center list-inline  wowload bounceIn" style="border-radius:20px;">
+                                            <li class="text-center" style="background: linear-gradient(110deg, #696969 20%, #696969 20%, #444444 80%);">
+                                                <a href="<?php echo site_url('admin/kunci');?>">
+                                                <span style="color:#fffdd0;"><i class="fa-solid fa-key"></i><b>KUNCI DATA</b></span></a>
+                                            </li>
+                                        </ul>
+                                    </th>
+                                    <?php
+                                    }
+                                    ?>
+
                                     <?php
                                     if($menu_admin == 1){
                                     ?>
