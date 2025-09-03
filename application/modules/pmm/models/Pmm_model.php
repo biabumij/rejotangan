@@ -4870,7 +4870,6 @@ class Pmm_model extends CI_Model {
         ->from('pmm_jurnal_umum pb ')
         ->join('pmm_detail_jurnal pdb','pb.id = pdb.jurnal_id','left')
         ->join('pmm_coa c','pdb.akun = c.id','left')
-        ->where("c.coa_category in ('15','17')")
         ->where("c.id in ('116','118','114','115','143','141','117','178','179','100','78','180','87','62','98','70','96','97','181','94','182','183','184')")
         ->where("pb.status = 'PAID'")
         ->where("(pb.tanggal_transaksi between '$date1' and '$date2')")
@@ -4894,19 +4893,7 @@ class Pmm_model extends CI_Model {
         ->from('pmm_biaya pb ')
         ->join('pmm_detail_biaya pdb','pb.id = pdb.biaya_id','left')
         ->join('pmm_coa c','pdb.akun = c.id','left')
-        ->where("c.coa_category in ('15','17')")
-        ->where("c.id <> 110 ") //Biaya Diskonto Bank
-        ->where("c.id <> 131 ") //Biaya Persiapan
-        ->where("c.id <> 124 ") //Biaya Maintenance Truck Mixer
-        ->where("c.id <> 138 ") //Biaya Maintenance Batching Plant
-        ->where("c.id <> 140 ") //Biaya Maintenance Wheel Loader
-        ->where("c.id <> 159 ") //Angsuran Batching Plant
-		->where("c.id <> 160 ") //Angsuran Wheel Loader
-        ->where("c.id <> 161 ") //Biaya Alat Truck Mixer
-        ->where("c.id <> 137 ") //Penyusutan Batching Plant
-        ->where("c.id <> 139 ") //Penyusutan Wheel Loader
-        ->where("c.id <> 186 ") //Insentif Truck Mixer
-        ->where("c.id <> 187 ") //Mobilisasi Truck Mixer
+        ->where("c.id in ('116','118','114','115','143','141','117','178','179','100','78','180','87','62','98','70','96','97','181','94','182','183','184')")
         ->where("pb.status = 'PAID'")
         ->where("(pb.tanggal_transaksi between '$date3' and '$date2')")
         ->get()->row_array();
@@ -4915,19 +4902,7 @@ class Pmm_model extends CI_Model {
         ->from('pmm_jurnal_umum pb ')
         ->join('pmm_detail_jurnal pdb','pb.id = pdb.jurnal_id','left')
         ->join('pmm_coa c','pdb.akun = c.id','left')
-        ->where("c.coa_category in ('15','17')")
-        ->where("c.id <> 110 ") //Biaya Diskonto Bank
-        ->where("c.id <> 131 ") //Biaya Persiapan
-        ->where("c.id <> 124 ") //Biaya Maintenance Truck Mixer
-        ->where("c.id <> 138 ") //Biaya Maintenance Batching Plant
-        ->where("c.id <> 140 ") //Biaya Maintenance Wheel Loader
-        ->where("c.id <> 159 ") //Angsuran Batching Plant
-		->where("c.id <> 160 ") //Angsuran Wheel Loader
-        ->where("c.id <> 161 ") //Biaya Alat Truck Mixer
-        ->where("c.id <> 137 ") //Penyusutan Batching Plant
-        ->where("c.id <> 139 ") //Penyusutan Wheel Loader
-        ->where("c.id <> 186 ") //Insentif Truck Mixer
-        ->where("c.id <> 187 ") //Mobilisasi Truck Mixer
+        ->where("c.id in ('116','118','114','115','143','141','117','178','179','100','78','180','87','62','98','70','96','97','181','94','182','183','184')")
         ->where("pb.status = 'PAID'")
         ->where("(pb.tanggal_transaksi between '$date3' and '$date2')")
         ->get()->row_array();
