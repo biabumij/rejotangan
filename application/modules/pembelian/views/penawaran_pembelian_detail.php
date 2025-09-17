@@ -225,8 +225,8 @@
                                         <?php
                                         if($approval_penawaran_pembelian == 1){
                                         ?>
-                                            <a href="<?= site_url('pembelian/closed_penawaran_pembelian/' . $row['id']); ?>" class="btn btn-default" style="width:10%; font-weight:bold; border-radius:5px;"> CLOSED</a>
-                                            <a href="<?= site_url('pembelian/reject_penawaran_pembelian/' . $row['id']); ?>" class="btn btn-danger" style="width:10%; font-weight:bold; border-radius:5px;"> REJECT</a>
+                                            <a onClick="return confirm('Jika penawaran diclosed, maka penawaran tidak bisa digunakan untuk membuat Permintaan Bahan & Alat dan Pesanan Pembelian (PO), namun data tetap tersimpan, apakah Anda yakin?')" href="<?= site_url('pembelian/closed_penawaran_pembelian/' . $row['id']); ?>" class="btn btn-default" style="width:10%; font-weight:bold; border-radius:5px;"> CLOSED</a>
+                                            <a onClick="return confirm('Sebelum menghapus penawaran, apakah Anda yakin penawaran ini tidak digunakan oleh Permintaan Bahan & Alat dan Pesanan Pembelian (PO)?')" href="<?= site_url('pembelian/hapus_penawaran_pembelian/' . $row['id']); ?>"  class="btn btn-danger" style="width:10%; font-weight:bold; border-radius:5px;"> HAPUS <i class="fa-solid fa-triangle-exclamation"></i></a>
                                         <?php
                                         }
                                         ?>
@@ -243,7 +243,7 @@
                                         <?php
                                         if($delete_penawaran_pembelian == 1){
                                         ?>
-                                            <a href="<?= site_url('pembelian/hapus_penawaran_pembelian/' . $row['id']); ?>" class="btn btn-danger" style="width:10%; font-weight:bold; border-radius:5px;"> HAPUS</a>
+                                            <a onClick="return confirm('Sebelum menghapus penawaran, apakah Anda yakin penawaran ini tidak digunakan oleh Permintaan Bahan & Alat dan Pesanan Pembelian (PO)?')" href="<?= site_url('pembelian/hapus_penawaran_pembelian/' . $row['id']); ?>"  class="btn btn-danger" style="width:10%; font-weight:bold; border-radius:5px;"> HAPUS <i class="fa-solid fa-triangle-exclamation"></i></a>
                                         <?php
                                         }
                                         ?>
@@ -253,7 +253,7 @@
                                         <?php
                                         if($delete_penawaran_pembelian == 1){
                                         ?>
-                                            <a href="<?= site_url('pembelian/hapus_penawaran_pembelian/' . $row['id']); ?>" class="btn btn-danger" style="width:10%; font-weight:bold; border-radius:5px;"> HAPUS</a>
+                                            <a onClick="return confirm('Sebelum menghapus penawaran, apakah Anda yakin penawaran ini tidak digunakan oleh Permintaan Bahan & Alat dan Pesanan Pembelian (PO)?')" href="<?= site_url('pembelian/hapus_penawaran_pembelian/' . $row['id']); ?>"  class="btn btn-danger" style="width:10%; font-weight:bold; border-radius:5px;"> HAPUS <i class="fa-solid fa-triangle-exclamation"></i></a>
                                         <?php
                                         }
                                         ?>

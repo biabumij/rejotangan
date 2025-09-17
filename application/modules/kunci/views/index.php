@@ -79,12 +79,17 @@
                                         $kunci_rakor =  $approval['kunci_rakor'];
                                         ?>
                                         <?php if($menu_admin == 1){?>
-                                        <li role="presentation"><a href="#pemakaian" aria-controls="pemakaian" role="tab" data-toggle="tab" style="border-radius:5px; font-weight:bold;">VERIFIKASI PEMAKAIAN BAHAN</a></li>
+                                        <li role="presentation"><a href="#pemakaian" aria-controls="pemakaian" role="tab" data-toggle="tab" style="border-radius:5px; font-weight:bold;">VERIFIKASI ADMINISTRATOR</a></li>
                                         <?php
                                         }
                                         ?>
                                         <?php if($kunci_rakor == 1){?>
                                         <li role="presentation" class="active"><a href="#rakor" aria-controls="rakor" role="tab" data-toggle="tab" style="border-radius:5px; font-weight:bold;">KUNCI DATA RAKOR</a></li>
+                                        <?php
+                                        }
+                                        ?>
+                                        <?php if($kunci_rakor == 1){?>
+                                        <li role="presentation"><a href="#akses" aria-controls="rakor" role="tab" data-toggle="tab" style="border-radius:5px; font-weight:bold;">AKSES HAPUS & EDIT</a></li>
                                         <?php
                                         }
                                         ?>
@@ -96,6 +101,9 @@
                                         </div>
                                         <div role="tabpanel" class="tab-pane active" id="rakor">
                                             <?php include_once "rakor.php"; ?>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane active" id="akses">
+                                            <?php include_once "akses.php"; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -117,6 +125,7 @@
         <script src="https://kit.fontawesome.com/591a1bf2f6.js" crossorigin="anonymous"></script>
         <?php include_once("script_pemakaian.php"); ?>
         <?php include_once("script_rakor.php"); ?>
+        <?php include_once("script_akses.php"); ?>
 
         <script>
             <?php
