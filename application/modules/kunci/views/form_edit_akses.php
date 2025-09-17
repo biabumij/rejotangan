@@ -84,7 +84,9 @@
                                     <div class="form-group">
                                         <center><label for="name" class="control-label">APPROVAL</label></center>
                                     </div>
-                                    <?php if($menu_admin == 1){?>
+                                    <?php
+                                    if(in_array($this->session->userdata('admin_group_id'), array(1))){
+                                    ?>
                                     <div class="form-group">
                                         <label for="name" class="col-sm-2 control-label">Menu Admin</label>
                                         <div class="col-sm-1">
@@ -103,30 +105,48 @@
                                         <div class="col-sm-1">
                                             <input type="checkbox" name="approval_penawaran_pembelian" id="approval_penawaran_pembelian" value="1"<?= (isset($approval_penawaran_pembelian) && $approval_penawaran_pembelian == 1) ? 'checked' : '' ;?> />
                                         </div>
+                                        <?php
+                                        if(in_array($this->session->userdata('admin_group_id'), array(1))){
+                                        ?>
                                         <label for="name" class="col-sm-2 control-label">Delete Penawaran Pembelian</label>
                                         <div class="col-sm-1">
                                             <input type="checkbox" name="delete_penawaran_pembelian" id="delete_penawaran_pembelian" value="1"<?= (isset($delete_penawaran_pembelian) && $delete_penawaran_pembelian == 1) ? 'checked' : '' ;?> />
                                         </div>
+                                        <?php
+                                        }
+                                        ?>
                                     </div>
                                     <div class="form-group">
                                         <label for="name" class="col-sm-2 control-label">Approval Permintaan Bahan & Alat</label>
                                         <div class="col-sm-1">
                                             <input type="checkbox" name="approval_permintaan_bahan_alat" id="approval_permintaan_bahan_alat" value="1"<?= (isset($approval_permintaan_bahan_alat) && $approval_permintaan_bahan_alat == 1) ? 'checked' : '' ;?> />
                                         </div>
+                                        <?php
+                                        if(in_array($this->session->userdata('admin_group_id'), array(1))){
+                                        ?>
                                         <label for="name" class="col-sm-2 control-label">Delete Permintaan Bahan & Alat</label>
                                         <div class="col-sm-1">
                                             <input type="checkbox" name="delete_permintaan_bahan_alat" id="delete_permintaan_bahan_alat" value="1"<?= (isset($delete_permintaan_bahan_alat) && $delete_permintaan_bahan_alat == 1) ? 'checked' : '' ;?> />
                                         </div>
+                                        <?php
+                                        }
+                                        ?>
                                     </div>
                                     <div class="form-group">
                                         <label for="name" class="col-sm-2 control-label">Approval PO Pembelian</label>
                                         <div class="col-sm-1">
                                             <input type="checkbox" name="approval_po" id="approval_po" value="1"<?= (isset($approval_po) && $approval_po == 1) ? 'checked' : '' ;?> />
                                         </div>
+                                        <?php
+                                        if(in_array($this->session->userdata('admin_group_id'), array(1))){
+                                        ?>
                                         <label for="name" class="col-sm-2 control-label">Delete PO Pembelian</label>
                                         <div class="col-sm-1">
                                             <input type="checkbox" name="delete_po" id="delete_po" value="1"<?= (isset($delete_po) && $delete_po == 1) ? 'checked' : '' ;?> />
                                         </div>
+                                        <?php
+                                        }
+                                        ?>
                                         <label for="name" class="col-sm-2 control-label">Hapus Surat Jalan Pembelian</label>
                                         <div class="col-sm-1">
                                             <input type="checkbox" name="surat_jalan_pembelian" id="surat_jalan_pembelian" value="1"<?= (isset($surat_jalan_pembelian) && $surat_jalan_pembelian == 1) ? 'checked' : '' ;?> />
@@ -147,20 +167,32 @@
                                         <div class="col-sm-1">
                                             <input type="checkbox" name="approval_penawaran_penjualan" id="approval_penawaran_penjualan" value="1"<?= (isset($approval_penawaran_penjualan) && $approval_penawaran_penjualan == 1) ? 'checked' : '' ;?> />
                                         </div>
+                                        <?php
+                                        if(in_array($this->session->userdata('admin_group_id'), array(1))){
+                                        ?>
                                         <label for="name" class="col-sm-2 control-label">Delete Penawaran Penjualan</label>
                                         <div class="col-sm-1">
                                             <input type="checkbox" name="delete_penawaran_penjualan" id="delete_penawaran_penjualan" value="1"<?= (isset($delete_penawaran_penjualan) && $delete_penawaran_penjualan == 1) ? 'checked' : '' ;?> />
                                         </div>
+                                        <?php
+                                        }
+                                        ?>
                                     </div>
                                     <div class="form-group">
                                         <label for="name" class="col-sm-2 control-label">Approval SO Penjualan</label>
                                         <div class="col-sm-1">
                                             <input type="checkbox" name="approval_so_penjualan" id="approval_so_penjualan" value="1"<?= (isset($approval_so_penjualan) && $approval_so_penjualan == 1) ? 'checked' : '' ;?> />
                                         </div>
+                                        <?php
+                                        if(in_array($this->session->userdata('admin_group_id'), array(1))){
+                                        ?>
                                         <label for="name" class="col-sm-2 control-label">Delete SO Penjualan</label>
                                         <div class="col-sm-1">
                                             <input type="checkbox" name="delete_so_penjualan" id="delete_so_penjualan" value="1"<?= (isset($delete_so_penjualan) && $delete_so_penjualan == 1) ? 'checked' : '' ;?> />
                                         </div>
+                                        <?php
+                                        }
+                                        ?>
                                         <label for="name" class="col-sm-2 control-label">Hapus Surat Jalan Penjualan</label>
                                         <div class="col-sm-1">
                                             <input type="checkbox" name="surat_jalan_penjualan" id="surat_jalan_penjualan" value="1"<?= (isset($surat_jalan_penjualan) && $surat_jalan_penjualan == 1) ? 'checked' : '' ;?> />
