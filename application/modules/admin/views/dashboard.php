@@ -161,9 +161,7 @@
                                         <?php
                                         $admin_name = $this->db->select('admin_name')
                                         ->from('tbl_admin')
-                                        ->where("admin_id <> '1'")
-                                        ->where("admin_id <> '5'")
-                                        ->where("admin_id <> '12'")
+                                        ->where("admin_id <> '28'")
                                         ->group_by('admin_id')
                                         ->order_by('admin_name','asc')
                                         ->get()->result_array();
