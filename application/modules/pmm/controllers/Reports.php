@@ -1363,6 +1363,7 @@ class Reports extends CI_Controller {
 			->where("ppo.status in ('OPEN','CLOSED')")
 			->group_by("pp.client_id")
 			->get()->result_array();
+			file_put_contents("c:/users/Dell/Desktop/test.txt", $this->db->last_query());
 
 			$total_penjualan_2 = 0;
 			$total_volume_2 = 0;
@@ -1449,7 +1450,7 @@ class Reports extends CI_Controller {
 			<?php foreach ($penjualan_2 as $i=>$x): ?>
 			<tr class="table-active3">
 	            <th width="10%"></th>
-				<th width="30%"><?= $penjualan[$i]['nama'] ?></th>
+				<th width="30%"><?= $penjualan_2[$i]['nama'] ?></th>
 				<th width="12%" class="text-right"><?php echo number_format($penjualan[$i]['volume'],2,',','.');?> (<?= $penjualan[$i]['measure'];?>)</th>
 	            <th width="18%" class="text-right">
 					<table width="100%" border="0" cellpadding="0">
