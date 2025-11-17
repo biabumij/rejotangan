@@ -47,7 +47,16 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td class="text-center" rowspan="8" style="font-weight:bold;vertical-align:middle;">P<br />E<br />N<br />D<br />A<br />P<br />A<br />T<br />A<br />N</td>
+                                                    <td class="text-center" rowspan="9" style="font-weight:bold;vertical-align:middle;">P<br />E<br />N<br />D<br />A<br />P<br />A<br />T<br />A<br />N</td>
+                                                    <td style="vertical-align:middle;">LPA (Upah Giling)</td>
+													<td>
+                                                    <input type="text" id="vol_produk_i" name="vol_produk_i" class="form-control numberformat text-right" value="" autocomplete="off">
+                                                    </td>
+                                                    <td>
+                                                    <input type="text" id="price_i" name="price_i" class="form-control rupiahformat text-right" value="" onchange="changeData(1)" autocomplete="off">
+                                                    </td>
+                                                </tr>
+                                                <tr>
                                                     <td style="vertical-align:middle;">LPA (JLS Brantas)</td>
 													<td>
                                                     <input type="text" id="vol_produk_a" name="vol_produk_a" class="form-control numberformat text-right" value="" autocomplete="off">
@@ -283,6 +292,7 @@
             var price_f = $('#price_f').val();
             var price_g = $('#price_g').val();
             var price_h = $('#price_h').val();
+            var price_i = $('#price_i').val();
             var boulder = $('#boulder').val();
             var stone_crusher = $('#stone_crusher').val();
             var wheel_loader = $('#wheel_loader').val();
@@ -308,6 +318,8 @@
             $('#price_g').val(price_g);
             price_h = ( price_h);
             $('#price_h').val(price_h);
+            price_i = ( price_i);
+            $('#price_i').val(price_i);
             boulder = ( boulder);
             $('#boulder').val(boulder);
             stone_crusher = ( stone_crusher);
@@ -331,7 +343,7 @@
         {
             var sub_total = $('#sub-total-val').val();
 
-            sub_total = (parseFloat($('#price_a').val()) + parseFloat($('#price_b').val()) + parseFloat($('#price_c').val()) + parseFloat($('#price_d').val()) + parseFloat($('#price_e').val()) + parseFloat($('#price_f').val()) + parseFloat($('#price_g').val()) + parseFloat($('#price_h').val())) - (parseFloat($('#boulder').val()) + parseFloat($('#stone_crusher').val()) + parseFloat($('#wheel_loader').val()) + parseFloat($('#maintenance').val()) + parseFloat($('#bbm_solar').val()) + parseFloat($('#tangki').val()) + parseFloat($('#timbangan').val()) + parseFloat($('#overhead').val()));
+            sub_total = (parseFloat($('#price_a').val()) + parseFloat($('#price_b').val()) + parseFloat($('#price_c').val()) + parseFloat($('#price_d').val()) + parseFloat($('#price_e').val()) + parseFloat($('#price_f').val()) + parseFloat($('#price_g').val()) + parseFloat($('#price_h').val()) + parseFloat($('#price_i').val())) - (parseFloat($('#boulder').val()) + parseFloat($('#stone_crusher').val()) + parseFloat($('#wheel_loader').val()) + parseFloat($('#maintenance').val()) + parseFloat($('#bbm_solar').val()) + parseFloat($('#tangki').val()) + parseFloat($('#timbangan').val()) + parseFloat($('#overhead').val()));
             
             $('#sub-total-val').val(sub_total);
             $('#sub-total').text($.number( sub_total, 0,',','.' ));
