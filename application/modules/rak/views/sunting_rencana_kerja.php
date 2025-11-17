@@ -57,7 +57,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="text-center" rowspan="9" style="font-weight:bold;vertical-align:middle;">P<br />E<br />N<br />D<br />A<br />P<br />A<br />T<br />A<br />N</td>
-                                                <td style="vertical-align:middle;">LPA (Upah Giling)</td>
+                                                <td style="vertical-align:middle;">PT LMA - Batu Split (Upah Giling)</td>
                                                 <td>
                                                 <input type="text" id="vol_produk_i" name="vol_produk_i" class="form-control numberformat text-right" value="<?php echo number_format($rak["vol_produk_i"],2,',','.');?>" autocomplete="off">
                                                 </td>
