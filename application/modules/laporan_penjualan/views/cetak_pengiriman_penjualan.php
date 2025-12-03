@@ -194,7 +194,7 @@
 								<img src="uploads/ttd_rifka.png" width="50px">
 							</td>
 							<td align="center">
-								<img src="uploads/ttd_satria.png" width="50px">
+								<img src="uploads/ttd_vicky.png" width="50px">
 							</td>
 						</tr>
 						<tr>
@@ -203,8 +203,8 @@
 								Produksi & HSE</b>
 							</td>
 							<td align="center">
-								<b><u>Rifka Dian Bethary</u><br />
-								Pj. Keuangan & SDM</b>
+								<b><u>Vicky Irwana Yudha</u><br />
+								Ka. Logistik</b>
 							</td>
 							<td align="center">
 								<b><u>Satria Widura Drana Wisesa</u><br />
