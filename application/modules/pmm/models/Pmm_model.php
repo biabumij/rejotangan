@@ -4656,7 +4656,7 @@ class Pmm_model extends CI_Model {
         $total_nilai_evaluasi_timbangan = ($total_pemakaian_timbangan!=0)?$timbangan - $total_pemakaian_timbangan * 1:0;
 
         $total_nilai_rap_alat = $stone_crusher + $wheel_loader + $maintenance + $bbm_solar;
-        $total_nilai_realisasi_alat = $total_pemakaian_stone_crusher + $total_pemakaian_wheel_loader + $total_pemakaian_maintenance + $pemakaian_nilai_solar + $pemakaian_nilai_tangki + $pemakaian_nilai_timbangan;
+        $total_nilai_realisasi_alat = $total_pemakaian_stone_crusher + $total_pemakaian_wheel_loader + $total_pemakaian_maintenance + $total_pemakaian_solar + $total_pemakaian_tangki + $total_pemakaian_timbangan;
         $total_nilai_evaluasi_alat = $total_nilai_evaluasi_stone_crusher + $total_nilai_evaluasi_wheel_loader + $total_nilai_evaluasi_maintenance + $total_nilai_evaluasi_bbm_solar + $total_nilai_evaluasi_tangki + $total_nilai_evaluasi_timbangan;
         
         $query = $total_nilai_realisasi_alat;
@@ -4842,7 +4842,7 @@ class Pmm_model extends CI_Model {
         $total_nilai_evaluasi_timbangan = ($total_pemakaian_timbangan!=0)?$timbangan - $total_pemakaian_timbangan * 1:0;
 
         $total_nilai_rap_alat = $stone_crusher + $wheel_loader + $maintenance + $bbm_solar;
-        $total_nilai_realisasi_alat = $total_pemakaian_stone_crusher + $total_pemakaian_wheel_loader + $total_pemakaian_maintenance + $pemakaian_nilai_solar + $pemakaian_nilai_tangki + $pemakaian_nilai_timbangan;
+        $total_nilai_realisasi_alat = $total_pemakaian_stone_crusher + $total_pemakaian_wheel_loader + $total_pemakaian_maintenance + $total_pemakaian_solar + $total_pemakaian_tangki + $total_pemakaian_timbangan;
         $total_nilai_evaluasi_alat = $total_nilai_evaluasi_stone_crusher + $total_nilai_evaluasi_wheel_loader + $total_nilai_evaluasi_maintenance + $total_nilai_evaluasi_bbm_solar + $total_nilai_evaluasi_tangki + $total_nilai_evaluasi_timbangan;
         
         $query = $total_nilai_realisasi_alat;
