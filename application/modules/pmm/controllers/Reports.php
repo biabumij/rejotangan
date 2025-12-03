@@ -1447,7 +1447,7 @@ class Reports extends CI_Controller {
 	            <th width="10%" class="text-center">4-40000</th>
 				<th width="90%" class="text-left" colspan="5">Pendapatan</th>
 	        </tr>
-			<?php foreach ($penjualan as $i=>$x): ?>
+			<?php foreach ($penjualan_2 as $i=>$x): ?>
 			<tr class="table-active3">
 	            <th width="10%"></th>
 				<th width="30%"><?= $penjualan[$i]['nama'] ?></th>
