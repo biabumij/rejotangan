@@ -191,10 +191,10 @@
 								<img src="uploads/ttd_dian.png" width="50px">
 							</td>
 							<td align="center">
-								<img src="uploads/ttd_rifka.png" width="50px">
+								<img src="uploads/ttd_vicky.png" width="50px">
 							</td>
 							<td align="center">
-								<img src="uploads/ttd_vicky.png" width="50px">
+								<img src="uploads/ttd_satria.png" width="50px">
 							</td>
 						</tr>
 						<tr>
