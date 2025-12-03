@@ -1447,11 +1447,11 @@ class Reports extends CI_Controller {
 	            <th width="10%" class="text-center">4-40000</th>
 				<th width="90%" class="text-left" colspan="5">Pendapatan</th>
 	        </tr>
-			<?php foreach ($penjualan_2 as $i=>$x): ?>
+			<?php foreach ($penjualan as $i=>$x): ?>
 			<tr class="table-active3">
 	            <th width="10%"></th>
-				<th width="30%"><?= $penjualan_2[$i]['nama'] ?></th>
-				<th width="12%" class="text-right"><?php echo number_format($penjualan_2[$i]['volume'],2,',','.');?> (<?= $penjualan[$i]['measure'];?>)</th>
+				<th width="30%"><?= $penjualan[$i]['nama'] ?></th>
+				<th width="12%" class="text-right"><?php echo number_format($penjualan[$i]['volume'],2,',','.');?> (<?= $penjualan[$i]['measure'];?>)</th>
 	            <th width="18%" class="text-right">
 					<table width="100%" border="0" cellpadding="0">
 						<tr>
