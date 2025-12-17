@@ -176,6 +176,7 @@ class Finance extends CI_Controller {
 
 		$this->db->select('c.*');
 		$this->db->where('c.coa_category',3);
+		$this->db->where('c.coa_cateidory',147);
 		$this->db->where('c.status','PUBLISH');
 		$this->db->order_by('c.coa_number','asc');
 		$query = $this->db->get('pmm_coa c');
