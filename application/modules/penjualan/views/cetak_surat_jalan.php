@@ -87,7 +87,7 @@
             		if($date !== false && $row['date_production'] != $date){
             			?>
 	            		<tr>
-	            			<th colspan="5" style="text-align:right;">Jumlah</th>
+	            			<th colspan="6" style="text-align:right;">Jumlah</th>
               				<th style="text-align:center;"><?php echo number_format($total_by_date,2,',','.');?></th>
 							<th style="text-align:center;">M3</th>
 	            		</tr>
@@ -112,7 +112,7 @@
             		if($key == count($data) - 1){
             			?>
 	            		<tr>
-						<th colspan="5" style="text-align:right;">Jumlah</th>
+						<th colspan="6" style="text-align:right;">Jumlah</th>
               				<th style="text-align:center;"><?php echo number_format($total_by_date,2,',','.');?></th>
 							<th style="text-align:center;">M3</th>
 	            		</tr>
@@ -128,7 +128,7 @@
             }
             ?>	
            	<tr>
-               <th colspan="5" style="text-align:right;">Total</th>
+               <th colspan="6" style="text-align:right;">Total</th>
                <th style="text-align:center;"><?php echo number_format($total,2,',','.');?></th>
 			   <th style="text-align:center;">M3</th>
            </tr>
