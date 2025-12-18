@@ -70,8 +70,9 @@
                 <th align="center" width="5%">No</th>
 				<th align="center" width="10%">Hari</th>
                 <th align="center" width="10%">Tanggal</th>
-				<th align="center" width="20%">Produk</th>
-				<th align="center" width="35%">No. Kendaraan</th>
+				<th align="center" width="15%">Rekanan</th>
+				<th align="center" width="10%">Produk</th>
+				<th align="center" width="30%">No. Kendaraan</th>
 				<th align="center" width="15%">Volume</th>
 				<th align="center" width="5%">Satuan</th>
             </tr>
@@ -101,6 +102,7 @@
             			<td><?php echo $key + 1 ;?></td>
             			<td><?php echo tglIndonesia(date('D',strtotime($row['date_production'])));?></td>
 						<td><?php echo date('d-m-Y',strtotime($row['date_production']));?></td>
+						<td><?php echo $row['nama'];?></td>
 						<td><?php echo $row['product_id'] = $this->crud_global->GetField('produk',array('id'=>$row['product_id']),'nama_produk');?></td>
 						<td align="left"><?php echo $row['nopol_truck'];?></td>
 						<td><?php echo number_format($row['volume'],2,',','.');?></td>
